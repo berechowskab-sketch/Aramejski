@@ -1,0 +1,1904 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Trener aramejskiego biblijnego: lekcje, słówka, fiszki, quizy i zdania (Greenspahn, wykład TSL I).">
+<meta name="theme-color" content="#1E3C8A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%231E3C8A%22/%3E%3Ctext x=%2232%22 y=%2246%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22%23E0B05A%22 font-family=%22serif%22%3E%D7%9B%3C/text%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Trener aramejskiego biblijnego</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brygada+1918:wght@500;700&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+Hebrew:wght@400;500;600&display=swap">
+<style>
+/* Układ: wąska kolumna robocza (max 980px) pod lapisowym pasem nagłówka zakończonym „szkliwionymi cegłami” z Bramy Isztar. */
+:root{
+  --bg:#EDEFF3; --surface:#FFFFFF; --sunk:#F5F6F9; --ink:#141A29; --muted:#4C566B; --line:#D4D9E2;
+  --lapis:#1E3C8A; --lapis-ink:#FFFFFF; --lapis-soft:#E2E8F6; --gold:#A8761F; --gold-soft:#F4E9D3;
+  --good:#2C7A4B; --good-soft:#E1F1E7; --bad:#B03E2C; --bad-soft:#F8E3DF;
+  --f-display:"Brygada 1918", Georgia, "Times New Roman", serif;
+  --f-ui:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-tr:"Gentium Book Plus", "Noto Serif", Georgia, serif;
+  --f-he:"Noto Serif Hebrew", "SBL Hebrew", "Ezra SIL", "Times New Roman", serif;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0D1322; --surface:#151D31; --sunk:#111829; --ink:#EEF0F6; --muted:#AAB3C8; --line:#26314B;
+  --lapis:#223F8F; --lapis-ink:#F3F5FB; --lapis-soft:#1C2850; --gold:#E0B05A; --gold-soft:#372C17;
+  --good:#6CC490; --good-soft:#163222; --bad:#EE8B77; --bad-soft:#3B1D18; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0D1322; --surface:#151D31; --sunk:#111829; --ink:#EEF0F6; --muted:#AAB3C8; --line:#26314B;
+  --lapis:#223F8F; --lapis-ink:#F3F5FB; --lapis-soft:#1C2850; --gold:#E0B05A; --gold-soft:#372C17;
+  --good:#6CC490; --good-soft:#163222; --bad:#EE8B77; --bad-soft:#3B1D18; color-scheme:dark }
+html,body{background:var(--bg)}
+body{color:var(--ink);font-family:var(--f-ui);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit}
+.he{font-family:var(--f-he);direction:rtl;unicode-bidi:isolate;font-size:1.28em;line-height:1.75;font-weight:500}
+.tr{font-family:var(--f-tr);font-style:italic;letter-spacing:.01em}
+.muted{color:var(--muted)}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* nagłówek */
+.top{background:var(--lapis);color:var(--lapis-ink);position:relative}
+.top::after{content:"";display:block;height:8px;background:
+  repeating-linear-gradient(90deg,var(--gold) 0 26px,transparent 26px 30px),var(--lapis);opacity:.95}
+.top .wrap{display:flex;align-items:center;gap:14px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:10px;cursor:pointer;background:none;border:0;padding:0;text-align:left;color:inherit}
+.brand .he{font-size:28px;line-height:1;color:var(--lapis-ink)}
+.brand b{font-family:var(--f-display);font-size:19px;font-weight:700;letter-spacing:.01em}
+.brand small{display:block;font-size:12px;opacity:.8;font-weight:400}
+nav.main{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav.main button{background:transparent;border:1px solid transparent;color:var(--lapis-ink);padding:8px 13px;border-radius:999px;cursor:pointer;font-size:15px;opacity:.9;min-height:40px}
+nav.main button:hover{opacity:1;border-color:rgba(255,255,255,.35)}
+nav.main button[aria-current="true"]{background:rgba(255,255,255,.16);opacity:1;border-color:rgba(255,255,255,.4)}
+.badge{display:inline-block;min-width:18px;padding:0 5px;border-radius:9px;background:var(--gold);color:#1A1406;font-size:11px;font-weight:600;line-height:18px;text-align:center;margin-left:4px}
+
+main{padding-block:22px 60px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+h1{font-size:28px;line-height:1.2}
+h2{font-size:21px}
+h3{font-size:16px}
+.eyebrow{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);background:var(--surface);padding:10px 16px;min-height:44px;border-radius:9px;cursor:pointer;font-weight:500;font-size:15px}
+.btn:hover{border-color:var(--lapis)}
+.btn.primary{background:var(--lapis);color:var(--lapis-ink);border-color:var(--lapis)}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent}
+.btn.good{background:var(--good);border-color:var(--good);color:#fff}
+.btn.bad{background:var(--bad);border-color:var(--bad);color:#fff}
+.btn:disabled{opacity:.5;cursor:default}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.stack{display:flex;flex-direction:column;gap:14px}
+
+/* strona główna */
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:stretch}
+.hero .intro p{margin:6px 0 0;max-width:60ch;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.stat b{display:block;font-family:var(--f-display);font-size:24px;font-variant-numeric:tabular-nums}
+.stat>span{display:block;font-size:13px;line-height:1.3;color:var(--muted);margin-top:2px}
+.lessons{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;margin-top:14px}
+.lcard{display:grid;grid-template-columns:44px 1fr;gap:10px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px;cursor:pointer;align-items:start}
+.lcard:hover{border-color:var(--lapis)}
+.lnum{width:44px;height:44px;border-radius:8px;background:var(--lapis-soft);color:var(--lapis);display:grid;place-items:center;font-family:var(--f-display);font-weight:700;font-size:15px}
+:root[data-theme="dark"] .lnum{color:var(--ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lnum{color:var(--ink)}}
+.lcard.done .lnum{background:var(--gold-soft);color:var(--gold)}
+.lcard .lbody{min-width:0;display:block}
+.lcard .lt{display:block;font-family:var(--f-display);font-weight:700;font-size:16.5px;line-height:1.3;text-wrap:balance}
+.lcard .meta{display:block}
+.lcard .bar{display:block}
+.lcard .meta{font-size:13.5px;color:var(--muted);margin-top:2px}
+.bar{height:5px;background:var(--sunk);border-radius:3px;overflow:hidden;margin-top:8px;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:var(--gold);border-radius:3px}
+.chips{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.chip{font-size:12.5px;padding:2px 9px;border-radius:999px;background:var(--sunk);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.chip.ok{background:var(--good-soft);color:var(--good);border-color:transparent}
+button.chip{cursor:pointer}
+button.chip.proc{background:var(--gold-soft);color:var(--ink);border-color:transparent}
+
+/* lekcja */
+.lhead{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.lhead .lnum{width:56px;height:56px;font-size:20px}
+.back{background:none;border:0;color:var(--muted);cursor:pointer;padding:0;font-size:14px;margin-bottom:10px}
+.back:hover{color:var(--ink)}
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);margin:18px 0 18px;overflow-x:auto}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:11px 14px;cursor:pointer;font-weight:600;font-size:16px;color:var(--muted);white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--gold)}
+.gblock{margin-bottom:18px}
+.gblock h3{margin-bottom:6px;color:var(--lapis)}
+:root[data-theme="dark"] .gblock h3{color:var(--gold)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .gblock h3{color:var(--gold)}}
+.gblock p{margin:0;max-width:72ch}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--sunk);font-weight:600;font-size:12px;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td .he{font-size:1.4em}
+
+/* słówka: dwie formy (aram. | hebr.) – każda z transliteracją pod spodem – oraz znaczenie */
+.vlist{display:flex;flex-direction:column;gap:10px}
+.vrow{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.forms{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-right:1px solid var(--line)}
+.form{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;gap:2px;padding:12px 10px 14px;min-width:0}
+.form+.form{border-left:1px dashed var(--line)}
+.form .lab{font-size:11.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.form .w{display:block;max-width:100%;overflow-wrap:anywhere;line-height:1.5}
+.form.ar .w{font-size:36px;font-weight:600}
+.form.hb .w{font-size:29px}
+.form .tr{display:block;font-size:16.5px;line-height:1.35;margin-top:2px;overflow-wrap:anywhere}
+.form.ar .tr{color:var(--ink)}
+.form.hb .tr{color:var(--muted)}
+.form .none{font-size:22px;color:var(--muted);padding:6px 0}
+.vrow .pl{padding:12px 16px 14px;min-width:0}
+.vrow .pl .mean{font-size:18px;font-weight:600;line-height:1.35}
+.vrow .note{font-size:15px;color:var(--muted);margin-top:5px;line-height:1.5}
+.lvl{display:inline-flex;gap:3px;vertical-align:middle;margin-left:8px}
+.lvl i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.lvl i.on{background:var(--gold)}
+.procbox{margin-top:6px;font-size:15px;background:var(--gold-soft);border-radius:6px;padding:7px 10px}
+
+/* fiszki */
+.fc-wrap{max-width:560px;margin:0 auto}
+.fc{perspective:1200px;height:300px;cursor:pointer;margin:14px 0}
+.fc-in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.fc.flip .fc-in{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center;gap:6px;overflow:auto}
+.fc-face.back{transform:rotateY(180deg);background:var(--sunk)}
+.fc-face .big.he{font-size:54px;line-height:1.35}
+.fc-face .big.pl{font-family:var(--f-display);font-size:28px}
+.fc-face .hint{position:absolute;bottom:10px;font-size:12px;color:var(--muted)}
+.fc-grid{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;text-align:left;font-size:16px;align-items:baseline}
+.fc-grid dt{color:var(--muted);font-size:13px}
+.fc-grid dd{margin:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;padding:9px 12px;min-height:42px;cursor:pointer;font-size:14.5px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--lapis-soft);color:var(--ink);font-weight:600}
+.answer-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+@media (prefers-reduced-motion: reduce){.fc-in{transition:none}}
+
+/* quiz */
+.q-card{max-width:640px;margin:0 auto}
+.q-prompt{font-size:19px;margin:10px 0 16px;line-height:1.5}
+.q-prompt .he{font-size:1.75em}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:13px 16px;min-height:52px;cursor:pointer;font-size:17px;line-height:1.45}
+.opt:hover:not(:disabled){border-color:var(--lapis)}
+.opt.ok{background:var(--good-soft);border-color:var(--good)}
+.opt.no{background:var(--bad-soft);border-color:var(--bad)}
+.opt:disabled{cursor:default}
+.opt .he{font-size:1.5em}
+.feedback{margin-top:12px;padding:12px 14px;border-radius:9px;font-size:16px}
+.feedback.ok{background:var(--good-soft)}
+.feedback.no{background:var(--bad-soft)}
+.progress-dots{display:flex;gap:4px;flex-wrap:wrap}
+.progress-dots i{width:18px;height:5px;border-radius:3px;background:var(--line)}
+.progress-dots i.ok{background:var(--good)}
+.progress-dots i.no{background:var(--bad)}
+.progress-dots i.cur{background:var(--gold)}
+.score{font-family:var(--f-display);font-size:48px;font-variant-numeric:tabular-nums}
+
+/* zdania */
+.sent{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.sent .he.line{display:block;text-align:right;font-size:1.85em;line-height:1.85}
+.sent .ref{font-size:13.5px;color:var(--muted)}
+.sent .reveal{margin-top:8px;font-size:16px;border-top:1px dashed var(--line);padding-top:8px}
+.sent .reveal p{margin:4px 0}
+.builder{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.slot{min-height:56px;border:1px dashed var(--line);border-radius:8px;padding:8px;display:flex;flex-wrap:wrap;gap:6px;direction:rtl;background:var(--sunk)}
+.pool{display:flex;flex-wrap:wrap;gap:6px;direction:rtl;margin-top:8px}
+.tile{font-family:var(--f-he);font-weight:500;font-size:25px;border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:2px 10px;cursor:pointer;line-height:1.7}
+.tile:hover{border-color:var(--lapis)}
+.tile.used{visibility:hidden}
+.slot.ok{border-color:var(--good);background:var(--good-soft)}
+.slot.no{border-color:var(--bad);background:var(--bad-soft)}
+
+/* słowniczek, paradygmaty */
+.search{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.par td .he{font-size:1.3em}
+.par th:first-child,.par td.lab{position:sticky;left:0;z-index:1;background:var(--sunk)}
+.par td.lab{background:var(--surface)}
+.swipe{display:none;font-size:13.5px;color:var(--muted);margin:0 0 6px}
+.par td.lab{white-space:nowrap;color:var(--muted);font-size:14px}
+.sync{font-size:12px;color:var(--muted)}
+.sync i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--muted);margin-right:5px;vertical-align:middle}
+.sync.acc i{background:var(--good)}
+textarea{width:100%;min-height:90px;font:12px/1.4 ui-monospace,Menlo,monospace;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--sunk);color:var(--ink)}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+.kbd{font-size:12.5px;color:var(--muted)}
+
+@media (max-width:720px){
+  body{font-size:17px}
+  .hero{grid-template-columns:1fr}
+  .vrow{grid-template-columns:1fr}
+  .forms{border-right:0;border-bottom:1px solid var(--line)}
+  .form.ar .w{font-size:38px}
+  .form.hb .w{font-size:30px}
+  nav.main{margin-left:0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+  nav.main button{padding:8px 2px;font-size:14px}
+  .badge{margin-left:2px}
+  .top .wrap{padding-block:10px 12px;gap:10px}
+  .lhead{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px}
+  .lhead>.row{grid-column:1 / -1}
+  .lhead>.row .btn{flex:1}
+  .swipe{display:block}
+  .hide-touch{display:none}
+  .fc{height:360px}
+  .fc-face .big.he{font-size:48px}
+  h1{font-size:25px}
+  .tabs button{padding:11px 12px}
+  .lhead .row .btn{padding:8px 10px}
+}
+@media (max-width:420px){
+  .stats{grid-template-columns:1fr 1fr 1fr}
+  .stat b{font-size:21px}
+  .answer-row{grid-template-columns:1fr 1fr 1fr}
+  .answer-row .btn{padding:8px 4px}
+  .form{padding:10px 6px 12px}
+  .brand small{display:none}
+}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <button class="brand" id="brand" type="button"><span class="he">כְּתָב</span><span><b>Trener aramejskiego</b><small>Greenspahn · wykład TSL I</small></span></button>
+    <nav class="main" id="nav" aria-label="Sekcje">
+      <button type="button" data-go="home">Lekcje</button>
+      <button type="button" data-go="review">Powtórka<span class="badge" id="dueBadge" hidden>0</span></button>
+      <button type="button" data-go="par">Paradygmaty</button>
+      <button type="button" data-go="gloss">Słowniczek</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="app"></main>
+
+<script>
+const LESSONS=[];
+function L(o){LESSONS.push(o)}
+const PROC={
+ K:{n:'Przekształcenie kananejskie',s:'ā > ō',d:'Hebrajski (język kananejski) zmienił długie ā w ō. Aramejski zachował ā: שְׁלָם – שָׁלוֹם, טָב – טוֹב.'},
+ R:{n:'Redukcja pretoniczna',s:'aram. ə : hebr. ā',d:'Krótka samogłoska tuż przed akcentem w aramejskim redukuje się do szwy, w hebrajskim wydłuża się: כְּתַב – כָּתַב.'},
+ T:{n:'*ṯ: aram. ת – hebr. שׁ',s:'ת ~ שׁ',d:'Prasemickie ṯ (jak „th” w ang. thin) dało w hebrajskim שׁ, w aramejskim ת: יְתִב – יָשַׁב.'},
+ D:{n:'*ḏ: aram. ד – hebr. ז',s:'ד ~ ז',d:'Prasemickie ḏ (jak „th” w ang. this) dało w hebrajskim ז, w aramejskim ד: דְּהַב – זָהָב.'},
+ TT:{n:'*ṯ̣/ẓ: aram. ט – hebr. צ',s:'ט ~ צ',d:'Emfatyczne ṯ̣ dało w hebrajskim צ, w aramejskim ט: קַיִט – קַיִץ.'},
+ A:{n:'*ḍ: aram. ע (ק) – hebr. צ',s:'ע ~ צ',d:'Emfatyczne ḍ dało w hebrajskim צ, w aramejskim ע (dawniej ק): אַרְעָא / אַרְקָא – אֶרֶץ.'},
+ P:{n:'Alef prostetyczny',s:'+א',d:'Dodatkowy alef na początku wyrazu w jednym z języków: אֲחִידָה – חִידָה, חַד – אֶחָד.'},
+ S:{n:'Wzór segolowy',s:'CəCVC : CeCeC',d:'Hebrajskie rzeczowniki typu מֶלֶךְ mają dwie krótkie samogłoski; aramejskie mają pełną samogłoskę tylko w sylabie akcentowanej (כְּסַף – כֶּסֶף), a pierwotny wzór wraca z sufiksem (כַּסְפָּא).'},
+ NM:{n:'Nunacja',s:'-īn : -îm',d:'Aramejska l.mn. męska kończy się na -īn (nun), hebrajska na -îm (mem). Także w zaimkach i czasownikach: אִנּוּן, יִכְתְּבוּן.'},
+ NR:{n:'Aram. ר – hebr. נ',s:'ר ~ נ',d:'W kilku słowach aramejskiemu r odpowiada hebrajskie n: בַּר – בֵּן, תְּרֵין – שְׁנַיִם.'},
+ AS:{n:'Asymilacja n',s:'nt > tt',d:'W hebrajskim n asymilowało się do następnej spółgłoski (אַתָּה < *ʾanta, אַף < *ʾanp); aramejski zachował je w piśmie: אַנְתְּ, אֲנַף.'},
+ DS:{n:'Dysymilacja',s:'CC > nC / rC',d:'Podwojona spółgłoska zostaje rozbita przez n lub r albo jedna z identycznych spółgłosek się zmienia: מַנְדַּע (hebr. מַדָּע), כָּרְסֵא (hebr. כִּסֵּא), אָע (hebr. עֵץ).'},
+ X:{n:'Inny rdzeń',s:'≠',d:'Aramejski wyraża to pojęcie innym słowem niż hebrajski: אֲזַל – הָלַךְ, נְפַק – יָצָא.'},
+ F:{n:'Fałszywy przyjaciel',s:'!',d:'Rdzeń istnieje w obu językach, ale znaczenie się różni: aram. עֲבַד „czynić” – hebr. עָבַד „służyć”.'},
+ LW:{n:'Zapożyczenie',s:'←',d:'Słowo zapożyczone z perskiego, akadyjskiego lub greckiego.'}
+};
+const PERS=['3 m. l.poj.','3 ż. l.poj.','2 m. l.poj.','1 l.poj.','3 m. l.mn.','3 ż. l.mn.','2 m. l.mn.','1 l.mn.'];
+const PARAD={
+ stems:['G (peʿal)','D (paʿʿel)','H (hafʿel)','A (ʾafʿel)','Gt (hitpeʿel)','Dt (hitpaʿʿal)'],
+ short:['G','D','H','A','Gt','Dt'],
+ pf:[
+  ['כְּתַב','כִּתְבַת','כְּתַבְתְּ','כִּתְבֵת','כְּתַבוּ','כְּתַבָה','כְּתַבְתּוּן','כְּתַבְנָא'],
+  ['כַּתֵּב','כַּתְּבַת','כַּתֵּבְתְּ','כַּתְּבֵת','כַּתִּבוּ','כַּתִּבָה','כַּתֵּבְתּוּן','כַּתֵּבְנָא'],
+  ['הַכְתֵּב','הַכְתְּבַת','הַכְתֵּבְתְּ','הַכְתְּבֵת','הַכְתִּבוּ','הַכְתִּבָה','הַכְתֵּבְתּוּן','הַכְתֵּבְנָא'],
+  ['אַכְתֵּב','אַכְתְּבַת','אַכְתֵּבְתְּ','אַכְתְּבֵת','אַכְתִּבוּ','אַכְתִּבָה','אַכְתֵּבְתּוּן','אַכְתֵּבְנָא'],
+  ['הִתְכְּתֵב','הִתְכַּתְבַת','הִתְכְּתֵבְתְּ','הִתְכַּתְבֵת','הִתְכְּתִבוּ','הִתְכְּתִבָה','הִתְכְּתֵבְתּוּן','הִתְכְּתֵבְנָא'],
+  ['הִתְכַּתַּב','הִתְכַּתְּבַת','הִתְכַּתַּבְתְּ','הִתְכַּתְּבֵת','הִתְכַּתַּבוּ','הִתְכַּתַּבָה','הִתְכַּתַּבְתּוּן','הִתְכַּתַּבְנָא']],
+ impf:[
+  ['יִכְתֻּב','תִּכְתֻּב','תִּכְתֻּב','אֶכְתֻּב','יִכְתְּבוּן','יִכְתְּבָן','תִּכְתְּבוּן','נִכְתֻּב'],
+  ['יְכַתֵּב','תְּכַתֵּב','תְּכַתֵּב','אֲכַתֵּב','יְכַתְּבוּן','יְכַתְּבָן','תְּכַתְּבוּן','נְכַתֵּב'],
+  ['יְהַכְתֵּב','תְּהַכְתֵּב','תְּהַכְתֵּב','אֲהַכְתֵּב','יְהַכְתְּבוּן','יְהַכְתְּבָן','תְּהַכְתְּבוּן','נְהַכְתֵּב'],
+  ['יַכְתֵּב','תַּכְתֵּב','תַּכְתֵּב','אַכְתֵּב','יַכְתְּבוּן','יַכְתְּבָן','תַּכְתְּבוּן','נַכְתֵּב'],
+  ['יִתְכְּתֵב','תִּתְכְּתֵב','תִּתְכְּתֵב','אֶתְכְּתֵב','יִתְכַּתְבוּן','יִתְכַּתְבָן','תִּתְכַּתְבוּן','נִתְכְּתֵב'],
+  ['יִתְכַּתַּב','תִּתְכַּתַּב','תִּתְכַּתַּב','אֶתְכַּתַּב','יִתְכַּתְּבוּן','יִתְכַּתְּבָן','תִּתְכַּתְּבוּן','נִתְכַּתַּב']],
+ ptcLab:['m. l.poj.','ż. l.poj.','m. l.mn.','ż. l.mn.'],
+ ptc:[
+  ['G czynny','כָּתֵב','כָּתְבָה','כָּתְבִין','כָּתְבָן'],
+  ['G bierny','כְּתִיב','כְּתִיבָה','כְּתִיבִין','כְּתִיבָן'],
+  ['D czynny','מְכַתֵּב','מְכַתְּבָה','מְכַתְּבִין','מְכַתְּבָן'],
+  ['D bierny','מְכַתַּב','מְכַתְּבָה','מְכַתְּבִין','מְכַתְּבָן'],
+  ['H czynny','מְהַכְתֵּב','מְהַכְתְּבָה','מְהַכְתְּבִין','מְהַכְתְּבָן'],
+  ['Gt','מִתְכְּתֵב','מִתְכַּתְבָה','מִתְכַּתְבִין','מִתְכַּתְבָן'],
+  ['Dt','מִתְכַּתַּב','מִתְכַּתְּבָה','מִתְכַּתְּבִין','מִתְכַּתְּבָן']],
+ imv:[
+  ['G','כְּתֻב','כְּתֻבִי','כְּתֻבוּ','כְּתֻבָה'],
+  ['D','כַּתֵּב','כַּתִּבִי','כַּתִּבוּ','כַּתִּבָה'],
+  ['H','הַכְתֵּב','הַכְתִּבִי','הַכְתִּבוּ','הַכְתִּבָה']],
+ inf:[['G','מִכְתַּב'],['D','כַּתָּבָה'],['H','הַכְתָּבָה'],['A','אַכְתָּבָה'],['Gt','הִתְכְּתָבָה'],['Dt','הִתְכַּתָּבָה']],
+ pron:[['1 l.poj.','אֲנָה','אֲנִי'],['2 m. l.poj.','אַנְתְּ / אַנְתָּה','אַתָּה'],['3 m. l.poj.','הוּא','הוּא'],['3 ż. l.poj.','הִיא','הִיא'],['1 l.mn.','אֲנַחְנָא','אֲנַחְנוּ'],['2 m. l.mn.','אַנְתּוּן','אַתֶּם'],['3 m. l.mn.','הִמּוֹ / אִנּוּן','הֵם'],['3 ż. l.mn.','אִנִּין','הֵן']],
+ sufS:[['1 l.poj.','מַלְכִּי'],['2 m. l.poj.','מַלְכָּךְ'],['3 m. l.poj.','מַלְכֵּהּ'],['3 ż. l.poj.','מַלְכַּהּ'],['1 l.mn.','מַלְכַּנָא'],['2 m. l.mn.','מַלְכְּכֹם'],['3 m. l.mn.','מַלְכְּהֹם']],
+ sufP:[['1 l.poj.','מַלְכַי'],['2 m. l.poj.','מַלְכָיךְ'],['3 m. l.poj.','מַלְכוֹהִי'],['3 ż. l.poj.','מַלְכַהּ'],['1 l.mn.','מַלְכָנָא'],['2 m. l.mn.','מַלְכֵיכֹם'],['3 m. l.mn.','מַלְכֵיהֹם']],
+ noun:[['m. l.poj.','מֶלֶךְ','מֶלֶךְ','מַלְכָּא'],['m. l.mn.','מַלְכִין','מַלְכֵי','מַלְכַיָּא'],['ż. l.poj.','מְדִינָה','מְדִינַת','מְדִינְתָּא'],['ż. l.mn.','מְדִינָן','מְדִינָת','מְדִינָתָא']]
+};
+
+/* Lekcje 1–9 (Greenspahn, rozdz. 1–9; wykład TSL I, cz. 1–9)
+   v: [aram, translit, hebr, hebr-translit, polski, tagi, uwaga]
+   s: [aram, polski, analiza, odnośnik]
+   q: [pytanie, [opcje], indeks poprawnej, wyjaśnienie] */
+L({id:1, ch:'1–2', title:'Wprowadzenie i krótka historia', read:'Rdz 31,47 · Mk 5,41 · Mk 15,34',
+g:[
+ {h:'Gdzie jest aramejski w Biblii?', p:'Ezd 4,8–6,18 i 7,12–26; Dn 2,4b–7,28; Jr 10,11 oraz dwa słowa w Rdz 31,47 – razem ok. 200 wersetów. Tekst zapisany jest tym samym alfabetem kwadratowym co hebrajski, z tą samą (masorecką, tyberiadzką) wokalizacją.'},
+ {h:'Rodzina języków', p:'Aramejski i hebrajski należą do północno-zachodniej grupy języków semickich. Hebrajski (i fenicki) to języki kananejskie, aramejski – nie. Stąd duże pokrewieństwo słownictwa i ten sam system rdzeni trójspółgłoskowych, ale to dwa różne języki: aramejski nie jest dialektem hebrajskiego.'},
+ {h:'Fazy rozwoju', t:[['Faza','Czas','Przykłady'],['staroaramejski','pocz. I tys. przed Chr.','inskrypcje z płn. Syrii'],['aramejski imperialny','VI–IV w. przed Chr.','Ezd, Dn, Elefantyna'],['średnioaramejski','III w. przed Chr. – II w. po Chr.','Qumran, NT, Onkelos'],['późnoaramejski','II–IX w. po Chr.','Talmud, targumy, Peszitta'],['nowoaramejski','od XVI w.','dialekty współczesne']]},
+ {h:'Pierwsze aramejskie słowa w Biblii', p:'Laban nazywa stos kamieni יְגַר שָׂהֲדוּתָא, a Jakub ten sam stos po hebrajsku גַּלְעֵד (Rdz 31,47). Oba wyrażenia znaczą „kopiec świadectwa”, ale nie mają ze sobą nic wspólnego – to pierwsza lekcja, że słownictwo obu języków bywa całkiem różne.'},
+ {h:'Aramejski w Nowym Testamencie', p:'Słowa Jezusa na krzyżu cytują Ps 22,2. Hebrajskie אֵלִי אֵלִי לָמָה עֲזַבְתָּנִי oddane są po aramejsku: אֱלָהִי אֱלָהִי לְמָה שְׁבַקְתַּנִי. Widać tu trzy zjawiska: (1) aram. אֱלָהּ zachowuje ā, hebr. אֱלוֹהַּ ma ō (przekształcenie kananejskie); (2) aram. לְמָה ma szwę tam, gdzie hebr. לָמָה ma qameṣ (redukcja pretoniczna); (3) hebr. עזב zastępuje inny rdzeń: aram. שׁבק.'},
+ {h:'Wokalizacja i nazewnictwo', p:'Najstarszy system wokalizacji to babiloński (Targum Onkelos); tyberiadzki (masorecki) jest późniejszy. Za Greenspahnem koniugacje nazywamy G, D, H, Gt, Dt zamiast tradycyjnych peʿal, paʿʿel, hafʿel, hitpeʿel, hitpaʿʿal.'}
+],
+v:[
+ ['יְגַר שָׂהֲדוּתָא','yəgar śāhădûtā','גַּלְעֵד','galʿēd','kopiec świadectwa (Rdz 31,47)','X','Pierwsze aramejskie słowa w Biblii; znaczą to samo co hebr. גַּלְעֵד, ale nie są z nim spokrewnione.'],
+ ['אֲרָמִית','ʾărāmît','אֲרָמִית','ʾărāmît','po aramejsku (Dn 2,4; Ezd 4,7)','','Hebrajskie słowo, którym tekst zapowiada przejście na aramejski.'],
+ ['אֱלָהִי','ʾĕlāhî','אֵלִי','ʾēlî','mój Boże (Ps 22,2 / Mk 15,34)','K','Aram. אֱלָהּ + suf. 1 os.; hebr. odpowiednik אֱלוֹהַּ z ō.'],
+ ['לְמָה','ləmâ','לָמָה','lāmâ','dlaczego?','R','Aram. szwa wobec hebr. qameṣ – redukcja pretoniczna.'],
+ ['שְׁבַקְתַּנִי','šəbaqtanî','עֲזַבְתָּנִי','ʿăzabtānî','opuściłeś mnie','X','Aram. rdzeń שׁבק zastępuje hebr. עזב.'],
+ ['אַבָּא','ʾabbā','אָבִי','ʾābî','ojcze, tato (Mk 14,36)','','Forma determinowana z -ā użyta jako wołacz.'],
+ ['טַלְיְתָא קוּמִי','ṭalyətā qûmî','יַלְדָּה קוּמִי','yaldâ qûmî','dziewczynko, wstań (Mk 5,41)','X',''],
+ ['מָרַנָא תָא','māranā tā','אֲדֹנֵינוּ בֹּא','ʾădōnênû bōʾ','Panie nasz, przyjdź (1 Kor 16,22)','X','Aram. מָרֵא „pan”, hebr. אָדוֹן.']
+],
+s:[
+ ['יְגַר שָׂהֲדוּתָא','Kopiec świadectwa.','Wyrażenie Labana: יְגַר „kopiec” + שָׂהֲדוּתָא „świadectwo” (st. determ., końcówka -ā).','Rdz 31,47'],
+ ['אֱלָהִי אֱלָהִי לְמָה שְׁבַקְתַּנִי','Boże mój, Boże mój, czemuś mnie opuścił?','שְׁבַקְתַּנִי = G pf 2 m. l.poj. שׁבק + sufiks 1 os. -nî. Hebr. ma tu עֲזַבְתָּנִי.','Mk 15,34 / Ps 22,2']
+],
+q:[
+ ['Ile mniej więcej wersetów Biblii hebrajskiej napisano po aramejsku?',['ok. 20','ok. 200','ok. 2000','ok. 600'],1,'Ezd, Dn, Jr 10,11 i Rdz 31,47 – razem ok. 200 wersetów.'],
+ ['Który fragment NIE jest aramejski?',['Dn 2,4b–7,28','Ezd 4,8–6,18','Jr 10,11','Neh 1,1–11'],3,'Nehemiasz jest w całości po hebrajsku.'],
+ ['Dlaczego aramejski nie jest językiem kananejskim?',['Nie należy do języków semickich','Nie przeszedł przekształcenia ā > ō','Używa innego alfabetu','Nie ma rdzeni trójspółgłoskowych'],1,'Brak przekształcenia kananejskiego (ā > ō) odróżnia aramejski od hebrajskiego i fenickiego.'],
+ ['Do której fazy należy aramejski biblijny?',['staroaramejski','aramejski imperialny','późnoaramejski','nowoaramejski'],1,'Aramejski imperialny (urzędowy) VI–IV w. przed Chr.'],
+ ['Hebrajskie עזב („opuścić”) w aramejskich słowach z krzyża to…',['עֲזַב','שְׁבַק','נְטַשׁ','שְׁלַח'],1,'שׁבק – inny rdzeń o podobnym znaczeniu.'],
+ ['Który system wokalizacji jest najstarszy?',['tyberiadzki','palestyński','babiloński','sefardyjski'],2,'System babiloński (np. Targum Onkelos) poprzedza masorecki tyberiadzki.']
+]});
+
+L({id:3, ch:'3', title:'Język aramejski', read:'Ezd 4,8–11 · Jr 10,11',
+g:[
+ {h:'Ten sam alfabet, inne zasady', p:'Biblijny aramejski czytamy tym samym pismem co hebrajski. Wiele słów jest wspólnych (כתב, שׁלח, מִן, עַל), ale zawsze trzeba sprawdzić, czy znaczenie jest takie samo.'},
+ {h:'Rodzajnik na końcu wyrazu', p:'Aramejski nie ma rodzajnika ה־ przed rzeczownikiem. Określoność wyraża końcówka ־ָא: מֶלֶךְ „król” → מַלְכָּא „ten król”; hebr. מֶלֶךְ → הַמֶּלֶךְ. Szczegóły w lekcji 6.'},
+ {h:'Jr 10,11 – dwa zapisy jednego słowa', p:'W jednym wersecie stoją obok siebie אַרְקָא i אַרְעָא „ziemia”. Starsza pisownia z ק i młodsza z ע oddają prasemickie *ḍ, które w hebrajskim dało צ (אֶרֶץ).'},
+ {h:'Fałszywy przyjaciel: עבד', p:'Hebr. עָבַד znaczy „służyć, pracować”, aram. עֲבַד – „czynić, robić” (jak hebr. עָשָׂה). Jr 10,11: אֱלָהַיָּא דִּי שְׁמַיָּא וְאַרְקָא לָא עֲבַדוּ „bogowie, którzy nie uczynili nieba i ziemi”.'},
+ {h:'Partykuła דִּי', p:'דִּי pełni funkcję zaimka względnego („który”), spójnika („że”) i wskaźnika dopełniacza („czyj”). Odpowiada hebr. אֲשֶׁר / שֶׁ־.'}
+],
+v:[
+ ['אִגְּרָה','ʾiggərâ','אִגֶּרֶת','ʾiggeret','list','LW','Det. אִגַּרְתָּא. Słowo pochodzenia akadyjskiego.'],
+ ['אֱלָהּ','ʾĕlāh','אֱלוֹהַּ','ʾĕlôah','Bóg, bóg','K','Det. אֱלָהָא; l.mn. det. אֱלָהַיָּא.'],
+ ['דִּי','dî','אֲשֶׁר','ʾăšer','który; że; (wskaźnik dopełniacza)','D','Z *ḏī; hebr. pokrewne זֶה / זוּ.'],
+ ['דְּנָה','dənâ','זֶה','zeh','ten, to','D','Prasemickie *ḏ: aram. ד, hebr. ז.'],
+ ['כְּתַב','kətab','כָּתַב','kātab','pisać','R','Aram. szwa w pierwszej sylabie, hebr. qameṣ.'],
+ ['לְ־','lə-','לְ־','lə-','do, dla; (wskaźnik dopełnienia)','',''],
+ ['לְהוֹם','ləhôm','לָהֶם','lāhem','do nich, im','',''],
+ ['מֶלֶךְ','melek','מֶלֶךְ','melek','król','S','Det. מַלְכָּא „(ten) król” – historyczne *malk widać w formie z rodzajnikiem.'],
+ ['סָפַר','sāpar','סוֹפֵר','sôpēr','pisarz','K','Det. סָפְרָא. Hebr. ō < ā (przekształcenie kananejskie).'],
+ ['עַל','ʿal','עַל','ʿal','na, nad, do, przeciw, o','',''],
+ ['שְׁלַח','šəlaḥ','שָׁלַח','šālaḥ','posyłać','R',''],
+ ['אֲבַד','ʾăbad','אָבַד','ʾābad','ginąć','R',''],
+ ['אֵלֶּה','ʾēlleh','אֵלֶּה','ʾēlleh','ci, te','','Forma hebraizująca z Jr 10,11; zwykle aram. אִלֵּין.'],
+ ['אֲמַר','ʾămar','אָמַר','ʾāmar','mówić','R',''],
+ ['אַרְעָא','ʾarʿā','אֶרֶץ','ʾereṣ','ziemia (det.)','A','Także אַרְקָא (Jr 10,11). Prasemickie *ḍ: aram. ע/ק, hebr. צ.'],
+ ['וְ־','wə-','וְ־','wə-','i, a','',''],
+ ['מִן','min','מִן','min','z, od','',''],
+ ['עֲבַד','ʿăbad','עָשָׂה','ʿāśâ','czynić, robić','F','Hebr. עָבַד = służyć, pracować.'],
+ ['שְׁמַיָּא','šəmayyā','הַשָּׁמַיִם','haššāmayim','niebo, niebiosa (det.)','',''],
+ ['תְּחוֹת','təḥôt','תַּחַת','taḥat','pod','','']
+],
+s:[
+ ['סָפְרָא כְּתַב אִגַּרְתָּא לְהוֹם','Pisarz napisał im list.','סָפְרָא – rzecz. det. „pisarz”; כְּתַב – G pf 3 m. l.poj.; אִגַּרְתָּא – det. od אִגְּרָה.','Greenspahn 3,1'],
+ ['אֱלָהָא עֲבַד שְׁמַיָּא','Bóg uczynił niebiosa.','עֲבַד „uczynił” – nie „służył” jak w hebr.','Greenspahn 3,2'],
+ ['מַלְכָּא אֲמַר עַל יְרוּשְׁלֶם','Król mówił o Jerozolimie.','עַל = „o, odnośnie do”. Aram. pisownia יְרוּשְׁלֶם bez jod.','Greenspahn 3,3'],
+ ['מַלְכָּא שְׁלַח אִגַּרְתָּא לְסָפְרָא','Król posłał list do pisarza.','Szyk SVO. לְסָפְרָא – przyimek לְ + rzeczownik det.','Greenspahn 3,4'],
+ ['אֱלָהָא אֲמַר מִן שְׁמַיָּא','Bóg przemówił z niebios.','מִן „z, od” – jak w hebr.','Greenspahn 3,5'],
+ ['אֲבַד סָפְרָא דְּנָה תְּחוֹת אַרְעָא','Zginął ten pisarz pod ziemią.','Szyk VS; zaimek wskazujący דְּנָה stoi po rzeczowniku.','Greenspahn 3,6'],
+ ['אֱלָהַיָּא דִּי שְׁמַיָּא וְאַרְקָא לָא עֲבַדוּ יֵאבַדוּ מֵאַרְעָא','Bogowie, którzy nie uczynili nieba i ziemi, zginą z ziemi.','Casus pendens: podmiot na początku. עֲבַדוּ G pf 3 m. l.mn.; יֵאבַדוּ G impf 3 m. l.mn. Dwie pisownie: אַרְקָא i אַרְעָא.','Jr 10,11'],
+ ['רְחוּם וְשִׁמְשַׁי סָפְרָא כְּתַבוּ אִגְּרָה עַל יְרוּשְׁלֶם','Rechum i pisarz Szimszaj napisali list przeciw Jerozolimie.','כְּתַבוּ – G pf 3 m. l.mn.; עַל = „przeciw”.','Ezd 4,8']
+],
+q:[
+ ['Jak aramejski wyraża określoność rzeczownika?',['przedrostkiem הַ־','końcówką ־ָא','zaimkiem דִּי','podwojeniem spółgłoski'],1,'Rodzajnik aramejski to końcówka -ā: מַלְכָּא „ten król”.'],
+ ['Co znaczy aram. עֲבַד?',['służyć','czynić','pracować na roli','czcić'],1,'Aramejskie עבד odpowiada hebr. עָשָׂה.'],
+ ['Hebrajskiemu אֶרֶץ odpowiada w aramejskim…',['אֶרֶץ','אַרְעָא','אֲדָמָה','תְּבֵל'],1,'*ḍ dało w aram. ע (wcześniej ק), w hebr. צ.'],
+ ['Funkcja partykuły דִּי to NIE…',['zaimek względny','spójnik „że”','wskaźnik dopełniacza','przeczenie'],3,'Przeczenie to לָא.'],
+ ['Hebr. זֶה „ten” po aramejsku to…',['זְנָה','דְּנָה','הָדֵין','זֶה'],1,'*ḏ: aram. ד wobec hebr. ז.']
+]});
+
+L({id:4, ch:'4', title:'Spółgłoski', read:'Ezd 4,12–16',
+g:[
+ {h:'Jedna litera – kilka prasemickich dźwięków', p:'Alfabet fenicki miał 22 znaki dla ok. 30 dźwięków. Hebrajski i aramejski przydzieliły niektóre dawne dźwięki do różnych liter. Dzięki tabeli odpowiedniości rozpoznasz wiele słów, które wyglądają inaczej niż w hebrajskim.'},
+ {h:'Tabela odpowiedniości', t:[['Prasemicki','Hebrajski','Aramejski','Przykład (hebr. → aram.)'],['*ṯ (th w „thin”)','שׁ','ת','יָשַׁב → יְתִב „mieszkać”'],['*ḏ (th w „this”)','ז','ד','זָהָב → דְּהַב „złoto”'],['*ṯ̣ / ẓ','צ','ט','קַיִץ → קַיִט „lato”'],['*ḍ','צ','ע (ק)','אֶרֶץ → אֲרַע „ziemia”'],['*š','שׁ','שׁ','שָׁלַח → שְׁלַח „posłać”'],['*ś','שׂ','שׂ (ס)','שֵׂעָר → שְׂעַר „włos”']]},
+ {h:'Alef prostetyczny', p:'Niektóre wyrazy mają dodatkowy początkowy א: hebr. חִידָה – aram. אֲחִידָה „zagadka”; hebr. זְרוֹעַ / אֶזְרוֹעַ – aram. דְּרָע / אֶדְרָע „ramię”. I odwrotnie: aram. חַד „jeden” – hebr. אֶחָד.'},
+ {h:'Dysymilacja', p:'Aram. אָע „drzewo” odpowiada hebr. עֵץ. Oczekiwane *עָע zmieniło pierwsze ע w א, aby uniknąć dwóch identycznych spółgłosek obok siebie.'},
+ {h:'Nun nieasymilowany', p:'W aramejskim nun często się nie asymiluje: יִנְתְּנוּן „dadzą” (hebr. יִתְּנוּ).'}
+],
+v:[
+ ['אֲנַחְנָה','ʾănaḥnâ','אֲנַחְנוּ','ʾănaḥnû','my','','Także אֲנַחְנָא.'],
+ ['בְּ־','bə-','בְּ־','bə-','w, przez','',''],
+ ['בְּנָה','bənâ','בָּנָה','bānâ','budować','R','Ptc l.mn. בָּנַיִן.'],
+ ['דָּךְ','dāk','הַהוּא','hahûʾ','tamten, ów','D',''],
+ ['יְדַע','yədaʿ','יָדַע','yādaʿ','wiedzieć, znać','R','Ptc bierny יְדִיעַ „wiadomy”.'],
+ ['כְּעַן','kəʿan','עַתָּה','ʿattâ','teraz','X',''],
+ ['לָא','lā','לֹא','lōʾ','nie','K',''],
+ ['נְתַן','nətan','נָתַן','nātan','dawać (tylko impf.)','','W aram. biblijnym tylko impf. i bezok.; pf i ptc tworzy יהב.'],
+ ['קִרְיָה','qiryâ','קִרְיָה','qiryâ','miasto','','Det. קִרְיְתָא.'],
+ ['יְתִב','yətib','יָשַׁב','yāšab','siedzieć, mieszkać','T',''],
+ ['תּוּב','tûb','שׁוּב','šûb','wracać','T',''],
+ ['תּוֹר','tôr','שׁוֹר','šôr','wół','T',''],
+ ['תְּלַג','təlag','שֶׁלֶג','šeleg','śnieg','T S',''],
+ ['שֵׁת','šēt','שֵׁשׁ','šēš','sześć','T','Tylko drugie *ṯ dało ת; pierwsze to *š.'],
+ ['חֲדַת','ḥădat','חָדָשׁ','ḥādāš','nowy','T R',''],
+ ['דְּבַח','dəbaḥ','זֶבַח','zebaḥ','ofiara (krwawa)','D S',''],
+ ['דְּהַב','dəhab','זָהָב','zāhāb','złoto','D R',''],
+ ['דָּכְרָן','dokrān','זִכָּרוֹן','zikkārôn','pamiątka, zapis','D K','L.mn. det. דָּכְרָנַיָּא „zapiski, kroniki”.'],
+ ['קַיִט','qayiṭ','קַיִץ','qayiṣ','lato','TT',''],
+ ['נְטַר','nəṭar','נָצַר','nāṣar','strzec','TT',''],
+ ['אֲחִידָה','ʾăḥîdâ','חִידָה','ḥîdâ','zagadka','P',''],
+ ['אֶדְרָע','ʾedrāʿ','אֶזְרוֹעַ','ʾezrôaʿ','ramię','D P K','Także דְּרָע.'],
+ ['אָע','ʾāʿ','עֵץ','ʿēṣ','drewno, drzewo (materiał)','A DS','*ʿʿ > ʾʿ (dysymilacja).'],
+ ['חֲלָק','ḥălāq','חֵלֶק','ḥēleq','część, udział','',''],
+ ['הֵן','hēn','אִם','ʾim','jeśli','X','W hebr. הֵן „oto” (rzadko „jeśli”).']
+],
+s:[
+ ['אֲנַחְנָה בָּנַיִן קִרְיְתָא','Budujemy miasto.','בָּנַיִן – G ptc m. l.mn. od בנה (III-h). Imiesłów wyraża czynność trwającą.','Greenspahn 4,1'],
+ ['סָפְרָא שְׁלַח אִגַּרְתָּא דָּךְ','Pisarz posłał tamten list.','דָּךְ po rzeczowniku: szyk przydawkowy.','Greenspahn 4,2'],
+ ['לָא אִיתַי חֲלָק לְהוֹם בַּעֲבַר נַהֲרָה','Nie mają udziału w Zarzeczu.','לָא אִיתַי „nie ma”; לְהוֹם – posiadanie („dla nich”).','Greenspahn 4,4'],
+ ['כְּעַן יְדִיעַ דִּי יְהוּדָיֵא יִנְתְּנוּן בְּלוֹ לְמַלְכָּא','Teraz wiadomo, że Judejczycy będą płacić podatek królowi.','יְדִיעַ – G ptc bierny; יִנְתְּנוּן – G impf 3 m. l.mn., nun rdzenia nie asymiluje się, końcowe ־וּן (nunacja).','Greenspahn 4,5'],
+ ['רְחוּם כְּתַב דָּכְרָן דְּנָה','Rechum napisał tę notatkę.','דָּכְרָן ~ hebr. זִכָּרוֹן: ד < *ḏ oraz ā zamiast ō.','Greenspahn 4,6'],
+ ['יְדִיעַ לֶהֱוֵא לְמַלְכָּא דִּי קִרְיְתָא מָרָדְתָּא בָּנַיִן','Niech będzie wiadome królowi, że budują buntownicze miasto.','לֶהֱוֵא – G impf 3 m. l.poj. od הוה z prefiksem ל־ zamiast י־; formuła urzędowa.','por. Ezd 4,12']
+],
+q:[
+ ['Hebrajskiemu יָשַׁב odpowiada aramejskie…',['יְשַׁב','יְתִב','יְסַב','יְצַב'],1,'Prasemickie *ṯ: hebr. שׁ, aram. ת.'],
+ ['Aram. דְּהַב „złoto” pokazuje odpowiedniość…',['aram. ד = hebr. ז','aram. ד = hebr. ד','aram. ה = hebr. ח','aram. ב = hebr. פ'],0,'*ḏ: hebr. ז (זָהָב), aram. ד.'],
+ ['Hebr. קַיִץ „lato” po aramejsku to…',['קַיִץ','קַיִט','קַיִע','קַיִת'],1,'*ṯ̣: hebr. צ, aram. ט.'],
+ ['Skąd א w aram. אָע „drzewo” (hebr. עֵץ)?',['alef prostetyczny','dysymilacja *ʿʿ','zapożyczenie akadyjskie','błąd kopisty'],1,'Oczekiwane *ʿāʿ zmieniło pierwsze ע w א.'],
+ ['Hebrajskiemu חִידָה odpowiada aram. אֲחִידָה. To przykład…',['metatezy','alefu prostetycznego','asymilacji','nunacji'],1,'Dodatkowy początkowy alef.'],
+ ['Co znaczy כְּעַן?',['tak','teraz','wtedy','tutaj'],1,'כְּעַן = hebr. עַתָּה.']
+]});
+
+L({id:5, ch:'5', title:'Samogłoski', read:'Ezd 4,17–24',
+g:[
+ {h:'Szwa złożona poza gardłowymi', p:'W aramejskim chatef pojawia się nie tylko pod gardłowymi, ale też pod ק i ג oraz przed ל, נ, ר: צִפֲּרִין „ptaki”, גֲּלִי „został objawiony”, סְגַר „zamknął”.'},
+ {h:'A. Przekształcenie kananejskie (ā > ō)', p:'W hebrajskim długie ā często przeszło w ō; aramejski zachował ā. שָׁלוֹם – שְׁלָם, דּוֹר – דָּר, טוֹב – טָב, לֹא – לָא, עוֹלָם – עָלַם, קוֹל – קָל, אֱנוֹשׁ – אֱנָשׁ.'},
+ {h:'B. Redukcja pretoniczna', p:'Pierwotnie krótka samogłoska tuż przed akcentem w hebrajskim się wydłuża, w aramejskim redukuje się do szwy: hebr. שָׁלוֹם (šā-), aram. שְׁלָם (šə-); hebr. כָּתַב, aram. כְּתַב; hebr. נָהָר, aram. נְהַר.'},
+ {h:'C. Rzeczowniki „segolowe”', p:'Hebrajskie wyrazy typu מֶלֶךְ mają dwie krótkie samogłoski. W aramejskim tylko sylaba akcentowana ma pełną samogłoskę: hebr. כֶּסֶף – aram. כְּסַף, hebr. צֶלֶם – aram. צְלֵם. Z sufiksem albo rodzajnikiem wraca pierwotny wzór: מַלְכָּא, כַּסְפָּא, פִּשְׁרֵהּ. Rozwój: *malk > *malek > מֶלֶךְ.'},
+ {h:'Ketiw i qere', p:'Masoreci czasem zostawiają w tekście jedną formę spółgłoskową (ketiw), a wokalizują inną (qere), np. przy formach z sufiksami.'}
+],
+v:[
+ ['אֱדַיִן','ʾĕdayin','אָז','ʾāz','wtedy','X','בֵּאדַיִן „wówczas” (בְּ + אֱדַיִן).'],
+ ['בְּטֵל','bəṭēl','בָּטֵל','bāṭēl','ustawać, przestać','','D בַּטִּל „wstrzymać”, inf. לְבַטָּלָה.'],
+ ['בַּיִת','bayit','בַּיִת','bayit','dom','','Det. בַּיְתָא, cstr. בֵּית.'],
+ ['בְּעֵל','bəʿēl','בַּעַל','baʿal','pan, właściciel','R','בְּעֵל טְעֵם „urzędnik” (dosł. pan rozkazu).'],
+ ['הִמּוֹ','himmô','הֵם','hēm','oni','','Także הִמּוֹן, אִנּוּן.'],
+ ['טְעֵם','ṭəʿēm','טַעַם','ṭaʿam','rozkaz, dekret; smak; rozsądek','S',''],
+ ['עֲבִידָה','ʿăbîdâ','עֲבוֹדָה','ʿăbôdâ','praca, dzieło','','Cstr. עֲבִידַת.'],
+ ['עָלַם','ʿālam','עוֹלָם','ʿôlām','wieczność','K','Det. עָלְמָא; מִן עָלְמָא „od dawna”.'],
+ ['קֳדָם','qŏdām','לִפְנֵי','lipnê','przed (miejsce)','X','Hebr. קֶדֶם „przód, wschód”. קָדָמַי „przede mną”.'],
+ ['שְׁלָם','šəlām','שָׁלוֹם','šālôm','pokój','K R',''],
+ ['תַּקִּיף','taqqîp','חָזָק','ḥāzāq','mocny, potężny','X','L.mn. תַּקִּיפִין.'],
+ ['אֲזַל','ʾăzal','הָלַךְ','hālak','iść, odejść','X','Pf 3 m. l.mn. אֲזַלוּ.'],
+ ['יוֹם','yôm','יוֹם','yôm','dzień','','L.mn. cstr. יוֹמָת.'],
+ ['מְרַד','mərad','מֶרֶד','mered','bunt','S',''],
+ ['נִשְׁתְּוָן','ništəwān','אִגֶּרֶת','ʾiggeret','pismo, list','LW X','Słowo perskie.'],
+ ['פִּתְגָם','pitgām','פִּתְגָּם','pitgām','słowo, wieść, wyrok','LW','Perskie; w hebr. tylko Est 1,20; Koh 8,11.'],
+ ['קֱרִי','qĕrî','נִקְרָא','niqrāʾ','został przeczytany','','G pf bierny 3 m. l.poj. od קרא.'],
+ ['שִׂים','śîm','שִׂים','śîm','kładźcie; wydajcie (rozkaz)','F','G imv m. l.mn. od שׂים. Zakres szerszy niż w hebr. („położyć”).'],
+ ['שְׁאָר','šəʾār','שְׁאָר','šəʾār','reszta, pozostali','',''],
+ ['אֱנָשׁ','ʾĕnāš','אֱנוֹשׁ','ʾĕnôš','człowiek, ludzie','K',''],
+ ['דָּר','dār','דּוֹר','dôr','pokolenie','K',''],
+ ['טָב','ṭāb','טוֹב','ṭôb','dobry','K',''],
+ ['קָל','qāl','קוֹל','qôl','głos, dźwięk','K',''],
+ ['נְהַר','nəhar','נָהָר','nāhār','rzeka','R','עֲבַר נַהֲרָה „Zarzecze” (satrapia na zachód od Eufratu).'],
+ ['עֲמַר','ʿămar','צֶמֶר','ṣemer','wełna','A S',''],
+ ['שְׂעַר','śəʿar','שֵׂעָר','śēʿār','włos','R','']
+],
+s:[
+ ['כְּתַב בְּעֵל טְעֵם אִגְּרָה לְמַלְכִין תַּקִּיפִין','Urzędnik napisał list do potężnych królów.','מַלְכִין – l.mn. st. abs. (-īn, hebr. -îm); przymiotnik תַּקִּיפִין zgodny w liczbie i stanie.','Greenspahn 5,1'],
+ ['אֲנַחְנָא בָּנַיִן בַּיִת בְּקִרְיְתָא מָרָדְתָּא','Budujemy dom w buntowniczym mieście.','Przymiotnik מָרָדְתָּא (ż., det.) zgodny z קִרְיְתָא.','Greenspahn 5,2'],
+ ['אֱדַיִן הִמּוֹ בַּטִּלוּ מִבְנֵה בִּירוּשְׁלֶם','Wtedy oni wstrzymali budowę w Jerozolimie.','בַּטִּלוּ – D pf 3 m. l.mn. (znaczenie przechodnie); מִבְנֵה – G bezok. z מ־.','Greenspahn 5,3'],
+ ['שִׂימוּ טְעֵם קֳדָם סָפְרָא מִן דִּי נִשְׁתְּוָנָא קֱרִי','Wydajcie rozkaz przed pisarzem, gdy list został odczytany.','שִׂימוּ טְעֵם – idiom „wydać rozkaz”; מִן דִּי „po tym jak”.','Greenspahn 5,4'],
+ ['מַלְכַיָּא תַּקִּיפַיָּא אֲזַלוּ עַל קִרְיְתָא','Potężni królowie wyruszyli przeciw miastu.','L.mn. det. -ayyā: מַלְכַיָּא, תַּקִּיפַיָּא.','Greenspahn 5,6'],
+ ['אֱדַיִן אֲמַר שִׁמְשַׁי לְבַטָּלָה מִבְנֵה בַּיְתָא דְּנָה','Wtedy Szimszaj kazał wstrzymać budowę tego domu.','לְבַטָּלָה – D bezok. (wzór qaṭṭālā).','Greenspahn 5,8'],
+ ['הִמּוֹ עֲבַדוּ מְרַד בִּירוּשְׁלֶם','Oni wzniecili bunt w Jerozolimie.','עֲבַדוּ „uczynili” – nie „służyli”.','Greenspahn 5,9'],
+ ['בֵּאדַיִן בְּטֵלַת עֲבִידַת בֵּית אֱלָהָא דִּי בִּירוּשְׁלֶם','Wówczas ustała praca przy domu Boga w Jerozolimie.','בְּטֵלַת – G pf 3 ż. l.poj. (wzór qətēl); עֲבִידַת בֵּית – łańcuch status constructus.','Ezd 4,24']
+],
+q:[
+ ['Para שְׁלָם / שָׁלוֹם pokazuje…',['tylko przekształcenie kananejskie','tylko redukcję pretoniczną','oba procesy','dysymilację'],2,'Aram. ə zamiast hebr. ā (redukcja) i ā zamiast ō (brak przekształcenia).'],
+ ['Hebr. טוֹב po aramejsku to…',['טוֹב','טָב','טֵב','טִיב'],1,'Aramejski zachował ā.'],
+ ['Dlaczego aram. כְּתַב ma szwę pod כ?',['przez akcent na pierwszej sylabie','redukcja pretoniczna krótkiej samogłoski','bo כ jest gardłowa','to zapożyczenie'],1,'W hebr. ta samogłoska wydłużyła się: כָּתַב.'],
+ ['Hebrajskiemu כֶּסֶף („srebro”) odpowiada aram.…',['כֶּסֶף','כְּסַף','כָּסַף','כֻּסְפָּא'],1,'Wzór segolatu: w aram. pełna samogłoska tylko w sylabie akcentowanej.'],
+ ['Chatef pod ק lub ג to w aramejskim…',['błąd','zjawisko normalne','znak dagesza','oznaka imperatywu'],1,'Szwa złożona występuje szerzej niż w hebr.'],
+ ['Co znaczy אֱדַיִן?',['zawsze','wtedy','również','oto'],1,'אֱדַיִן = hebr. אָז.']
+]});
+
+L({id:6, ch:'6', title:'Rzeczownik i rodzajnik', read:'Ezd 5,1–5 · Mk 14,36',
+g:[
+ {h:'Trzy stany (status)', p:'Rzeczownik ma rodzaj (m./ż.), liczbę (poj./podw./mn.) i stan: absolutus (nieokreślony), constructus (w łańcuchu dopełniaczowym) i determinatus/emphaticus (określony, z ־ָא). Hebrajski zna tylko absolutus i constructus, określoność wyraża przedrostkiem הַ־.'},
+ {h:'Rzeczownik męski', t:[['','Absolutus','Constructus','Determinatus'],['l.poj.','מֶלֶךְ','מֶלֶךְ','מַלְכָּא'],['l.mn.','מַלְכִין','מַלְכֵי','מַלְכַיָּא'],['hebr. l.mn.','מְלָכִים','מַלְכֵי','הַמְּלָכִים']]},
+ {h:'Rzeczownik żeński', t:[['','Absolutus','Constructus','Determinatus'],['l.poj.','מְדִינָה','מְדִינַת','מְדִינְתָּא'],['l.mn.','מְדִינָן','מְדִינָת','מְדִינָתָא'],['hebr. l.mn.','מְדִינוֹת','מְדִינוֹת','הַמְּדִינוֹת']]},
+ {h:'Skąd te końcówki?', p:'Pierwotna żeńska końcówka ־ַת przetrwała w constructusie i determinatusie (מְדִינְתָּא); w absolutusie t odpadło, a ה jest tylko mater lectionis – jak w hebr. W l.mn. aram. zachowuje ā (־ָן, ־ָתָא), hebr. ma ō (־וֹת, przekształcenie kananejskie). Męska l.mn.: aram. ־ִין (nunacja), hebr. ־ִים (mimacja); w determinatusie nun asymiluje się do jod: ־ַיָּא.'},
+ {h:'Liczba podwójna i nieregularności', p:'יְדַיִן „obie ręce”, מָאתַיִן „200”. נְשִׁין „kobiety” (hebr. נָשִׁים), אֲבָהָן „ojcowie” (cstr. אֲבָהָת), שֻׁם „imię” – l.mn. שְׁמָהָן (cstr. שְׁמָהָת), רַבְרְבִין „wielcy” (reduplikacja od רַב). Czasem ־ָא traci funkcję rodzajnika i staje się częścią słowa: אַבָּא, אִמָּא.'}
+],
+v:[
+ ['אָמְרִין','ʾāmrîn','אֹמְרִים','ʾōmərîm','mówiący (ptc m. l.mn.)','K NM',''],
+ ['אֲתָה','ʾătâ','בָּא','bāʾ','przyjść','X','Pf 3 m. l.poj. אֲתָא.'],
+ ['בַּר','bar','בֵּן','bēn','syn','NR','Cstr. l.mn. בְּנֵי.'],
+ ['גְּבַר','gəbar','גֶּבֶר','geber','mężczyzna, mąż','S','L.mn. גֻּבְרִין, det. גֻּבְרַיָּא.'],
+ ['מַן','man','מִי','mî','kto?','X',''],
+ ['פֶּחָה','peḥâ','פֶּחָה','peḥâ','namiestnik','LW','Cstr. פַּחַת; z akadyjskiego.'],
+ ['קוּם','qûm','קוּם','qûm','wstać, powstać','','Pf 3 m. l.mn. קָמוּ.'],
+ ['שָׂם','śām','שָׂם','śām','położył; wydał (rozkaz)','F','G pf 3 m. l.poj. od שׂים; שָׂם טְעֵם „wydał rozkaz”.'],
+ ['שֻׁם','šum','שֵׁם','šēm','imię','','L.mn. שְׁמָהָן, cstr. שְׁמָהָת.'],
+ ['הֲוָת','hăwāt','הָיְתָה','hāytâ','była','','G pf 3 ż. l.poj. od הוה.'],
+ ['כֵּן','kēn','כֵּן','kēn','tak','',''],
+ ['לְכֹם','ləkōm','לָכֶם','lākem','wam','',''],
+ ['נְבִיא','nəbîʾ','נָבִיא','nābîʾ','prorok','R',''],
+ ['עַיִן','ʿayin','עַיִן','ʿayin','oko','','Cstr. עֵין.'],
+ ['עֲלֵיהוֹן','ʿălêhôn','עֲלֵיהֶם','ʿălêhem','na nich, do nich','',''],
+ ['שָׂב','śāb','זָקֵן','zāqēn','starszy','X','L.mn. det. שָׂבַיָּא; hebr. שָׂב „siwy”.'],
+ ['נְשִׁין','nəšîn','נָשִׁים','nāšîm','kobiety','R NM',''],
+ ['מָאתַיִן','māʾtayin','מָאתַיִם','māʾtayim','dwieście','NM','Liczba podwójna od מְאָה.']
+],
+s:[
+ ['בֵּאדַיִן קָמוּ זְרֻבָּבֶל בַּר שְׁאַלְתִּיאֵל וְיֵשׁוּעַ בַּר יוֹצָדָק וְשָׁרִיו לְמִבְנֵא בֵּית אֱלָהָא דִּי בִירוּשְׁלֶם','Wtedy powstali Zorobabel, syn Szealtiela, i Jeszua, syn Josadaka, i zaczęli budować dom Boga w Jerozolimie.','בַּר zamiast hebr. בֶּן; בֵּית אֱלָהָא – constructus + determinatus: cały łańcuch jest określony.','Ezd 5,2'],
+ ['בֵּהּ זִמְנָא אֲתָא עֲלֵיהוֹן תַּתְּנַי פַּחַת עֲבַר נַהֲרָה','W tym czasie przyszedł do nich Tattenaj, namiestnik Zarzecza.','פַּחַת – cstr. od פֶּחָה; בֵּהּ זִמְנָא „w nim, (w) czasie” – sufiks antycypujący rzeczownik.','Ezd 5,3'],
+ ['מַן שָׂם לְכֹם טְעֵם בַּיְתָא דְנָה לְמִבְנֵא','Kto wydał wam rozkaz, by budować ten dom?','Dopełnienie בַּיְתָא דְנָה stoi przed bezokolicznikiem לְמִבְנֵא.','Ezd 5,3'],
+ ['וְעֵין אֱלָהֲהֹם הֲוָת עַל שָׂבֵי יְהוּדָיֵא','A oko ich Boga było nad starszymi Judejczyków.','עֵין – cstr. od עַיִן (ż.), stąd הֲוָת (3 ż.); שָׂבֵי – cstr. l.mn.','Ezd 5,5'],
+ ['גֻּבְרַיָּא כְּתַבוּ שְׁמָהָת נְבִיאַיָּא','Mężczyźni zapisali imiona proroków.','שְׁמָהָת – cstr. l.mn. od שֻׁם; נְבִיאַיָּא – l.mn. det.','Greenspahn 6'],
+ ['אַבָּא','Abba, Ojcze!','Forma determinowana jako wołacz; ־ָא zrosło się ze słowem.','Mk 14,36']
+],
+q:[
+ ['Który stan NIE istnieje w hebrajskim?',['absolutus','constructus','determinatus','wszystkie istnieją'],2,'Hebr. wyraża określoność rodzajnikiem הַ־.'],
+ ['Forma מַלְכַיָּא to…',['l.poj. det.','l.mn. abs.','l.mn. det.','l.mn. cstr.'],2,'-ayyā: l.mn. m. determinatus.'],
+ ['Hebr. ־ִים w l.mn. odpowiada aram.…',['־ִים','־ִין','־וֹת','־ָא'],1,'Nunacja: -īn zamiast -îm.'],
+ ['Dlaczego aram. ż. l.mn. ma ־ָן / ־ָתָא, a hebr. ־וֹת?',['zapożyczenie','hebr. przekształcenie ā > ō','redukcja pretoniczna','dysymilacja'],1,'Hebr. ō < ā, aram. zachował ā.'],
+ ['Constructus od מְדִינָה to…',['מְדִינְתָּא','מְדִינַת','מְדִינָן','מְדִינֵי'],1,'Zachowuje dawne ־ַת.'],
+ ['Aram. בַּר „syn” wobec hebr. בֵּן ilustruje…',['odpowiedniość aram. ר – hebr. נ','metatezę','alef prostetyczny','asymilację'],0,'Por. też תְּרֵין „dwa” – hebr. שְׁנַיִם.']
+]});
+
+L({id:7, ch:'7', title:'System czasownikowy', read:'Ezd 5,6–10',
+g:[
+ {h:'Koniugacje (tematy)', t:[['Greenspahn','Tradycyjnie','Hebrajski','Znaczenie'],['G','peʿal','qal','podstawowe'],['D','paʿʿel','piʿel','intensywne/przechodnie'],['H','hafʿel (ʾafʿel)','hifʿil','przyczynowe'],['Gt','hitpeʿel','(nifʿal)','bierne/zwrotne do G'],['Dt','hitpaʿʿal','hitpaʿel','bierne/zwrotne do D']]},
+ {h:'Formy', p:'Perfectum (qətal) – formy z sufiksami osobowymi; imperfectum (yiqtul) – z prefiksami; imiesłów; tryb rozkazujący; bezokolicznik. W aramejskim imiesłów bardzo często pełni funkcję czasu teraźniejszego, a z הוה tworzy formy opisowe.'},
+ {h:'Sufiksy przy rzeczownikach (pierwsze)', p:'־ֵהּ „jego”: שְׁמֵהּ „jego imię”; ־הֹם / ־הוֹן „ich”: רָאשֵׁיהֹם „ich głowy”; ־כֹם / ־כוֹן „wasz”. Hebr.: ־וֹ, ־ָם, ־כֶם.'},
+ {h:'Imperfectum od הוה', p:'לֶהֱוֵא „niech będzie” – zamiast oczekiwanego prefiksu י־ stoi ל־ (por. lekcja 22).'}
+],
+v:[
+ ['אֲזַלְנָא','ʾăzalnā','הָלַכְנוּ','hālaknû','poszliśmy','X','G pf 1 os. l.mn. od אזל; końcówka -nā (hebr. -nû).'],
+ ['אִלֵּךְ','ʾillēk','הָהֵם','hāhēm','tamci, owi','',''],
+ ['גַּו','gaw','תּוֹךְ','tôk','wnętrze','X','בְּגוֹא „pośrodku”.'],
+ ['כְּנָת','kənāt','רֵעַ','rēaʿ','towarzysz, kolega','','L.mn. כְּנָוָת.'],
+ ['מְדִינָה','mədînâ','מְדִינָה','mədînâ','prowincja','','Det. מְדִינְתָּא.'],
+ ['רֵאשׁ','rēʾš','רֹאשׁ','rōʾš','głowa','K',''],
+ ['רַב','rab','גָּדוֹל','gādôl','wielki','F','Hebr. רַב = liczny; aram. „liczny” to שַׂגִּיא.'],
+ ['אַף','ʾap','אַף','ʾap','także','',''],
+ ['כֹּלָּא','kollā','הַכֹּל','hakkōl','wszystko','','Det. od כֹּל.'],
+ ['כְּתִיב','kətîb','כָּתוּב','kātûb','napisany','R','G ptc bierny (wzór qətîl; hebr. qātûl).'],
+ ['נִכְתֻּב','niktub','נִכְתֹּב','niktōb','zapiszemy','','G impf 1 os. l.mn.'],
+ ['לֶהֱוֵא','lehĕwēʾ','יְהִי','yəhî','niech będzie','','G impf 3 m. od הוה z prefiksem ל־.'],
+ ['שְׁאֵל','šəʾēl','שָׁאַל','šāʾal','pytać','R',''],
+ ['אֲמַרְנָא','ʾămarnā','אָמַרְנוּ','ʾāmarnû','powiedzieliśmy','R','']
+],
+s:[
+ ['יְדִיעַ לֶהֱוֵא לְמַלְכָּא דִּי אֲזַלְנָא לִיהוּד מְדִינְתָּא','Niech będzie wiadome królowi, że poszliśmy do prowincji Judy.','יְדִיעַ – ptc bierny; לֶהֱוֵא – impf od הוה z ל־; אֲזַלְנָא – pf 1 l.mn.','Ezd 5,8'],
+ ['לְבֵית אֱלָהָא רַבָּא','Do domu wielkiego Boga.','רַבָּא – przymiotnik det. zgodny z אֱלָהָא; „wielki”, nie „liczny”.','Ezd 5,8'],
+ ['אֱדַיִן שְׁאֵלְנָא לְשָׂבַיָּא אִלֵּךְ','Wtedy zapytaliśmy tych starszych.','לְ wprowadza osobę pytaną; אִלֵּךְ „tamci” po rzeczowniku.','Ezd 5,9'],
+ ['דִּי נִכְתֻּב שֻׁם גֻּבְרַיָּא דִּי בְרָאשֵׁיהֹם','…abyśmy zapisali imiona mężczyzn, którzy są na ich czele.','נִכְתֻּב – impf 1 l.mn. (cel); רָאשֵׁיהֹם – l.mn. + suf. 3 m. l.mn.','Ezd 5,10'],
+ ['כֹּלָּא כְּתִיב בִּסְפַר מַלְכָּא','Wszystko jest zapisane w księdze króla.','כְּתִיב – ptc bierny jako orzeczenie (zdanie imienne).','Greenspahn 7'],
+ ['שָׂבַיָּא אֲזַלוּ לִמְדִינְתָּא','Starsi poszli do prowincji.','אֲזַלוּ – G pf 3 m. l.mn.','Greenspahn 7']
+],
+q:[
+ ['Koniugacja Greenspahna „H” to tradycyjnie…',['peʿal','paʿʿel','hafʿel','hitpaʿʿal'],2,'H = hafʿel (także ʾafʿel), odpowiednik hebr. hifʿil.'],
+ ['Gt odpowiada mniej więcej hebrajskiemu…',['qal','nifʿal','piʿel','hofʿal'],1,'Gt (hitpeʿel) najczęściej wyraża stronę bierną do G.'],
+ ['Wzór biernego imiesłowu G w aramejskim to…',['qātûl','qətîl','qəṭal','məqaṭṭal'],1,'כְּתִיב; hebr. כָּתוּב.'],
+ ['Co znaczy aram. רַב?',['liczny','wielki','nauczyciel','dużo razy'],1,'„Liczny” to שַׂגִּיא.'],
+ ['Końcówka 1 os. l.mn. perfectum w aram. to…',['־נוּ','־נָא','־תּוּן','־וּ'],1,'אֲזַלְנָא; hebr. הָלַכְנוּ.']
+]});
+
+L({id:8, ch:'8', title:'G perfectum (peʿal, qətal)', read:'Ezd 5,11–15',
+g:[
+ {h:'Odmiana כְּתַב', t:[['Osoba','Aramejski','Hebrajski'],['3 m. l.poj.','כְּתַב','כָּתַב'],['3 ż. l.poj.','כִּתְבַת','כָּתְבָה'],['2 m. l.poj.','כְּתַבְתְּ (כְּתַבְתָּ)','כָּתַבְתָּ'],['1 l.poj.','כִּתְבֵת','כָּתַבְתִּי'],['3 m. l.mn.','כְּתַבוּ','כָּתְבוּ'],['3 ż. l.mn.','כְּתַבָה','כָּתְבוּ'],['2 m. l.mn.','כְּתַבְתּוּן','כְּתַבְתֶּם'],['1 l.mn.','כְּתַבְנָא','כָּתַבְנוּ']]},
+ {h:'Procesy', p:'כְּתַב < *katab: redukcja pretoniczna (hebr. wydłużenie: כָּתַב). כִּתְבַת < *kətbat: dwie szwy na początku zamieniają się w i (reguła szwy). Aramejski zaciera różnicę rodzaju w 2 os.: formy męskie służą też dla żeńskich. 2 m. l.poj. כְּתַבְתָּ to hebraizm.'},
+ {h:'Typy samogłoskowe', p:'Obok qətal (כְּתַב) są czasowniki stanu: qətēl (בְּטֵל „ustał”) i qətil. Perfectum oznacza głównie czynność dokonaną – w przeszłości lub (wg kontekstu) w przyszłości.'},
+ {h:'Rzeczownik z sufiksem: אֲבָהָתַנָא', p:'„Nasi ojcowie” – od אַב, l.mn. אֲבָהָן (męski rzeczownik z żeńską końcówką l.mn.).'}
+],
+v:[
+ ['אַב','ʾab','אָב','ʾāb','ojciec','','L.mn. אֲבָהָן; אֲבָהָתַנָא „nasi ojcowie”.'],
+ ['הֵיכַל','hêkal','הֵיכָל','hêkāl','pałac, świątynia','LW','Z sumeryjskiego przez akadyjski.'],
+ ['חַד','ḥad','אֶחָד','ʾeḥād','jeden','P','Ż. חֲדָה; hebr. ma alef prostetyczny.'],
+ ['יְהַב','yəhab','נָתַן','nātan','dawać','X','Pf i ptc; impf dostarcza נתן. Pass. יְהִיב.'],
+ ['מָאן','māʾn','כְּלִי','kəlî','naczynie','X','L.mn. det. מָאנַיָּא.'],
+ ['נְפַק','nəpaq','יָצָא','yāṣāʾ','wychodzić','X','H הַנְפֵּק „wyprowadził”.'],
+ ['שַׂגִּיא','śaggîʾ','רַב','rab','liczny, wielki; bardzo','X',''],
+ ['שְׁנָה','šənâ','שָׁנָה','šānâ','rok','R','Cstr. שְׁנַת.'],
+ ['עֲבֵד','ʿăbēd','עֶבֶד','ʿebed','sługa','S','עַבְדוֹהִי „jego słudzy”.'],
+ ['עַם','ʿam','עַם','ʿam','lud, naród','','L.mn. עַמְמַיָּא.'],
+ ['הַגְלִי','haglî','הֶגְלָה','heglâ','uprowadził do niewoli','','H pf 3 m. l.poj. od גלה.'],
+ ['נְחַת','nəḥat','יָרַד','yārad','schodzić','X','H imv אֲחֵת „złóż (w depozyt)”.'],
+ ['סְתַר','sətar','הָרַס','hāras','burzyć','X','Hebr. סָתַר „ukryć” – fałszywy przyjaciel.'],
+ ['קַדְמָה','qadmâ','לְפָנִים','ləpānîm','dawniej','','מִקַּדְמַת דְּנָה „przed tym”.'],
+ ['הַרְגִּזוּ','hargizû','הִרְגִּיזוּ','hirgîzû','rozgniewali','','H pf 3 m. l.mn. od רגז.'],
+ ['הֲתִיבוּ','hătîbû','הֵשִׁיבוּ','hēšîbû','odpowiedzieli','T','H od תוב (hebr. שׁוב).'],
+ ['כִּתְבֵת','kitbēt','כָּתַבְתִּי','kātabtî','napisałem','','G pf 1 l.poj.']
+],
+s:[
+ ['אֲנַחְנָא הִמּוֹ עַבְדוֹהִי דִי אֱלָהּ שְׁמַיָּא וְאַרְעָא','My jesteśmy sługami Boga nieba i ziemi.','Zdanie imienne z zaimkiem הִמּוֹ jako łącznikiem; עַבְדוֹהִי דִי – sufiks antycypujący (prolepsa) + דִּי.','Ezd 5,11'],
+ ['לָהֵן מִן דִּי הַרְגִּזוּ אֲבָהָתַנָא לֶאֱלָהּ שְׁמַיָּא יְהַב הִמּוֹ בְּיַד נְבוּכַדְנֶצַּר','Lecz ponieważ nasi ojcowie rozgniewali Boga nieba, wydał ich w rękę Nabuchodonozora.','מִן דִּי „ponieważ”; הַרְגִּזוּ – H pf; יְהַב – G pf 3 m. l.poj.','Ezd 5,12'],
+ ['אֲזַל מַלְכָּא קֳדָם קִרְיְתָא','Król poszedł przed miasto.','Szyk VS typowy dla narracji.','Greenspahn 8,1'],
+ ['כִּתְבֵת אִגְּרָה עַל בֵּית מַלְכָּא','Napisałem list w sprawie domu króla.','כִּתְבֵת – pf 1 l.poj. (hebr. כָּתַבְתִּי).','Greenspahn 8,3'],
+ ['אֱדַיִן שְׁלַח אֱלָהָא טְעֵם עַל מְדִינְתָּא דָּךְ','Wtedy Bóg posłał rozkaz do tamtej prowincji.','מְדִינְתָּא – det. ż. l.poj.','Greenspahn 8,4'],
+ ['אֲבָהָתַנָא יְהַבוּ מָאנַיָּא אִלֵּךְ לְכוֹרֶשׁ','Nasi ojcowie dali te naczynia Cyrusowi.','יְהַבוּ – G pf 3 m. l.mn.','Greenspahn 8,6'],
+ ['בַּיְתָא רַבָּא דֵּךְ יִתְבְּנֵא בִּשְׁנָה חֲדָה','Ten wielki dom zostanie zbudowany w jednym roku.','יִתְבְּנֵא – Gt impf (bierne); חֲדָה – ż. od חַד, zgodne ze שְׁנָה.','Greenspahn 8,9']
+],
+q:[
+ ['כִּתְבַת to…',['3 m. l.poj.','3 ż. l.poj.','1 l.poj.','2 m. l.mn.'],1,'3 ż. l.poj.; hebr. כָּתְבָה.'],
+ ['כְּתַבְנָא to…',['napisaliśmy','napisali','napiszemy','piszemy'],0,'1 l.mn. pf.'],
+ ['Skąd hireq w כִּתְבֵת?',['ze wzdłużenia','z reguły szwy (dwie szwy na początku → i)','z asymilacji','to zapożyczenie'],1,'*kətbet > kitbēt.'],
+ ['Który czasownik dostarcza perfectum dla „dawać”?',['נתן','יהב','שׂים','רמה'],1,'נתן występuje tylko w impf. i bezok.'],
+ ['Hebr. יָצָא „wyjść” po aramejsku to…',['נְפַק','סְלִק','עַל','אֲזַל'],0,'Inny rdzeń: נפק.'],
+ ['Co znaczy שַׂגִּיא?',['wielki/liczny','mały','stary','święty'],0,'Aram. „liczny” – hebr. רַב.']
+]});
+
+L({id:9, ch:'9', title:'Imiesłowy G (qātēl – qətîl)', read:'Ezd 5,16–6,5',
+g:[
+ {h:'Imiesłów czynny i bierny', t:[['','Czynny (m.)','Czynny (ż.)','Bierny (m.)','Bierny (ż.)'],['l.poj.','כָּתֵב','כָּתְבָה','כְּתִיב','כְּתִיבָה'],['l.mn.','כָּתְבִין','כָּתְבָן','כְּתִיבִין','כְּתִיבָן'],['hebr. l.poj.','כֹּתֵב','כֹּתֶבֶת','כָּתוּב','כְּתוּבָה']]},
+ {h:'Wzory i procesy', p:'Czynny: aram. ā–ē, hebr. ō–ē (przekształcenie kananejskie: qātēl > qōtēl). Bierny: aram. ə–î (qətîl), hebr. ā–û (qātûl). Uwaga: אָמַר i יָדַע to w aramejskim imiesłowy (<*ʾāmir, *yādiʿ pod wpływem gardłowych), a nie perfectum jak w hebrajskim!'},
+ {h:'Użycie', p:'Imiesłów pełni funkcję czasu teraźniejszego lub trwającego: מַלְכָּא יָדַע „król wie”. Z הוה tworzy formy opisowe: הֲוָא כָּתֵב „pisał”. Może też być przymiotnikiem albo rzeczownikiem.'},
+ {h:'Ketiw – qere', p:'Masoreci zachowują pisownię spółgłoskową (כְּתִיב „napisane”), a w marginesie czytanie (קְרֵי „czytaj”).'}
+],
+v:[
+ ['גְּנַז','gənaz','אוֹצָר','ʾôṣār','skarbiec','LW','בֵּית גִּנְזַיָּא „skarbiec” (dosł. dom skarbów); perskie.'],
+ ['טָב','ṭāb','טוֹב','ṭôb','dobry','K','דְּהַב טָב „szczere złoto”.'],
+ ['כְּסַף','kəsap','כֶּסֶף','kesep','srebro','S','Det. כַּסְפָּא.'],
+ ['תַּמָּה','tammâ','שָׁם','šām','tam','X',''],
+ ['אֻשִּׁין','ʾuššîn','יְסוֹדוֹת','yəsôdôt','fundamenty','LW X','Z akadyjskiego.'],
+ ['בַּקַּרוּ','baqqarû','בִּקְּרוּ','biqqərû','przeszukali','','D pf 3 m. l.mn. od בקר.'],
+ ['מְגִלָּה','məgillâ','מְגִלָּה','məgillâ','zwój','',''],
+ ['נִפְקָה','nipqâ','הוֹצָאָה','hôṣāʾâ','wydatek, koszt','','Od נפק „wychodzić”.'],
+ ['רְעוּ','rəʿû','רָצוֹן','rāṣôn','wola, życzenie','A','*ḍ: aram. ע, hebr. צ (rdzeń רצה).'],
+ ['שְׁלִם','šəlim','שָׁלֵם','šālēm','zakończony','',''],
+ ['הִשְׁתְּכַח','hištəkaḥ','נִמְצָא','nimṣāʾ','został znaleziony','X','Gt od שׁכח z metatezą ת־שׁ. Hebr. שָׁכַח = zapomnieć!'],
+ ['כָּתֵב','kātēb','כֹּתֵב','kōtēb','piszący','K','G ptc czynny m. l.poj.'],
+ ['יָדְעִין','yādʿîn','יוֹדְעִים','yôdəʿîm','wiedzący, wiemy','K NM',''],
+ ['שְׁלִיחַ','šəlîaḥ','שָׁלוּחַ','šālûaḥ','posłany','R','G ptc bierny; patach furtivum.'],
+ ['יְהִיב','yəhîb','נָתוּן','nātûn','dany','X','G ptc bierny / pf bierny od יהב.']
+],
+s:[
+ ['נְבוּכַדְנֶצַּר אָמַר דִּי קִרְיְתָא תִּתְיְהִב לִיהוּדָיֵא','Nabuchodonozor mówi, że miasto zostanie dane Judejczykom.','אָמַר – imiesłów (nie perfectum!); תִּתְיְהִב – Gt impf 3 ż.','Greenspahn 9,1'],
+ ['מְגִלָּה רַבָּה שְׁלִיחָה לְפַחַת מְדִינְתָּא','Wielki zwój jest posłany do namiestnika prowincji.','שְׁלִיחָה – ptc bierny ż. jako orzeczenie.','Greenspahn 9,2'],
+ ['מַלְכָּא יָדַע דִּי עֲבִידָה בְּטֵלָה','Król wie, że praca jest wstrzymana.','יָדַע – ptc czynny (patach przy ע zamiast ē).','Greenspahn 9,3'],
+ ['אֲנַחְנָה יָדְעִין לְמִבְנֵה בַּיְתָא דְּנָה','Umiemy zbudować ten dom.','יָדְעִין – ptc m. l.mn.; לְמִבְנֵה – bezok. z מ־.','Greenspahn 9,4'],
+ ['אִיתַי דְּהַב בְּבֵית גִּנְזַיָּא תַּמָּה בְּבָבֶל','Jest złoto w skarbcu, tam w Babilonie.','אִיתַי „jest”; בֵּית גִּנְזַיָּא – łańcuch constructus.','Greenspahn 9,5'],
+ ['כּוֹרֶשׁ מַלְכָּא שָׂם טְעֵם בֵּית אֱלָהָא בִירוּשְׁלֶם בַּיְתָא יִתְבְּנֵא','Król Cyrus wydał rozkaz: dom Boga w Jerozolimie – niech ten dom zostanie odbudowany.','Casus pendens: בֵּית אֱלָהָא… podjęte przez בַּיְתָא; יִתְבְּנֵא – Gt impf (jussyw).','Ezd 6,3']
+],
+q:[
+ ['W aramejskim forma אָמַר to…',['G pf 3 m.','G ptc czynny','G imv','G bezok.'],1,'Pułapka dla hebraisty: to imiesłów.'],
+ ['Hebr. כָּתוּב po aramejsku to…',['כָּתוּב','כְּתִיב','כָּתֵב','מִכְתַּב'],1,'Wzór qətîl.'],
+ ['Dlaczego hebr. ptc ma ō (כֹּתֵב), a aram. ā (כָּתֵב)?',['redukcja pretoniczna','przekształcenie kananejskie w hebr.','dysymilacja','zapożyczenie'],1,'qātēl > qōtēl tylko w hebrajskim.'],
+ ['כָּתְבָן to ptc…',['m. l.poj.','ż. l.poj.','m. l.mn.','ż. l.mn.'],3,'Ż. l.mn. abs.'],
+ ['Hebr. שָׁכַח znaczy „zapomnieć”, a aram. שׁכח (H, Gt)…',['pamiętać','znaleźć','szukać','posłać'],1,'הִשְׁתְּכַח „został znaleziony”.'],
+ ['Co znaczy תַּמָּה?',['tutaj','tam','teraz','wtedy'],1,'= hebr. שָׁם.']
+]});
+
+/* Lekcje 10–17 */
+L({id:10, ch:'10', title:'Słownictwo: kalki i fałszywi przyjaciele', read:'Ezd 6,6–12',
+g:[
+ {h:'Pułapka dla hebraisty', p:'Znajomość hebrajskiego bardzo pomaga, ale łatwo czytać aramejski tak, jakby był hebrajskim. אָמַר i יָדַע wyglądają jak hebr. perfectum, a są aramejskimi imiesłowami. Podobieństwo słów bywa złudne.'},
+ {h:'To samo pojęcie – inny rdzeń', t:[['Znaczenie','Hebrajski','Aramejski'],['przyjść','בּוֹא','אֲתָה'],['iść','הָלַךְ','אֲזַל'],['wejść w górę','עָלָה','סְלִק'],['zejść','יָרַד','נְחַת'],['wejść do','בּוֹא','עֲלַל'],['wyjść','יָצָא','נְפַק'],['opuścić','עָזַב','שְׁבַק'],['syn','בֵּן','בַּר'],['dwa','שְׁנַיִם','תְּרֵין']]},
+ {h:'Ten sam rdzeń – inne znaczenie', t:[['Rdzeń','Hebrajski','Aramejski'],['עבד','służyć, pracować','czynić, robić'],['פלח','(ciąć, rozłupać)','służyć, czcić'],['רב','liczny; wielki','wielki'],['שׂגא','(rosnąć – poezja)','שַׂגִּיא liczny, bardzo'],['שׂים','położyć','położyć; wydać (rozkaz); nadać (imię)'],['שׁכח','zapomnieć','(H, Gt) znaleźć'],['גשׁם','deszcz','ciało']]},
+ {h:'יהב i נתן', p:'W aramejskim biblijnym נתן ma tylko imperfectum i bezokolicznik; perfectum i imiesłowy tworzy יהב. W hebrajskim יהב przetrwało tylko w trybie rozkazującym: הָבָה „daj, dalej!” (Rdz 11,4: הָבָה נִבְנֶה לָּנוּ עִיר).'}
+],
+v:[
+ ['אֲנָה','ʾănâ','אֲנִי','ʾănî','ja','',''],
+ ['חַבֵּל','ḥabbēl','שִׁחֵת','šiḥēt','niszczyć (D)','','Inf. חַבָּלָה. Hebr. חִבֵּל „zniszczyć” – rzadkie.'],
+ ['כֹּל','kōl','כֹּל','kōl','każdy, cały','','Cstr. כָּל־, det. כֹּלָּא.'],
+ ['מָה','mâ','מָה','mâ','co?','',''],
+ ['נְוָלוּ','nəwālû','אַשְׁפֹּת','ʾašpōt','gnojowisko, ruina','LW','Z akadyjskiego.'],
+ ['פִּתְגָמָא','pitgāmā','דָּבָר','dābār','słowo, nakaz (det.)','LW',''],
+ ['מְצַלַּיִן','məṣallayin','מִתְפַּלְלִים','mitpaləlîm','modlący się','X','D ptc m. l.mn. od צלה.'],
+ ['רַחִיק','raḥîq','רָחוֹק','rāḥôq','daleki','',''],
+ ['שְׁבַק','šəbaq','עָזַב','ʿāzab','zostawić, pozostawić','X','Imv l.mn. שְׁבֻקוּ.'],
+ ['פְּלַח','pəlaḥ','עָבַד','ʿābad','służyć, czcić','F','Ptc פָּלַח, l.mn. פָּלְחִין.'],
+ ['סְלִק','səliq','עָלָה','ʿālâ','wejść, wstąpić','X',''],
+ ['עַל','ʿal','בָּא','bāʾ','wszedł (od עלל)','X','G pf 3 m. l.poj. od עלל; nie mylić z przyimkiem עַל.'],
+ ['תְּרֵין','tərên','שְׁנַיִם','šənayim','dwa (m.)','T NR NM','Ż. תַּרְתֵּין.'],
+ ['חַיִּין','ḥayyîn','חַיִּים','ḥayyîm','życie','NM','Cstr. חַיֵּי.'],
+ ['יַד','yad','יָד','yād','ręka','R','Podw. יְדַיִן.'],
+ ['מְגַר','məgar','מִגֵּר','miggēr','obalić (D)','','Impf יְמַגַּר.'],
+ ['נְכַס','nəkas','נְכָסִים','nəkāsîm','majątek','',''],
+ ['מְהַקְרְבִין','məhaqrəbîn','מַקְרִיבִים','maqrîbîm','składający ofiarę','','H ptc m. l.mn. od קרב.'],
+ ['יְהַשְׁנֵא','yəhašnēʾ','יְשַׁנֶּה','yəšanneh','zmieni','','H impf 3 m. l.poj. od שׁנה.'],
+ ['יִתְעֲבֵד','yitʿăbēd','יֵעָשֶׂה','yēʿāśeh','zostanie uczyniony','F','Gt impf 3 m. l.poj. od עבד.']
+],
+s:[
+ ['שְׁבֻקוּ לַעֲבִידַת בֵּית אֱלָהָא דֵךְ','Zostawcie (w spokoju) pracę przy tym domu Boga.','שְׁבֻקוּ – G imv m. l.mn.; לְ wprowadza dopełnienie bliższe.','Ezd 6,7'],
+ ['דִּי לֶהֱוֹן מְהַקְרְבִין נִיחוֹחִין לֶאֱלָהּ שְׁמַיָּא','…aby składali miłe (Bogu) ofiary Bogu nieba.','לֶהֱוֹן + imiesłów = forma opisowa (perifraza) w zdaniu celowym.','Ezd 6,10'],
+ ['וּמְצַלַּיִן לְחַיֵּי מַלְכָּא וּבְנוֹהִי','…i modlili się za życie króla i jego synów.','חַיֵּי – cstr. od חַיִּין; בְּנוֹהִי – „jego synowie” (sufiks dla l.mn.).','Ezd 6,10'],
+ ['וּמִנִּי שִׂים טְעֵם דִּי כָל אֱנָשׁ דִּי יְהַשְׁנֵא פִּתְגָמָא דְנָה','I przeze mnie wydany jest rozkaz, że każdy człowiek, który zmieni ten nakaz…','שִׂים – ptc bierny („położony, wydany”); יְהַשְׁנֵא – H impf.','Ezd 6,11'],
+ ['וּבַיְתֵהּ נְוָלוּ יִתְעֲבֵד עַל דְּנָה','…a jego dom zostanie z tego powodu zamieniony w gnojowisko.','יִתְעֲבֵד – Gt impf; עבד „czynić” → „zostanie uczyniony”.','Ezd 6,11'],
+ ['אֲנָה דָרְיָוֶשׁ שָׂמֶת טְעֵם אָסְפַּרְנָא יִתְעֲבִד','Ja, Dariusz, wydałem rozkaz; niech będzie dokładnie wykonany.','שָׂמֶת – G pf 1 l.poj. od שׂים; אָסְפַּרְנָא – perskie „dokładnie”.','Ezd 6,12'],
+ ['אֱנָשׁ רַחִיק מִן קִרְיְתָא','Człowiek jest daleko od miasta.','Zdanie imienne bez łącznika.','Greenspahn 10']
+],
+q:[
+ ['Hebr. עָלָה „wejść w górę” to po aramejsku…',['עֲלָה','סְלִק','נְחַת','נְפַק'],1,'סלק – inny rdzeń.'],
+ ['Co znaczy aram. פְּלַח?',['rozłupać','służyć, czcić','orać','zabić'],1,'Aram. „służyć” = פלח, bo עבד znaczy „czynić”.'],
+ ['Perfectum „dał” po aramejsku biblijnym tworzy się od…',['נתן','יהב','שׂים','רמה'],1,'נתן tylko w impf. i bezok.'],
+ ['תְּרֵין „dwa” wobec hebr. שְׁנַיִם pokazuje…',['*ṯ > ת oraz aram. r ~ hebr. n','*ḏ > ד','alef prostetyczny','asymilację nun'],0,'Dwie odpowiedniości naraz (+ nunacja).'],
+ ['W aram. hebrajskie „zostawić, opuścić” (עזב) to…',['שְׁבַק','שְׁלַח','שְׁאַר','שְׁכַח'],0,'Por. Mk 15,34.'],
+ ['יְהַשְׁנֵא to…',['G impf','D pf','H impf','Gt ptc'],2,'Prefiks yə-ha- = H impf.']
+]});
+
+L({id:11, ch:'11', title:'Zaimki osobowe i partykuła אִיתַי', read:'Ezd 6,13–18',
+g:[
+ {h:'Zaimki osobowe', t:[['Osoba','Aramejski','Hebrajski'],['1 l.poj.','אֲנָה','אֲנִי / אָנֹכִי'],['2 m. l.poj.','אַנְתְּ / אַנְתָּה','אַתָּה'],['3 m. l.poj.','הוּא','הוּא'],['3 ż. l.poj.','הִיא','הִיא'],['1 l.mn.','אֲנַחְנָא / אֲנַחְנָה','אֲנַחְנוּ'],['2 m. l.mn.','אַנְתּוּן','אַתֶּם'],['3 m. l.mn.','הִמּוֹ / הִמּוֹן / אִנּוּן','הֵם'],['3 ż. l.mn.','אִנִּין','הֵן']]},
+ {h:'Asymilacja n', p:'Aram. אַנְתְּ, אַנְתּוּן zachowują n (pisane), które w hebrajskim zasymilowało się: *ʾanta > אַתָּה (dagesz w ת). W 3 os. l.mn. aram. ma końcowe n (הִמּוֹן, אִנּוּן) – nunacja – wobec hebr. m (הֵם).'},
+ {h:'אִיתַי – „jest, są”', p:'Odpowiada hebr. יֵשׁ, przeczenie לָא אִיתַי (w targumach לֵית) – hebr. אֵין. Łączy się z sufiksami, tworząc zdania imienne: אִיתֵיכוֹן פָּלְחִין „czy wy służycie?”. Posiadanie: אִיתַי לְ־ „mieć” (dosł. jest dla).'},
+ {h:'Zaimek jako łącznik', p:'Zaimek 3 os. może pełnić funkcję spójki: זְרֻבָּבֶל הוּא פֶּחָה „Zorobabel jest namiestnikiem”; אֲנַחְנָא הִמּוֹ עַבְדוֹהִי „my jesteśmy jego sługami”.'}
+],
+v:[
+ ['אַנְתְּ','ʾant','אַתָּה','ʾattâ','ty (m.)','AS','Także אַנְתָּה (qere).'],
+ ['הוּא','hûʾ','הוּא','hûʾ','on','',''],
+ ['הִיא','hîʾ','הִיא','hîʾ','ona','',''],
+ ['אַנְתּוּן','ʾantûn','אַתֶּם','ʾattem','wy','AS NM',''],
+ ['אִנּוּן','ʾinnûn','הֵם','hēm','oni','NM',''],
+ ['אִיתַי','ʾîtay','יֵשׁ','yēš','jest, są','X','Przeczenie: לָא אִיתַי.'],
+ ['אָסְפַּרְנָא','ʾāsparnā','בְּשָׁקְדָה','bəšoqdâ','dokładnie, starannie','LW','Słowo perskie.'],
+ ['כָּהֵן','kāhēn','כֹּהֵן','kōhēn','kapłan','K','L.mn. כָּהֲנִין, cstr. כָּהֲנֵי.'],
+ ['כְּנֵמָא','kənēmā','כֹּה','kōh','tak, w ten sposób','X',''],
+ ['כְּתָב','kətāb','כְּתָב','kətāb','pismo, napis','',''],
+ ['מַלְכוּ','malkû','מַלְכוּת','malkût','królestwo, panowanie','','Det. מַלְכוּתָא.'],
+ ['סְפַר','səpar','סֵפֶר','sēper','księga','S',''],
+ ['לָקֳבֵל','lāqŏbēl','כְּ / לְנֹכַח','kə / lənōkaḥ','naprzeciw; zgodnie z','','כָּל קֳבֵל דִּי „ponieważ”.'],
+ ['שַׁכְלִלוּ','šaklilû','כִּלּוּ','killû','ukończyli','','Š pf 3 m. l.mn. od כלל (koniugacja šafʿel).'],
+ ['שֵׁיצִיא','šêṣîʾ','כָּלָה','kālâ','został ukończony','','Š od יצא; Ezd 6,15.'],
+ ['גָּלוּ','gālû','גּוֹלָה','gôlâ','wygnanie','K','בְּנֵי גָלוּתָא „wygnańcy”.'],
+ ['חֶדְוָה','ḥedwâ','שִׂמְחָה','śimḥâ','radość','',''],
+ ['חֲנֻכָּה','ḥănukkâ','חֲנֻכָּה','ḥănukkâ','poświęcenie','',''],
+ ['יְרַח','yəraḥ','חֹדֶשׁ','ḥōdeš','miesiąc','X','Hebr. יֶרַח „księżyc; miesiąc” (poet.).'],
+ ['נְבוּאָה','nəbûʾâ','נְבוּאָה','nəbûʾâ','proroctwo','',''],
+ ['מַצְלְחִין','maṣləḥîn','מַצְלִיחִים','maṣlîḥîm','pomyślnie prowadzący','','H ptc od צלח.']
+],
+s:[
+ ['אִיתַי הֵיכַל בְּקִרְיְתָא רַבְּתָא','Jest pałac w wielkim mieście.','רַבְּתָא – przymiotnik ż. det. od רַב.','Greenspahn 11,1'],
+ ['אַנְתּוּן הִמּוֹ כָּהֲנֵי אֱלָהָא דִּי שְׁמַיָּא','Wy jesteście kapłanami Boga nieba.','הִמּוֹ jako łącznik; כָּהֲנֵי – cstr. l.mn.','Greenspahn 11,2'],
+ ['בֵּית אֱלָהָא אִיתַי בִּירוּשְׁלֶם','Dom Boga jest w Jerozolimie.','אִיתַי po podmiocie.','Greenspahn 11,3'],
+ ['לְגַבְרָא לָא אִיתַי רֵאשׁ','Ten mężczyzna nie ma głowy.','Posiadanie: לְ + לָא אִיתַי „nie ma (dla)”.','Greenspahn 11,4'],
+ ['זְרֻבָּבֶל הוּא פֶּחָה דִּי יְהוּדָיֵא','Zorobabel jest namiestnikiem Judejczyków.','Zaimek הוּא jako łącznik; דִּי – dopełniacz.','Greenspahn 11,5'],
+ ['כְּנֵמָא כְּתִיב בִּסְפַר דָּרְיָוֶשׁ','Tak jest napisane w księdze Dariusza.','כְּתִיב – ptc bierny.','Greenspahn 11,6'],
+ ['וְשֵׁיצִיא בַּיְתָה דְנָה עַד יוֹם תְּלָתָה לִירַח אֲדָר','I ukończono ten dom do trzeciego dnia miesiąca Adar.','שֵׁיצִיא – šafʿel; בַּיְתָה – determinatus pisany z ה.','Ezd 6,15'],
+ ['וַעֲבַדוּ בְנֵי יִשְׂרָאֵל חֲנֻכַּת בֵּית אֱלָהָא דְנָה בְּחֶדְוָה','I synowie Izraela obchodzili poświęcenie tego domu Boga z radością.','עֲבַדוּ „uczynili, obchodzili”; łańcuch חֲנֻכַּת בֵּית אֱלָהָא.','Ezd 6,16']
+],
+q:[
+ ['Hebr. אַתָּה po aramejsku to…',['אַתְּ','אַנְתְּ','אַנְתּוּן','הוּא'],1,'Aram. zachowuje n, które w hebr. się zasymilowało.'],
+ ['אִיתַי odpowiada hebr.…',['אֵין','יֵשׁ','הִנֵּה','הָיָה'],1,'Przeczenie: לָא אִיתַי (hebr. אֵין).'],
+ ['Jak powiesz „oni” w aramejskim biblijnym?',['הֵם','הִמּוֹ / אִנּוּן','אַנְתּוּן','אִנִּין (tylko m.)'],1,'אִנִּין to forma żeńska.'],
+ ['לְגַבְרָא אִיתַי… wyraża…',['posiadanie','czas przyszły','tryb rozkazujący','stronę bierną'],0,'„Mężczyzna ma…”.'],
+ ['Co znaczy סְפַר?',['pisarz','księga','liczba','granica'],1,'Pisarz to סָפַר / סָפְרָא.']
+]});
+
+L({id:12, ch:'12', title:'Przyimki', read:'Ezd 7,12–26',
+g:[
+ {h:'Przyimki wspólne z hebrajskim', p:'בְּ „w”, לְ „do, dla”, כְּ „jak”, מִן „z, od” (bez asymilacji n przed rzeczownikiem: מִן שְׁמַיָּא; ale מִנִּי „ode mnie”), עַל „na, o, przeciw”, עַד „aż do”, עִם „z”, בֵּין „między”, תְּחוֹת „pod”.'},
+ {h:'Przyimki typowo aramejskie', t:[['Przyimek','Znaczenie','Pochodzenie'],['בָּתַר','po (czasowo)','בְּ + אֲתַר „miejsce”'],['בְּגוֹא','pośród','גַּו „wnętrze”'],['לָקֳבֵל','naprzeciw, zgodnie z','קבל'],['כָּל קֳבֵל דִּי','ponieważ','„wobec tego że”'],['קֳדָם','przed (miejsce)','קַדְמָה „dawniej” (czas)'],['לְוָת','u, do','—']]},
+ {h:'לְ jako znacznik dopełnienia', p:'Aramejski biblijny zwykle nie używa odpowiednika hebr. אֵת. Dopełnienie bliższe (zwłaszcza osobowe, określone) bywa wprowadzone przez לְ: שְׁבֻקוּ לַעֲבִידַת „zostawcie pracę”. Partykuła יָת (fenickie אית, hebr. אֵת) występuje tylko raz – Dn 3,12; jest typowa dla późniejszych dialektów.'},
+ {h:'Przyimki z sufiksami', p:'Jednosylabowe łączą się z sufiksami jak rzeczownik l.poj. (לֵהּ „jemu”, מִנָּךְ „od ciebie”), dwusylabowe – jak l.mn. (עֲלוֹהִי „na nim”, קָדָמַי „przede mną”). Tak samo w hebrajskim: לוֹ, עָלָיו.'}
+],
+v:[
+ ['דִּין','dîn','מִשְׁפָּט','mišpāṭ','sąd, wyrok','X','Hebr. דִּין „sąd” – rzadkie.'],
+ ['דַּיָּן','dayyān','שֹׁפֵט','šōpēṭ','sędzia','',''],
+ ['דָּת','dāt','דָּת','dāt','prawo, dekret','LW','Perskie; det. דָּתָא.'],
+ ['יְהָךְ','yəhāk','יֵלֵךְ','yēlēk','pójdzie','','G impf od הלך (jak od הוך); bezok. מְהָךְ.'],
+ ['מִתְנַדַּב','mitnaddab','מִתְנַדֵּב','mitnaddēb','zgłaszający się dobrowolnie','','Dt ptc od נדב.'],
+ ['שַׁלִּיט','šallîṭ','שַׁלִּיט','šallîṭ','władny, upoważniony','',''],
+ ['עִם','ʿim','עִם','ʿim','z (towarzysząco)','','עִמָּךְ „z tobą”.'],
+ ['עַד','ʿad','עַד','ʿad','aż do','',''],
+ ['בֵּין','bên','בֵּין','bên','między','',''],
+ ['כְּ־','kə-','כְּ־','kə-','jak','',''],
+ ['בָּתַר','bātar','אַחַר','ʾaḥar','po, za (czasowo)','X',''],
+ ['לְוָת','ləwāt','אֵצֶל','ʾēṣel','u, do (kogoś)','X',''],
+ ['יָת','yāt','אֵת','ʾēt','(znacznik dopełnienia)','','Tylko Dn 3,12.'],
+ ['דְּכַר','dəkar','אַיִל','ʾayil','baran','D X','Pokrewne hebr. זָכָר „samiec” (*ḏ).'],
+ ['הֵיבָלָה','hêbālâ','הוֹבָלָה','hôbālâ','zanieść (H bezok.)','','Od יבל; לְהֵיבָלָה.'],
+ ['יֵיטַב','yêṭab','יִיטַב','yîṭab','będzie dobre, spodoba się','','G impf od יטב.'],
+ ['מַנִּי','mannî','מַנֵּה','mannēh','ustanów!','','D imv od מנה.'],
+ ['תִּקְנֵא','tiqnēʾ','תִּקְנֶה','tiqneh','kupisz','','G impf od קנה.'],
+ ['לְמִרְמֵא','ləmirmēʾ','לִרְמוֹת','lirmôt','nałożyć (dosł. rzucić)','','G bezok. od רמה.'],
+ ['הַשְׁלֵם','hašlēm','הַשְׁלֵם','hašlēm','oddaj w całości','','H imv od שׁלם.']
+],
+s:[
+ ['הוּא שְׁאֵל עַל דַּת מַלְכָּא','On pytał o prawo króla.','עַל „o, w sprawie”; דַּת – cstr. od דָּת.','Greenspahn 12,1'],
+ ['עַמָּא דְּנָה שַׁלִּיט לְהֵיבָלָה מָאנַיָּא מִן הֵיכְלָא','Ten lud ma prawo wynieść naczynia ze świątyni.','שַׁלִּיט + bezok. „mieć władzę, by…”.','Greenspahn 12,2'],
+ ['נְבוּכַדְנֶצַּר הֲוָה מֶלֶךְ בָּבֶל מִן עָלְמָא','Nabuchodonozor był królem Babilonu od dawna.','מִן עָלְמָא „od wieku, od dawna”.','Greenspahn 12,3'],
+ ['אַנְתּוּן תְּהוֹדְעוּן לְדַיָּנָא דִּי מְרַד לֶהֱוֵא בִּמְדִינְתָּא','Oznajmicie sędziemu, że w prowincji będzie bunt.','תְּהוֹדְעוּן – H impf 2 m. l.mn. od ידע (י > ו).','Greenspahn 12,5'],
+ ['מִנִּי שִׂים טְעֵם דִּי כָל מִתְנַדַּב בְּמַלְכוּתִי לִמְהָךְ לִירוּשְׁלֶם עִמָּךְ יְהָךְ','Przeze mnie wydany jest rozkaz, że każdy w moim królestwie, kto dobrowolnie chce iść do Jerozolimy, może iść z tobą.','מִנִּי „ode mnie”; casus pendens כָל מִתְנַדַּב… podjęty przez יְהָךְ.','Ezd 7,13'],
+ ['וְכָל דִּי לָא לֶהֱוֵא עָבֵד דָּתָא דִי אֱלָהָךְ וְדָתָא דִּי מַלְכָּא','A każdy, kto nie będzie wypełniał prawa twego Boga i prawa króla…','לֶהֱוֵא עָבֵד – perifraza (הוה + ptc).','Ezd 7,26']
+],
+q:[
+ ['Jaki jest zwykły znacznik dopełnienia bliższego w aram. biblijnym?',['אֵת','יָת','לְ','עַל'],2,'יָת tylko raz (Dn 3,12).'],
+ ['בָּתַר znaczy…',['przed','po (czasowo)','pośród','pod'],1,'Z בְּ + אֲתַר „miejsce”.'],
+ ['כָּל קֳבֵל דִּי znaczy…',['zanim','ponieważ','chociaż','dopóki'],1,'Dosł. „wobec tego, że”.'],
+ ['Dwusylabowe przyimki przyjmują sufiksy…',['jak rzeczownik l.poj.','jak rzeczownik l.mn.','jak czasownik','nie przyjmują'],1,'עֲלוֹהִי, קָדָמַי.'],
+ ['Co znaczy דַּיָּן?',['prawo','sędzia','sąd','bunt'],1,'']
+]});
+
+L({id:13, ch:'13', title:'Sufiksy zaimkowe', read:'Dn 2,4–13',
+g:[
+ {h:'Sufiksy przy rzeczowniku w l.poj.', t:[['Osoba','Aramejski','Przykład','Hebrajski'],['1 l.poj.','־ִי','מַלְכִּי','־ִי'],['2 m. l.poj.','־ָךְ','מַלְכָּךְ','־ְךָ'],['3 m. l.poj.','־ֵהּ','מַלְכֵּהּ','־וֹ'],['3 ż. l.poj.','־ַהּ','מַלְכַּהּ','־ָהּ'],['1 l.mn.','־ַנָא','מַלְכַּנָא','־ֵנוּ'],['2 m. l.mn.','־כֹם / ־כוֹן','מַלְכְּכֹם','־כֶם'],['3 m. l.mn.','־הֹם / ־הוֹן','מַלְכְּהֹם','־ָם']]},
+ {h:'Sufiksy przy rzeczowniku w l.mn.', t:[['Osoba','Aramejski','Przykład','Hebrajski'],['1 l.poj.','־ַי','עַבְדַי','־ַי'],['2 m. l.poj.','־ָיךְ','עַבְדָיךְ','־ֶיךָ'],['3 m. l.poj.','־וֹהִי','עַבְדוֹהִי','־ָיו'],['3 ż. l.poj.','־ַהּ / ־ַיַהּ','—','־ֶיהָ'],['1 l.mn.','־ָנָא','עַבְדָנָא','־ֵינוּ'],['2 m. l.mn.','־ֵיכֹם','עַבְדֵיכֹם','־ֵיכֶם'],['3 m. l.mn.','־ֵיהֹם','עַבְדֵיהֹם','־ֵיהֶם']]},
+ {h:'Rzeczownik „segolowy” z sufiksem', p:'Sufiks przywraca pierwotny wzór: פְּשַׁר „wyjaśnienie” → פִּשְׁרֵהּ „jego wyjaśnienie” (*pišr-). Nieregularne: אַב → אֲבוּהִי „jego ojciec”, אַח → אַחָיךְ „twoi bracia”, בַּר → בְּרֵהּ „jego syn”.'},
+ {h:'Sufiksy przy czasowniku', p:'Oznaczają zwykle dopełnienie bliższe. W imperfectum często pojawia się dodatkowe n (nun energicum): יְחַוִּנַּהּ „oznajmi ją”, יְשֵׁיזְבִנְכוֹן „wybawi was”. Sufiks może też podjąć wysunięty na początek wyraz (casus pendens), np. Ezd 5,12.'}
+],
+v:[
+ ['אָחֳרָן','ʾoḥŏrān','אַחֵר','ʾaḥēr','inny','K',''],
+ ['נְחַוֵּא','nəḥawwēʾ','נַגִּיד','naggîd','oznajmimy','X','D impf 1 l.mn. od חוה; hebr. חִוָּה „oznajmić” tylko w poezji.'],
+ ['לְהַחֲוָיָה','ləhaḥăwāyâ','לְהַגִּיד','ləhaggîd','oznajmić (H bezok.)','',''],
+ ['חַכִּים','ḥakkîm','חָכָם','ḥākām','mędrzec, mądry','','L.mn. cstr. חַכִּימֵי.'],
+ ['חֵלֶם','ḥēlem','חֲלוֹם','ḥălôm','sen','K','Det. חֶלְמָא.'],
+ ['לָהֵן','lāhēn','לָכֵן / כִּי אִם','lākēn / kî ʾim','dlatego; lecz; chyba że','',''],
+ ['מִלָּה','millâ','דָּבָר','dābār','słowo, sprawa','X','Det. מִלְּתָא; hebr. מִלָּה – poetyckie.'],
+ ['עִדָּן','ʿiddān','עֵת','ʿēt','czas; rok','X',''],
+ ['עֲנָה','ʿănâ','עָנָה','ʿānâ','odpowiadać','R','Pf 3 m. l.mn. עֲנוֹ; ptc עָנֵה.'],
+ ['פְּשַׁר','pəšar','פֵּשֶׁר','pēšer','wyjaśnienie, wykład','S','Det. פִּשְׁרָא; suf. פִּשְׁרֵהּ.'],
+ ['הוֹבָדָה','hôbādâ','הַאֲבִיד','haʾăbîd','wytracić (H bezok.)','','Od אבד; alef > waw.'],
+ ['אֱמַר','ʾĕmar','אֱמֹר','ʾĕmōr','powiedz!','','G imv od אמר.'],
+ ['הַדָּם','haddām','אֵבָר','ʾēbār','członek, kawałek','LW','Perskie; הַדָּמִין תִּתְעַבְדוּן „zostaniecie posiekani”.'],
+ ['זְבַן','zəban','קָנָה','qānâ','kupować; zyskiwać (czas)','X',''],
+ ['יְכִל','yəkil','יָכֹל','yākōl','móc','',''],
+ ['יַקִּיר','yaqqîr','יָקָר','yāqār','trudny; cenny','',''],
+ ['קַבֵּל','qabbēl','קִבֵּל','qibbēl','otrzymać (D)','',''],
+ ['קְצַף','qəṣap','קָצַף','qāṣap','rozgniewać się','R',''],
+ ['מַלְכִּי','malkî','מַלְכִּי','malkî','mój król','',''],
+ ['פִּשְׁרֵהּ','pišrēh','פִּשְׁרוֹ','pišrô','jego wyjaśnienie','',''],
+ ['עַבְדוֹהִי','ʿabdôhî','עֲבָדָיו','ʿăbādāyw','jego słudzy','','']
+],
+s:[
+ ['מַלְכָּא לְעָלְמִין חֱיִי אֱמַר חֶלְמָא לְעַבְדָיךְ וּפִשְׁרָא נְחַוֵּא','Królu, żyj na wieki! Powiedz sen twoim sługom, a wyjaśnienie oznajmimy.','לְעַבְדָיךְ – l.mn. + suf. 2 m. l.poj.; חֱיִי – G imv od חיה; נְחַוֵּא – D impf 1 l.mn.','Dn 2,4'],
+ ['עָנֵה מַלְכָּא וְאָמַר לְכַשְׂדָּיֵא מִלְּתָא מִנִּי אַזְדָּא','Odpowiedział król i rzekł do Chaldejczyków: Postanowienie z mojej strony jest pewne.','עָנֵה וְאָמַר – dwa imiesłowy w funkcji narracyjnej (formuła wprowadzająca mowę).','Dn 2,5'],
+ ['עֲנוֹ תִנְיָנוּת וְאָמְרִין מַלְכָּא חֶלְמָא יֵאמַר לְעַבְדוֹהִי וּפִשְׁרָה נְהַחֲוֵה','Odpowiedzieli po raz drugi i mówili: Niech król powie sen swoim sługom, a wyjaśnienie oznajmimy.','לְעַבְדוֹהִי – suf. 3 m. l.poj. przy l.mn.; נְהַחֲוֵה – H impf 1 l.mn.','Dn 2,7'],
+ ['לָא אִיתַי אֱנָשׁ עַל יַבֶּשְׁתָּא דִּי מִלַּת מַלְכָּא יוּכַל לְהַחֲוָיָה','Nie ma człowieka na ziemi, który mógłby oznajmić sprawę króla.','יוּכַל – G impf od יכל (jod > waw jako mater lectionis).','Dn 2,10'],
+ ['כָּל קֳבֵל דְּנָה מַלְכָּא בְּנַס וּקְצַף שַׂגִּיא','Z tego powodu król rozgniewał się i bardzo się rozzłościł.','שַׂגִּיא jako przysłówek „bardzo”.','Dn 2,12'],
+ ['וַאֲמַר לְהוֹבָדָה לְכֹל חַכִּימֵי בָבֶל','I kazał wytracić wszystkich mędrców Babilonu.','לְהוֹבָדָה – H bezok. od אבד; לְ przed dopełnieniem.','Dn 2,12']
+],
+q:[
+ ['Aram. ־ֵהּ (מַלְכֵּהּ) odpowiada hebr.…',['־וֹ','־ָהּ','־ָם','־ִי'],0,'„jego”.'],
+ ['עַבְדוֹהִי znaczy…',['jego sługa','jego słudzy','nasi słudzy','jej słudzy'],1,'־וֹהִי: 3 m. l.poj. przy l.mn.'],
+ ['Sufiks 1 os. l.mn. przy rzeczowniku l.poj. to…',['־נוּ','־ַנָא','־ָנָא','־כֹם'],1,'מַלְכַּנָא „nasz król”; przy l.mn. ־ָנָא.'],
+ ['Nun w יְחַוִּנַּהּ to…',['nun rdzenia','nun energicum','sufiks l.mn.','znak bierności'],1,'Dodatkowe n przed sufiksem w impf.'],
+ ['Hebr. חֲלוֹם „sen” po aramejsku to…',['חֲלוֹם','חֵלֶם','חֲלָם','חֶלֶם'],1,'Det. חֶלְמָא.'],
+ ['Co znaczy מִלָּה?',['słowo, sprawa','wypełnienie','królowa','zwój'],0,'= hebr. דָּבָר.']
+]});
+
+L({id:14, ch:'14', title:'Zaimki wskazujące, względne i pytające', read:'Dn 2,14–24',
+g:[
+ {h:'Zaimki wskazujące', t:[['','Bliższe („ten”)','Dalsze („tamten”)','Hebrajski'],['m. l.poj.','דְּנָה','דֵּךְ / דָּךְ','זֶה / הַהוּא'],['ż. l.poj.','דָּא','דָּךְ','זֹאת / הַהִיא'],['l.mn.','אִלֵּין / אֵל','אִלֵּךְ','אֵלֶּה / הָהֵם'],['wspólne','—','דִּכֵּן','—']]},
+ {h:'Odpowiedniości', p:'ד w דְּנָה, דָּא, דֵּךְ pochodzi z *ḏ, dlatego w hebr. stoi ז (זֶה, זֹאת). W szyku przydawkowym zaimek stoi zwykle po rzeczowniku (בַּיְתָא דְנָה „ten dom”), w orzecznikowym – przed nim (דְּנָה חֶלְמָא „to jest sen”).'},
+ {h:'Zaimek względny דִּי', p:'דִּי wprowadza zdania względne („który”), dopełnieniowe („że”), celowe („aby”) i przyczynowe (מִן דִּי „ponieważ”); oznacza też dopełniacz (צְלֵם דִּי דְהַב „posąg ze złota”).'},
+ {h:'Zaimki pytające', p:'מַן „kto?”, מָה „co?”; partykuła pytajna הֲ־ (הֲלָא „czyż nie?”, הַצְדָּא „czy to prawda?”). מַן דִּי „ktokolwiek”, מָה דִּי „cokolwiek”.'}
+],
+v:[
+ ['דָּא','dāʾ','זֹאת','zōʾt','ta, to (ż.)','D',''],
+ ['אִלֵּין','ʾillên','אֵלֶּה','ʾēlleh','ci, te','NM','Także אֵל.'],
+ ['דֵּךְ','dēk','הַהוּא','hahûʾ','ten, tamten','D',''],
+ ['דִּכֵּן','dikkēn','הַהוּא','hahûʾ','tamten','D',''],
+ ['בְּעָה','bəʿâ','בִּקֵּשׁ','biqqēš','szukać, prosić','X','Ptc בָּעֵה; bezok. לְמִבְעֵה. Hebr. בָּעָה „pytać” (Iz 21,12).'],
+ ['גְּלָה','gəlâ','גָּלָה','gālâ','odsłonić, objawić','R','Pf bierny גֲּלִי.'],
+ ['זְמָן','zəmān','זְמָן / עֵת','zəmān / ʿēt','czas, chwila','LW',''],
+ ['חָכְמָה','ḥokmâ','חָכְמָה','ḥokmâ','mądrość','',''],
+ ['עֲלַל','ʿălal','בּוֹא','bôʾ','wejść','X','Pf עַל; H הַנְעֵל / הַעֵל „wprowadził”.'],
+ ['רָז','rāz','סוֹד','sôd','tajemnica','LW','Perskie; det. רָזָא.'],
+ ['שַׁבַּח','šabbaḥ','שִׁבַּח','šibbaḥ','wysławiać (D)','','Ptc מְשַׁבַּח.'],
+ ['בָּרֵךְ','bārēk','בֵּרַךְ','bērak','błogosławić','','D; ptc bierny מְבָרַךְ.'],
+ ['גְּבוּרָה','gəbûrâ','גְּבוּרָה','gəbûrâ','moc','',''],
+ ['חֲבַר','ḥăbar','חָבֵר','ḥābēr','towarzysz','R',''],
+ ['עַמִּיק','ʿammîq','עָמֹק','ʿāmōq','głęboki','',''],
+ ['רַחֲמִין','raḥămîn','רַחֲמִים','raḥămîm','miłosierdzie','NM',''],
+ ['מְהָקֵים','məhāqêm','מֵקִים','mēqîm','ustanawiający','','H ptc od קום.'],
+ ['הֲלָא','hălāʾ','הֲלֹא','hălōʾ','czyż nie?','K','']
+],
+s:[
+ ['יְדַעְנָא רָזַיָּא אִלֵּין','Znamy te tajemnice.','רָזַיָּא – l.mn. det.; zaimek אִלֵּין po rzeczowniku.','Greenspahn 14,1'],
+ ['מַן בְּנָה הֵיכְלָא דֵּךְ','Kto zbudował tamten pałac?','מַן – „kto?”.','Greenspahn 14,2'],
+ ['סָפְרָא כְּתַב דִּי חָכְמָה אָבְדָה מִבָּבֶל בִּזְמַן נְבוּכַדְנֶצַּר','Pisarz napisał, że mądrość zginęła z Babilonu w czasach Nabuchodonozora.','דִּי „że”; אָבְדָה – ptc ż.','Greenspahn 14,3'],
+ ['אִיתַי אֱנָשׁ דִּי בָּעֵה רַחֲמִין','Jest człowiek, który prosi o miłosierdzie.','דִּי „który”; בָּעֵה – ptc od בעה (III-h).','Greenspahn 14,6'],
+ ['אֱדַיִן לְדָנִיֵּאל בְּחֶזְוָא דִי לֵילְיָא רָזָה גֲלִי','Wtedy Danielowi w nocnym widzeniu została objawiona tajemnica.','גֲלִי – G pf bierny (peʿil) od גלה; רָזָה – determinatus z ה.','Dn 2,19'],
+ ['לֶהֱוֵא שְׁמֵהּ דִּי אֱלָהָא מְבָרַךְ מִן עָלְמָא וְעַד עָלְמָא','Niech imię Boga będzie błogosławione od wieku do wieku.','שְׁמֵהּ דִּי אֱלָהָא – prolepsa: „imię jego, (tj.) Boga”.','Dn 2,20'],
+ ['דִּי חָכְמְתָא וּגְבוּרְתָא דִּי לֵהּ הִיא','Bo mądrość i moc do Niego należą.','דִּי przyczynowe; דִּי לֵהּ „który do niego” = „jego”.','Dn 2,20']
+],
+q:[
+ ['Hebr. זֹאת po aramejsku to…',['דָּא','דְּנָה','דֵּךְ','אִלֵּין'],0,'*ḏ → ד.'],
+ ['W zdaniu orzecznikowym „to jest sen” zaimek stoi…',['po rzeczowniku','przed rzeczownikiem','na końcu zdania','nie występuje'],1,'דְּנָה חֶלְמָא.'],
+ ['גֲּלִי to…',['G imv','G pf bierny','D pf','H ptc'],1,'Peʿil od גלה: „został objawiony”.'],
+ ['Hebr. בּוֹא „wejść” odpowiada aram.…',['עֲלַל','סְלִק','בְּעָה','אֲזַל'],0,'Pf עַל, H הַנְעֵל.'],
+ ['Co wyraża שְׁמֵהּ דִּי אֱלָהָא?',['dwa różne imiona','dopełniacz z sufiksem antycypującym','zdanie pytajne','tryb rozkazujący'],1,'Prolepsa: „imię jego – Boga”.']
+]});
+
+L({id:15, ch:'15', title:'G imperfectum (yiqtul)', read:'Dn 2,25–36',
+g:[
+ {h:'Odmiana כְּתַב', t:[['Osoba','Aramejski','Hebrajski'],['3 m. l.poj.','יִכְתֻּב','יִכְתֹּב'],['3 ż. l.poj.','תִּכְתֻּב','תִּכְתֹּב'],['2 m. l.poj.','תִּכְתֻּב','תִּכְתֹּב'],['1 l.poj.','אֶכְתֻּב','אֶכְתֹּב'],['3 m. l.mn.','יִכְתְּבוּן','יִכְתְּבוּ'],['3 ż. l.mn.','יִכְתְּבָן','תִּכְתֹּבְנָה'],['2 m. l.mn.','תִּכְתְּבוּן','תִּכְתְּבוּ'],['1 l.mn.','נִכְתֻּב','נִכְתֹּב']]},
+ {h:'Różnice wobec hebrajskiego', p:'Formy l.mn. kończą się na ־וּן / ־ָן (nunacja; w hebr. ־וּן tylko jako nun paragogiczny). Samogłoska tematyczna u (krótka) zamiast hebr. ō. Czasowniki z a: יִשְׁלַט, יִשְׁמַע.'},
+ {h:'Znaczenie', p:'Imperfectum oznacza czynność niedokonaną: przyszłą, powtarzalną, możliwą lub życzenie (jussyw). Formy krótkie (jussyw) bez końcowego n: אַל תְּהוֹבֵד „nie wytracaj”.'},
+ {h:'Słabe początki', p:'I-ʾ: יֵאמַר (hebr. יֹאמַר). I-n: יִפֵּל < *yinpēl (asymilacja), ale też יִנְתְּנוּן (bez asymilacji). הוה ma prefiks ל־: לֶהֱוֵא, תֶּהֱוֵא, לֶהֱוֹן.'}
+],
+v:[
+ ['אֶבֶן','ʾeben','אֶבֶן','ʾeben','kamień','','Det. אַבְנָא.'],
+ ['גְּזַר','gəzar','גָּזַר','gāzar','odciąć, wyciąć','R','Gt הִתְגְּזֶרֶת „została odcięta”.'],
+ ['הַדֵּק','haddēq','הֵדַק','hēdaq','skruszył','','H pf od דקק.'],
+ ['חֲזָה','ḥăzâ','רָאָה','rāʾâ','widzieć','X','Hebr. חָזָה – poetyckie.'],
+ ['חֲסַף','ḥăsap','חֶרֶשׂ','ḥereś','glina (wypalona)','X',''],
+ ['טוּר','ṭûr','הַר','har','góra','TT X','Prasemickie *ṱ: pokrewne hebr. צוּר „skała”.'],
+ ['נְחָשׁ','nəḥāš','נְחֹשֶׁת','nəḥōšet','brąz, miedź','K',''],
+ ['פַּרְזֶל','parzel','בַּרְזֶל','barzel','żelazo','',''],
+ ['צְלֵם','ṣəlēm','צֶלֶם','ṣelem','posąg, obraz','S','Det. צַלְמָא.'],
+ ['רְגַל','rəgal','רֶגֶל','regel','stopa, noga','S','L.mn. + suf. רַגְלוֹהִי.'],
+ ['בְּרַם','bəram','אַךְ','ʾak','ale, jednak','X',''],
+ ['דְּרָע','dərāʿ','זְרוֹעַ','zərôaʿ','ramię','D K',''],
+ ['חֲדֵה','ḥădēh','חָזֶה','ḥāzeh','pierś','D','Prasemickie *ḥdy.'],
+ ['יַרְכָה','yarkâ','יָרֵךְ','yārēk','biodro, udo','',''],
+ ['מְחָא','məḥāʾ','מָחַץ','māḥaṣ','uderzyć','',''],
+ ['מְעֵה','məʿēh','מֵעִים','mēʿîm','brzuch, wnętrzności','',''],
+ ['שָׁק','šāq','שׁוֹק','šôq','golenie, noga','K',''],
+ ['יִכְתֻּב','yiktub','יִכְתֹּב','yiktōb','napisze','','G impf 3 m. l.poj.'],
+ ['יִכְתְּבוּן','yiktəbûn','יִכְתְּבוּ','yiktəbû','napiszą','NM','G impf 3 m. l.mn.'],
+ ['נֵאמַר','nēʾmar','נֹאמַר','nōʾmar','powiemy','','G impf 1 l.mn. od אמר.']
+],
+s:[
+ ['אַנְתְּ מַלְכָּא חָזֵה הֲוַיְתָ וַאֲלוּ צְלֵם חַד שַׂגִּיא','Ty, królu, patrzyłeś, a oto pewien wielki posąg.','חָזֵה הֲוַיְתָ – perifraza „byłeś patrzącym”; חַד jako rodzajnik nieokreślony „pewien”.','Dn 2,31'],
+ ['הוּא צַלְמָא רֵאשֵׁהּ דִּי דְהַב טָב','Ten posąg – jego głowa była ze szczerego złota.','Casus pendens + sufiks podejmujący (רֵאשֵׁהּ); דִּי – materiał.','Dn 2,32'],
+ ['חֲדוֹהִי וּדְרָעוֹהִי דִּי כְסַף מְעוֹהִי וְיַרְכָתֵהּ דִּי נְחָשׁ','Jego pierś i ramiona ze srebra, jego brzuch i biodra z brązu.','Sufiksy 3 m. l.poj. przy l.mn. (־וֹהִי) i l.poj. (־ֵהּ).','Dn 2,32'],
+ ['רַגְלוֹהִי מִנְּהוֹן דִּי פַרְזֶל וּמִנְּהוֹן דִּי חֲסַף','Jego stopy – częściowo z żelaza, częściowo z gliny.','מִנְּהוֹן … וּמִנְּהוֹן „część… część”.','Dn 2,33'],
+ ['וְאַבְנָא דִּי מְחָת לְצַלְמָא הֲוָת לְטוּר רַב','A kamień, który uderzył posąg, stał się wielką górą.','מְחָת – G pf 3 ż. od מחא; הֲוָה לְ „stać się”.','Dn 2,35'],
+ ['דְּנָה חֶלְמָא וּפִשְׁרֵהּ נֵאמַר קֳדָם מַלְכָּא','To jest sen, a jego wyjaśnienie powiemy przed królem.','נֵאמַר – G impf 1 l.mn.; דְּנָה przed rzeczownikiem = orzecznik.','Dn 2,36'],
+ ['מַלְכָּא יִכְתֻּב אִגַּרְתָּא','Król napisze list.','יִכְתֻּב – G impf 3 m. l.poj.','Greenspahn 15']
+],
+q:[
+ ['יִכְתְּבוּן to…',['3 m. l.mn. impf','3 ż. l.mn. impf','2 m. l.mn. pf','ptc m. l.mn.'],0,'Końcówka -ûn (nunacja).'],
+ ['Hebr. יֹאמַר po aramejsku to…',['יֹאמַר','יֵאמַר','יִמַר','יְאַמֵּר'],1,'I-ʾ w aram. daje ē.'],
+ ['Imperfectum הוה w 3 m. l.poj. to…',['יֶהֱוֵא','לֶהֱוֵא','נֶהֱוֵא','הֲוָא'],1,'Prefiks ל־ zamiast י־.'],
+ ['Co znaczy טוּר?',['skała','góra','mur','droga'],1,'Pokrewne hebr. צוּר (*ṱ).'],
+ ['Hebr. רָאָה „widzieć” w aram. to najczęściej…',['רְאָה','חֲזָה','בְּעָה','שְׁמַע'],1,'חזה – w hebr. tylko w poezji.'],
+ ['W wyrażeniu צְלֵם חַד słowo חַד pełni rolę…',['liczebnika „pierwszy”','rodzajnika nieokreślonego','przysłówka','przeczenia'],1,'„pewien posąg”.']
+]});
+
+L({id:16, ch:'16', title:'Przymiotniki i konstrukcja dopełniaczowa (דִּי)', read:'Dn 2,37–49',
+g:[
+ {h:'Przymiotnik', p:'Przymiotnik odmienia się jak rzeczownik i zgadza się z nim w rodzaju i liczbie. W szyku przydawkowym oba są w tym samym stanie (צְלֵם רַב „wielki posąg”; צַלְמָא רַבָּא „ten wielki posąg”). W szyku orzecznikowym przymiotnik jest nieokreślony: צַלְמָא רַב „posąg jest wielki”.'},
+ {h:'Trzy sposoby wyrażenia dopełniacza', t:[['Sposób','Przykład','Znaczenie'],['status constructus','בֵּית אֱלָהָא','dom Boga'],['דִּי','בַּיְתָא דִּי אֱלָהָא','dom (ten) Boga'],['sufiks + דִּי (prolepsa)','שְׁמֵהּ דִּי אֱלָהָא','imię Boga (dosł. jego imię, tj. Boga)']]},
+ {h:'Porównanie z hebrajskim', p:'Hebrajski używa niemal wyłącznie łańcucha constructus (בֵּית הָאֱלֹהִים) lub peryfrazy z לְ / אֲשֶׁר לְ. Konstrukcja z דִּי jest typowo aramejska; w późnym hebrajskim odpowiada jej שֶׁל.'},
+ {h:'Liczebniki porządkowe', p:'Na ־ָי: קַדְמָי „pierwszy”, תִּנְיָן „drugi”, תְּלִיתָי „trzeci” (hebr. שְׁלִישִׁי), רְבִיעָי „czwarty” (hebr. רְבִיעִי). Ż.: רְבִיעָאָה / רְבִיעָיָה.'}
+],
+v:[
+ ['אָחֳרִי','ʾoḥŏrî','אַחֶרֶת','ʾaḥeret','inna (ż.)','K',''],
+ ['בַּר','bar','שָׂדֶה','śādeh','pole, step','X','Det. בָּרָא; חֵיוַת בָּרָא „zwierzęta polne”. Homonim „syn”.'],
+ ['דּוּר','dûr','יָשַׁב / דּוּר','yāšab / dûr','mieszkać','','Ptc l.mn. דָּאֲרִין.'],
+ ['חֵיוָה','ḥêwâ','חַיָּה','ḥayyâ','zwierzę','','Cstr. חֵיוַת.'],
+ ['נְפַל','nəpal','נָפַל','nāpal','upaść','R','Impf יִפֵּל.'],
+ ['סְגִד','səgid','סָגַד','sāgad','oddać pokłon','R','Impf יִסְגֻּד.'],
+ ['רְבִיעָי','rəbîʿāy','רְבִיעִי','rəbîʿî','czwarty','',''],
+ ['שְׁלֵט','šəlēṭ','שָׁלַט','šālaṭ','panować','R','Impf יִשְׁלַט.'],
+ ['תְּלִיתָי','təlîtāy','שְׁלִישִׁי','šəlîšî','trzeci','T',''],
+ ['אַחֲרֵי','ʾaḥărê','אַחֲרֵי','ʾaḥărê','po, za','',''],
+ ['אֲנַף','ʾănap','אַף / פָּנִים','ʾap / pānîm','twarz','AS','Hebr. אַף < *ʾanp (asymilacja n).'],
+ ['אֶצְבַּע','ʾeṣbaʿ','אֶצְבַּע','ʾeṣbaʿ','palec','','L.mn. אֶצְבְּעָן.'],
+ ['עוֹף','ʿôp','עוֹף','ʿôp','ptactwo','',''],
+ ['פְּלִיג','pəlîg','מְחֻלָּק','məḥullāq','podzielony','','Ptc bierny od פלג.'],
+ ['תְּבִיר','təbîr','שָׁבוּר','šābûr','kruchy, łamliwy','T R',''],
+ ['קַדְמָי','qadmāy','רִאשׁוֹן','riʾšôn','pierwszy','X',''],
+ ['מָרֵא','mārēʾ','אָדוֹן','ʾādôn','pan','X','מָרֵא מַלְכִין „pan królów”.'],
+ ['קְשֹׁט','qəšōṭ','אֱמֶת','ʾĕmet','prawda','','מִן קְשֹׁט „prawdziwie”.']
+],
+s:[
+ ['אֲנַחְנָא דָּאֲרִין בְּבַיִת דִּי דְהַב','Mieszkamy w domu ze złota.','דָּאֲרִין – ptc m. l.mn. od דור (alef kompensuje II rdzeniową); דִּי – materiał.','Greenspahn 16,1'],
+ ['מַלְכָּא יִשְׁלַט עַל מְדִינַת עֲבַר נַהֲרָה','Król będzie panował nad prowincją Zarzecza.','יִשְׁלַט – impf typu a.','Greenspahn 16,2'],
+ ['הִמּוֹ יִסְגְּדוּן לְרֵאשֵׁהּ דִּי צַלְמָא','Oni oddadzą pokłon głowie posągu.','Prolepsa: רֵאשֵׁהּ דִּי צַלְמָא „jego głowie – (tj.) posągu”.','Greenspahn 16,5'],
+ ['וּבָתְרָךְ תְּקוּם מַלְכוּ אָחֳרִי אֲרַע מִנָּךְ','A po tobie powstanie inne królestwo, niższe od ciebie.','אָחֳרִי zgodne w rodzaju z מַלְכוּ (ż.); מִן – stopień wyższy („niższe niż ty”).','Dn 2,39'],
+ ['וּמַלְכוּ רְבִיעָאָה תֶּהֱוֵא תַקִּיפָה כְּפַרְזְלָא','A czwarte królestwo będzie mocne jak żelazo.','רְבִיעָאָה – liczebnik porządkowy ż.; תַקִּיפָה – orzecznik nieokreślony.','Dn 2,40'],
+ ['מִן קְשֹׁט דִּי אֱלָהֲכוֹן הוּא אֱלָהּ אֱלָהִין וּמָרֵא מַלְכִין','Prawdziwie wasz Bóg jest Bogiem bogów i Panem królów.','אֱלָהּ אֱלָהִין – constructus wyrażający stopień najwyższy.','Dn 2,47']
+],
+q:[
+ ['„Ten posąg jest wielki” (orzecznikowo) to…',['צַלְמָא רַבָּא','צַלְמָא רַב','צְלֵם רַב','רַב צְלֵם דְּנָה'],1,'Orzecznik jest nieokreślony.'],
+ ['שְׁמֵהּ דִּי אֱלָהָא to przykład…',['łańcucha constructus','prolepsy (sufiks + דִּי)','zdania względnego','dwóch podmiotów'],1,'Typowo aramejska konstrukcja.'],
+ ['Hebr. שְׁלִישִׁי „trzeci” to w aram.…',['שְׁלִישָׁי','תְּלִיתָי','תְּלָת','תַּלְתִּי'],1,'*ṯ → ת w obu miejscach.'],
+ ['Jak aram. wyraża stopień wyższy?',['przyrostkiem','przyimkiem מִן','podwojeniem','słowem יַתִּיר tylko'],1,'אֲרַע מִנָּךְ „niższe od ciebie”.'],
+ ['Co znaczy בַּר w wyrażeniu חֵיוַת בָּרָא?',['syn','pole','czysty','zboże'],1,'Homonim: „pole, step”.']
+]});
+
+L({id:17, ch:'17', title:'Liczebniki', read:'Dn 3,1–12',
+g:[
+ {h:'Liczebniki główne', t:[['','z rzecz. m.','z rzecz. ż.','Hebrajski (m.)'],['1','חַד','חֲדָה','אֶחָד'],['2','תְּרֵין','תַּרְתֵּין','שְׁנַיִם'],['3','תְּלָתָה','תְּלָת','שְׁלֹשָׁה'],['4','אַרְבְּעָה','אַרְבַּע','אַרְבָּעָה'],['5','חַמְשָׁה','חֲמֵשׁ','חֲמִשָּׁה'],['6','שִׁתָּה','שֵׁת','שִׁשָּׁה'],['7','שִׁבְעָה','שְׁבַע','שִׁבְעָה'],['10','עַשְׂרָה','עֲשַׂר','עֲשָׂרָה'],['12','תְּרֵי עֲשַׂר','—','שְׁנֵים עָשָׂר'],['20','עֶשְׂרִין','','עֶשְׂרִים'],['60','שִׁתִּין','','שִׁשִּׁים'],['100','מְאָה','','מֵאָה'],['200','מָאתַיִן','','מָאתַיִם'],['1000','אֲלַף','','אֶלֶף'],['10 000','רִבּוֹ','','רִבּוֹא']]},
+ {h:'Biegunowość rodzaju', p:'Jak w hebrajskim: liczebniki 3–10 mają „odwrotny” rodzaj – z rzeczownikiem męskim forma z ־ָה (גֻּבְרִין תְּלָתָה „trzech mężczyzn”), z żeńskim forma krótka. Dziesiątki mają końcówkę ־ִין (hebr. ־ִים).'},
+ {h:'Słowa zapożyczone w Dn 3', p:'Lista instrumentów (קַרְנָא, מַשְׁרוֹקִיתָא, קִיתָרֹס, סַבְּכָא, פְּסַנְתֵּרִין, סוּמְפֹּנְיָה) zawiera zapożyczenia greckie, a tytuły urzędników – perskie (אֲחַשְׁדַּרְפְּנַיָּא, סִגְנַיָּא).'}
+],
+v:[
+ ['אַתּוּן','ʾattûn','כִּבְשָׁן','kibšān','piec','LW X','Z akadyjskiego.'],
+ ['זְמָר','zəmār','זֶמֶר','zemer','muzyka','R',''],
+ ['זַן','zan','מִין','mîn','rodzaj','LW','L.mn. זְנֵי „rodzaje”.'],
+ ['יְקַד','yəqad','יָקַד','yāqad','płonąć','R','Ptc ż. det. יָקִדְתָּא.'],
+ ['נוּר','nûr','אֵשׁ','ʾēš','ogień','X','Det. נוּרָא; hebr. נֵר „lampa” – pokrewne.'],
+ ['קֶרֶן','qeren','קֶרֶן','qeren','róg','','Det. קַרְנָא.'],
+ ['יִתְרְמֵא','yitrəmēʾ','יֻשְׁלַךְ','yušlak','zostanie wrzucony','X','Gt impf od רמה.'],
+ ['שְׁמַע','šəmaʿ','שָׁמַע','šāmaʿ','słyszeć','R',''],
+ ['חֲיָה','ḥăyâ','חָיָה','ḥāyâ','żyć','R','Imv חֱיִי „żyj!”.'],
+ ['חַיִל','ḥayil','חַיִל','ḥayil','siła; wojsko','',''],
+ ['כְּדִי','kədî','כַּאֲשֶׁר','kaʾăšer','gdy','',''],
+ ['כְּנַשׁ','kənaš','כָּנַס','kānas','gromadzić','','Dt ptc מִתְכַּנְּשִׁין.'],
+ ['כָּרוֹז','kārôz','מַכְרִיז','makrîz','herold','LW','Prawdopodobnie z greckiego κῆρυξ.'],
+ ['סְגַן','səgan','סֶגֶן','segen','prefekt','LW',''],
+ ['קָאְמִין','qāʾmîn','קָמִים','qāmîm','stojący','','G ptc l.mn. od קום (alef kompensuje).'],
+ ['שַׁעֲתָא','šaʿătā','רֶגַע','regaʿ','chwila (det.)','X','בַּהּ שַׁעֲתָא „w tej chwili”.'],
+ ['תְּלָת','təlāt','שָׁלֹשׁ','šālōš','trzy (ż.)','T K R',''],
+ ['אַרְבַּע','ʾarbaʿ','אַרְבַּע','ʾarbaʿ','cztery (ż.)','P','Rdzeń רבע (por. רְבִיעָי).'],
+ ['שִׁתִּין','šittîn','שִׁשִּׁים','šiššîm','sześćdziesiąt','T NM',''],
+ ['מְאָה','məʾâ','מֵאָה','mēʾâ','sto','',''],
+ ['אֲלַף','ʾălap','אֶלֶף','ʾelep','tysiąc','S',''],
+ ['עֲשַׂר','ʿăśar','עֶשֶׂר','ʿeśer','dziesięć (ż.)','S','']
+],
+s:[
+ ['נְבוּכַדְנֶצַּר מַלְכָּא עֲבַד צְלֵם דִּי דְהַב רוּמֵהּ אַמִּין שִׁתִּין פְּתָיֵהּ אַמִּין שִׁת','Król Nabuchodonozor zrobił posąg ze złota: jego wysokość – sześćdziesiąt łokci, jego szerokość – sześć łokci.','Zdania imienne bez łącznika; liczebnik po rzeczowniku אַמִּין.','Dn 3,1'],
+ ['בְּעִדָּנָא דִּי תִשְׁמְעוּן קָל קַרְנָא','W chwili, gdy usłyszycie dźwięk rogu…','תִשְׁמְעוּן – G impf 2 m. l.mn.; קָל קַרְנָא – constructus.','Dn 3,5'],
+ ['תִּפְּלוּן וְתִסְגְּדוּן לְצֶלֶם דַּהֲבָא','…padniecie i oddacie pokłon złotemu posągowi.','תִּפְּלוּן < *tinpəlûn – asymilacja nun.','Dn 3,5'],
+ ['וּמַן דִּי לָא יִפֵּל וְיִסְגֻּד בַּהּ שַׁעֲתָא יִתְרְמֵא לְגוֹא אַתּוּן נוּרָא יָקִדְתָּא','A kto nie upadnie i nie odda pokłonu, w tej chwili zostanie wrzucony do pieca płonącego ognia.','מַן דִּי „kto(kolwiek)”; casus pendens; יִתְרְמֵא – Gt impf.','Dn 3,6'],
+ ['אִיתַי גֻּבְרִין יְהוּדָאִין לֵאלָהָיךְ לָא פָלְחִין','Są mężowie judejscy… twoim bogom nie służą.','לֵאלָהָיךְ – dopełnienie z לְ na początku (wysunięte); פָלְחִין – ptc.','Dn 3,12'],
+ ['גֻּבְרִין תְּלָתָה אֲזַלוּ לְהֵיכְלָא','Trzech mężczyzn poszło do pałacu.','תְּלָתָה – forma „żeńska” z rzeczownikiem męskim (biegunowość).','Greenspahn 17']
+],
+q:[
+ ['„Trzech mężczyzn” to…',['גֻּבְרִין תְּלָת','גֻּבְרִין תְּלָתָה','תְּלָת גְּבַר','גֻּבְרִין תְּלִיתָי'],1,'Biegunowość rodzaju: z m. forma z -ā.'],
+ ['Hebr. שָׁלֹשׁ po aram. to תְּלָת. Ile procesów widać?',['jeden','dwa','trzy','żaden'],2,'*ṯ → ת (dwa razy), brak ā > ō, redukcja pretoniczna.'],
+ ['Co znaczy נוּר?',['lampa','ogień','światło','piec'],1,'Hebr. אֵשׁ.'],
+ ['Dziesiątki w aram. kończą się na…',['־ִים','־ִין','־וֹת','־ָא'],1,'עֶשְׂרִין, שִׁתִּין.'],
+ ['יִתְרְמֵא to…',['G impf','Gt impf','H pf','D ptc'],1,'Prefiks yit-: Gt.']
+]});
+
+/* Lekcje 18–26 */
+L({id:18, ch:'18', title:'G imperatyw i bezokolicznik', read:'Dn 3,13–23',
+g:[
+ {h:'Tryb rozkazujący', t:[['','Aramejski','Hebrajski'],['m. l.poj.','כְּתֻב','כְּתֹב'],['ż. l.poj.','כְּתֻבִי','כִּתְבִי'],['m. l.mn.','כְּתֻבוּ','כִּתְבוּ'],['ż. l.mn.','כְּתֻבָה','כְּתֹבְנָה']]},
+ {h:'Bezokolicznik z מ־', p:'Bezokolicznik G ma prefiks מ־: מִכְתַּב, zwykle z לְ: לְמִכְתַּב „aby pisać” (hebr. לִכְתֹּב). Od III-h: לְמִבְנֵא „budować”. W koniugacjach pochodnych bezokolicznik kończy się na ־ָה / ־ָא: D לְבַטָּלָה, H לְהַחֲוָיָה, i nie ma מ־.'},
+ {h:'Słabe czasowniki w imperatywie', p:'I-n i I-y tracą pierwszą spółgłoskę: נפק → פֻּק, l.mn. פֻּקוּ „wyjdźcie!” (hebr. צְאוּ). I-ʾ zachowuje alef: אֱמַר, אֱזַל. Od אתה: אֱתוֹ „przyjdźcie!”.'},
+ {h:'Šafʿel: שֵׁיזִב „ocalić”', p:'Czasownik pochodzenia akadyjskiego (ušēzib). Odmienia się jak czterospółgłoskowy: impf יְשֵׁיזִב, z sufiksem יְשֵׁיזְבִנְכוֹן „wybawi was”, bezok. שֵׁיזָבָה.'}
+],
+v:[
+ ['אֲזָה','ʾăzâ','הִסִּיק','hissîq','rozpalić (piec)','X','G bezok. לְמֵזֵא; ptc bierny אֵזֵה.'],
+ ['הֵיתָיוּ','hêtāyû','הוּבְאוּ','hûbəʾû','zostali przyprowadzeni','X','H pf bierny od אתה; bezok. לְהַיְתָיָה.'],
+ ['יַתִּיר','yattîr','יוֹתֵר','yôtēr','nadzwyczajny; bardzo','',''],
+ ['כַּפֵּת','kappēt','כָּפַת','kāpat','związać (D)','','Bezok. לְכַפָּתָה; ptc bierny מְכַפְּתִין.'],
+ ['עֲתִיד','ʿătîd','עָתִיד','ʿātîd','gotowy','R',''],
+ ['קַטֵּל','qaṭṭēl','הָרַג','hārag','zabijać (D)','X','Hebr. קָטַל – rzadkie (Hi, Ps).'],
+ ['שֵׁיזִב','šêzib','הִצִּיל','hiṣṣîl','ocalić, wybawić (Š)','LW X','Z akadyjskiego.'],
+ ['שָׁעָה','šāʿâ','רֶגַע','regaʿ','chwila','X',''],
+ ['חֲזֵה','ḥăzēh','רָאוּי','rāʾûy','właściwy, stosowny','','G ptc bierny od חזה.'],
+ ['הַצְדָּא','haṣdāʾ','הַאֻמְנָם','haʾumnām','czy to prawda?','','Partykuła הֲ + צְדָא.'],
+ ['הַסִּקוּ','hassiqû','הֶעֱלוּ','heʿĕlû','wynieśli','X','H pf od סלק (asymilacja l).'],
+ ['רְגַז','rəgaz','רֹגֶז','rōgez','gniew','S',''],
+ ['שִׁבְעָה','šibʿâ','שִׁבְעָה','šibʿâ','siedem','','חַד שִׁבְעָה „siedmiokrotnie”.'],
+ ['פֻּקוּ','puqû','צְאוּ','ṣəʾû','wyjdźcie!','X','G imv m. l.mn. od נפק.'],
+ ['אֱתוֹ','ʾĕtô','בֹּאוּ','bōʾû','przyjdźcie!','X','G imv m. l.mn. od אתה.'],
+ ['לְמִכְתַּב','ləmiktab','לִכְתֹּב','liktōb','pisać (bezok.)','',''],
+ ['כְּתֻבוּ','kətubû','כִּתְבוּ','kitbû','piszcie!','','']
+],
+s:[
+ ['הַצְדָּא שַׁדְרַךְ מֵישַׁךְ וַעֲבֵד נְגוֹ לֵאלָהַי לָא אִיתֵיכוֹן פָּלְחִין','Czy to prawda, Szadraku, Meszaku i Abed-Nego, że moim bogom nie służycie?','אִיתֵיכוֹן – אִיתַי + suf. 2 m. l.mn. + ptc = „wy nie jesteście służącymi”.','Dn 3,14'],
+ ['וּמַן הוּא אֱלָהּ דִּי יְשֵׁיזְבִנְכוֹן מִן יְדָי','A któż jest tym bogiem, który was wybawi z moich rąk?','יְשֵׁיזְבִנְכוֹן – Š impf + nun energicum + suf. 2 m. l.mn.','Dn 3,15'],
+ ['הֵן אִיתַי אֱלָהַנָא דִּי אֲנַחְנָא פָלְחִין יָכִל לְשֵׁיזָבוּתַנָא','Jeśli nasz Bóg, któremu służymy, może nas wybawić…','לְשֵׁיזָבוּתַנָא – bezok. Š z sufiksem 1 l.mn.','Dn 3,17'],
+ ['עָנֵה וְאָמַר לְמֵזֵא לְאַתּוּנָא חַד שִׁבְעָה עַל דִּי חֲזֵה לְמֵזְיֵהּ','Odpowiedział i kazał rozpalić piec siedem razy mocniej, niż należało go rozpalać.','לְמֵזֵא – G bezok. od אזה (I-ʾ: מֵ־ < *maʾ-).','Dn 3,19'],
+ ['אֲמַר לְכַפָּתָה לְשַׁדְרַךְ מֵישַׁךְ וַעֲבֵד נְגוֹ לְמִרְמֵא לְאַתּוּן נוּרָא יָקִדְתָּא','Rozkazał związać Szadraka, Meszaka i Abed-Nego, aby wrzucić ich do pieca płonącego ognia.','לְכַפָּתָה – D bezok. (bez מ־); לְמִרְמֵא – G bezok. (z מ־).','Dn 3,20'],
+ ['כְּתֻבוּ אִגַּרְתָּא לְמַלְכָּא','Napiszcie list do króla!','כְּתֻבוּ – G imv m. l.mn.','Greenspahn 18'],
+ ['פֻּקוּ וֶאֱתוֹ','Wyjdźcie i przyjdźcie!','I-n traci nun w imperatywie; אֱתוֹ od אתה.','Dn 3,26']
+],
+q:[
+ ['Bezokolicznik G w aramejskim ma prefiks…',['לְ tylko','מ־ (zwykle z לְ)','הַ־','תִּ־'],1,'לְמִכְתַּב.'],
+ ['פֻּקוּ to…',['G imv m. l.mn. od נפק','G pf 3 m. l.mn.','H imv','ptc bierny'],0,'Nun odpada w imperatywie.'],
+ ['Bezokolicznik D לְכַפָּתָה ma…',['prefiks מ־','końcówkę ־ָה i brak מ־','sufiks zaimkowy','prefiks ה־'],1,'Wzór qaṭṭālā.'],
+ ['שֵׁיזִב należy do koniugacji…',['H','Š (šafʿel)','Dt','G'],1,'Zapożyczenie akadyjskie.'],
+ ['Co znaczy הַצְדָּא?',['dlaczego?','czy to prawda?','gdzie?','kto?'],1,'']
+]});
+
+L({id:19, ch:'19', title:'Koniugacja D – paʿʿel (qaṭṭēl)', read:'Dn 3,24–33',
+g:[
+ {h:'Paradygmat D', t:[['Forma','Aramejski','Hebrajski (piʿel)'],['pf 3 m. l.poj.','כַּתֵּב','כִּתֵּב'],['pf 3 m. l.mn.','כַּתִּבוּ','כִּתְּבוּ'],['impf 3 m. l.poj.','יְכַתֵּב','יְכַתֵּב'],['impf 3 m. l.mn.','יְכַתְּבוּן','יְכַתְּבוּ'],['ptc czynny','מְכַתֵּב','מְכַתֵּב'],['ptc bierny','מְכַתַּב','מְכֻתָּב (puʿal)'],['imv m. l.poj.','כַּתֵּב','כַּתֵּב'],['bezok.','כַּתָּבָה','כַּתֵּב']]},
+ {h:'Cechy', p:'Podwojona druga spółgłoska rdzenia (dagesz forte). W perfectum aram. ma a w pierwszej sylabie (qaṭṭēl), hebr. – i (qiṭṭēl, wtórne). Imperfectum i imiesłów prawie jak w hebrajskim. Gardłowe i ר nie przyjmują dagesza: בָּרֵךְ zamiast *barrēk (wydłużenie zastępcze).'},
+ {h:'Znaczenie', p:'D nadaje znaczenie przechodnie lub intensywne: G בְּטֵל „ustać” → D בַּטֵּל „wstrzymać”; G קְטַל → D קַטֵּל „zabijać (wielu)”. Często czasowniki występują tylko w D: מַלֵּל „mówić”, שַׁבַּח „wysławiać”, קַבֵּל „przyjąć”.'},
+ {h:'Ptc bierny D', p:'מְכַפְּתִין „związani”, מְבָרַךְ „błogosławiony” – mem + wzór qaṭṭal. Hebr. odpowiednik to imiesłów puʿal (מְבֹרָךְ).'}
+],
+v:[
+ ['גְּשֵׁם','gəšēm','גּוּף','gûp','ciało','F','Hebr. גֶּשֶׁם = deszcz!'],
+ ['דָּר','dār','דּוֹר','dôr','pokolenie','K','עִם דָּר וְדָר „z pokolenia na pokolenie”.'],
+ ['חֲבָל','ḥăbāl','חֶבֶל','ḥebel','szkoda','',''],
+ ['יַצִּיב','yaṣṣîb','נָכוֹן','nākôn','pewny, prawdziwy','','Przysłówkowo „na pewno”.'],
+ ['כְּמָה','kəmâ','כַּמָּה','kammâ','jak (bardzo)!','R',''],
+ ['שְׂגָא','śəgāʾ','רָבָה','rābâ','rosnąć, mnożyć się','X','שְׁלָמְכוֹן יִשְׂגֵּא „pokój wasz niech się pomnoży”.'],
+ ['שָׁלְטָן','šolṭān','שִׁלְטוֹן','šilṭôn','władza, panowanie','K',''],
+ ['שְׁרַיִן','šərayin','מֻתָּרִים','muttārîm','rozwiązani','','G ptc bierny l.mn. od שׁרה.'],
+ ['אָת','ʾāt','אוֹת','ʾôt','znak','K','L.mn. + suf. אָתוֹהִי.'],
+ ['בָּרֵךְ','bārēk','בֵּרַךְ','bērak','błogosławić (D)','','ר nie przyjmuje dagesza: wydłużenie zastępcze.'],
+ ['דְּמֵה','dəmēh','דּוֹמֶה','dômeh','podobny (ptc)','',''],
+ ['הָא','hāʾ','הִנֵּה','hinnēh','oto','',''],
+ ['הִתְחָרַךְ','hitḥārak','נֶחֱרַךְ','neḥĕrak','został przypalony','','Dt pf od חרך.'],
+ ['מַלְאַךְ','malʾak','מַלְאָךְ','malʾāk','anioł, posłaniec','','Z suf. מַלְאֲכֵהּ.'],
+ ['הַצְלַח','haṣlaḥ','הִצְלִיחַ','hiṣlîaḥ','dał powodzenie','','H pf od צלח.'],
+ ['שָׁלוּ','šālû','שַׁלְוָה','šalwâ','zaniedbanie','',''],
+ ['תְּלָתָה','təlātâ','שְׁלֹשָׁה','šəlōšâ','trzech (z rz. m.)','T R',''],
+ ['מְכַפְּתִין','məkappətîn','כְּפוּתִים','kəpûtîm','związani','','D ptc bierny m. l.mn.']
+],
+s:[
+ ['הֲלָא גֻבְרִין תְּלָתָה רְמֵינָא לְגוֹא נוּרָא מְכַפְּתִין','Czyż nie trzech mężów wrzuciliśmy związanych w środek ognia?','רְמֵינָא – G pf 1 l.mn. od רמה (III-h); מְכַפְּתִין – D ptc bierny.','Dn 3,24'],
+ ['הָא אֲנָה חָזֵה גֻּבְרִין אַרְבְּעָה שְׁרַיִן מַהְלְכִין בְּגוֹא נוּרָא','Oto ja widzę czterech mężów rozwiązanych, przechadzających się pośród ognia.','מַהְלְכִין – H ptc od הלך; שְׁרַיִן – G ptc bierny.','Dn 3,25'],
+ ['וַחֲבָל לָא אִיתַי בְּהוֹן','I nie ma na nich żadnej szkody.','Dopełnienie wysunięte przed לָא אִיתַי.','Dn 3,25'],
+ ['בְּרִיךְ אֱלָהֲהוֹן דִּי שַׁדְרַךְ מֵישַׁךְ וַעֲבֵד נְגוֹ דִּי שְׁלַח מַלְאֲכֵהּ וְשֵׁיזִב לְעַבְדוֹהִי','Błogosławiony Bóg Szadraka, Meszaka i Abed-Nego, który posłał swego anioła i wybawił swoje sługi.','בְּרִיךְ – G ptc bierny; prolepsa אֱלָהֲהוֹן דִּי…','Dn 3,28'],
+ ['אָתוֹהִי כְּמָה רַבְרְבִין וְתִמְהוֹהִי כְּמָה תַקִּיפִין','Jego znaki – jakże wielkie, a jego cuda – jakże potężne!','רַבְרְבִין – reduplikowana l.mn. od רַב; כְּמָה wykrzyknikowe.','Dn 3,33'],
+ ['מַלְכוּתֵהּ מַלְכוּת עָלַם וְשָׁלְטָנֵהּ עִם דָּר וְדָר','Jego królestwo jest królestwem wiecznym, a jego władza – z pokolenia na pokolenie.','Zdania imienne; מַלְכוּת עָלַם – constructus.','Dn 3,33']
+],
+q:[
+ ['Pf D 3 m. l.poj. od כתב to…',['כִּתֵּב','כַּתֵּב','כְּתַב','הַכְתֵּב'],1,'Aram. a w pierwszej sylabie; hebr. כִּתֵּב.'],
+ ['Dlaczego בָּרֵךְ nie ma dagesza w ר?',['bo to G','ר nie przyjmuje podwojenia – wydłużenie zastępcze','bo to zapożyczenie','błąd w tekście'],1,'Jak w hebr. בֵּרַךְ.'],
+ ['Ptc bierny D ma wzór…',['qətîl','məqaṭṭal','haqṭēl','qāṭēl'],1,'מְכַפְּתִין, מְבָרַךְ.'],
+ ['Aram. גְּשֵׁם znaczy…',['deszcz','ciało','kość','siła'],1,'Fałszywy przyjaciel.'],
+ ['Bezokolicznik D od בטל to…',['מִבְטַל','בַּטָּלָה','לְהַבְטָלָה','בְּטֵל'],1,'Wzór qaṭṭālā.']
+]});
+
+L({id:20, ch:'20', title:'Koniugacja H – hafʿel / ʾafʿel', read:'Dn 4,1–9',
+g:[
+ {h:'Paradygmat H', t:[['Forma','Aramejski','Hebrajski (hifʿil)'],['pf 3 m. l.poj.','הַכְתֵּב','הִכְתִּיב'],['pf 3 m. l.mn.','הַכְתִּבוּ','הִכְתִּיבוּ'],['impf 3 m. l.poj.','יְהַכְתֵּב','יַכְתִּיב'],['ptc','מְהַכְתֵּב','מַכְתִּיב'],['imv','הַכְתֵּב','הַכְתֵּב'],['bezok.','הַכְתָּבָה','הַכְתִּיב']]},
+ {h:'Zachowane ה', p:'W imperfectum i imiesłowie aramejski biblijny zwykle zachowuje ה po prefiksie (יְהַשְׁנֵא, מְהַקְרְבִין); w hebrajskim ה zanikło (*yəhaqṭīl > יַקְטִיל). Aram. ma ē (haqṭēl), hebr. ī (hiqṭîl).'},
+ {h:'H i ʾA', p:'Z czasem ה osłabło i zostało zastąpione przez א: koniugacja ʾafʿel (A). W aramejskim biblijnym obie formy występują obok siebie (הַשְׁכַּח i אַשְׁכַּח), w późniejszych dialektach przeważa A.'},
+ {h:'Dysymilacja nosowa', p:'W formach H pojawia się czasem wtórne n zamiast podwojenia: הַנְעֵל „wprowadził” (od עלל), הַנְפֵּק „wyniósł” (od נפק – nun zachowany). W hebr. odpowiednio הֵבִיא, הוֹצִיא.'}
+],
+v:[
+ ['אִילָן','ʾîlān','עֵץ','ʿēṣ','drzewo','X','Det. אִילָנָא.'],
+ ['אֲלוּ','ʾălû','הִנֵּה','hinnēh','oto','X','Także אֲרוּ.'],
+ ['בַּהֵל','bahhēl','בִּהֵל','bihhēl','przestraszyć, przerazić (D)','','יְבַהֲלֻנַּנִי „przerażają mnie”.'],
+ ['דְּחַל','dəḥal','יָרֵא','yārēʾ','bać się','D X','D „przestraszyć”. Pokrewne hebr. זָחַל (Hi 32,6).'],
+ ['חַרְטֹם','ḥarṭōm','חַרְטֹם','ḥarṭōm','mag, wróżbita','LW','Z egipskiego.'],
+ ['עֳפִי','ʿŏpî','עֳפִי','ʿŏpî','listowie','',''],
+ ['קַדִּישׁ','qaddîš','קָדוֹשׁ','qādôš','święty','',''],
+ ['רְבָה','rəbâ','רָבָה','rābâ','rosnąć','R',''],
+ ['רוּחַ','rûaḥ','רוּחַ','rûaḥ','duch, wiatr','',''],
+ ['אָחֳרֵין','ʾoḥŏrên','אַחֲרוֹן','ʾaḥărôn','ostatni','K','עַד אָחֳרֵין „w końcu”.'],
+ ['אֲנַס','ʾănas','אָנַס','ʾānas','ciążyć, trapić','',''],
+ ['חֱזוּ','ḥĕzû','חָזוֹן','ḥāzôn','widzenie','',''],
+ ['תַּטְלֵל','taṭlēl','תָּצֵל','tāṣēl','szuka cienia','TT','H impf od טלל; hebr. צֵל „cień” (*ẓ).'],
+ ['מָזוֹן','māzôn','מָזוֹן','māzôn','pokarm','',''],
+ ['מְטָא','məṭāʾ','מָצָא / הִגִּיעַ','māṣāʾ / higgîaʿ','dosięgnąć, przyjść','TT X',''],
+ ['הַנְעָלָה','hanʿālâ','הָבִיא','hābîʾ','wprowadzić (H bezok.)','DS','Od עלל z dysymilacją nosową.'],
+ ['עֲנַף','ʿănap','עָנָף','ʿānāp','gałąź','R',''],
+ ['צִפַּר','ṣippar','צִפּוֹר','ṣippôr','ptak','K','L.mn. צִפֲּרִין.'],
+ ['רוּם','rûm','רוּם','rûm','wysokość','',''],
+ ['שַׁפִּיר','šappîr','יָפֶה','yāpeh','piękny','X','Hebr. שָׁפִיר – rzadkie.'],
+ ['הַנְפֵּק','hanpēq','הוֹצִיא','hôṣîʾ','wyniósł, wyprowadził','X','H pf od נפק (nun zachowany).']
+],
+s:[
+ ['חֵלֶם חֲזֵית וִידַחֲלִנַּנִי','Ujrzałem sen, który mnie przeraził.','חֲזֵית – G pf 1 l.poj. od חזה (III-h); יְדַחֲלִנַּנִי – D impf + suf. 1 l.poj.','Dn 4,2'],
+ ['וְחֶזְוֵי רֵאשִׁי יְבַהֲלֻנַּנִי','A widzenia mojej głowy mnie przerażały.','חֶזְוֵי – cstr. l.mn.; יְבַהֲלֻנַּנִי – D impf 3 m. l.mn. + suf.','Dn 4,2'],
+ ['וּמִנִּי שִׂים טְעֵם לְהַנְעָלָה קָדָמַי לְכֹל חַכִּימֵי בָבֶל','Przeze mnie został wydany rozkaz, by wprowadzić przede mnie wszystkich mędrców Babilonu.','לְהַנְעָלָה – H bezok. od עלל (nun!); קָדָמַי – przyimek + suf. 1 l.poj.','Dn 4,3'],
+ ['וַאֲלוּ אִילָן בְּגוֹא אַרְעָא וְרוּמֵהּ שַׂגִּיא','A oto drzewo pośrodku ziemi, a jego wysokość ogromna.','Zdanie imienne z אֲלוּ „oto”.','Dn 4,7'],
+ ['עָפְיֵהּ שַׁפִּיר וְאִנְבֵּהּ שַׂגִּיא','Jego listowie piękne, a jego owoc obfity.','Rzeczownik + suf. 3 m. l.poj.; orzecznik nieokreślony.','Dn 4,9'],
+ ['תְּחֹתוֹהִי תַּטְלֵל חֵיוַת בָּרָא','Pod nim szukały cienia zwierzęta polne.','תְּחֹתוֹהִי – przyimek z suf. „l.mn.”; תַּטְלֵל – H impf (bez ה).','Dn 4,9'],
+ ['מַלְכָּא הַנְפֵּק מָאנַיָּא מִן הֵיכְלָא','Król wyniósł naczynia ze świątyni.','הַנְפֵּק – H pf (przyczynowe do נְפַק „wyjść”).','Greenspahn 20']
+],
+q:[
+ ['Pf H 3 m. l.poj. od כתב to…',['הִכְתִּיב','הַכְתֵּב','אַכְתֵּב','מְהַכְתֵּב'],1,'Aram. haqṭēl; אַכְתֵּב to ʾafʿel.'],
+ ['Czym różni się aram. impf H od hebr.?',['nie ma prefiksu','zwykle zachowuje ה po prefiksie','ma podwojoną 2. spółgłoskę','ma końcówkę -ā'],1,'יְהַשְׁנֵא wobec hebr. יַשְׁנֶה.'],
+ ['Skąd n w הַנְעָלָה (od עלל)?',['nun rdzenia','dysymilacja nosowa','sufiks','zapożyczenie'],1,'Zamiast podwojenia.'],
+ ['Hebr. קָדוֹשׁ to w aram.…',['קָדוֹשׁ','קַדִּישׁ','קְדָשׁ','קֹדֶשׁ'],1,'Inny wzór (qaṭṭîl).'],
+ ['Koniugacja ʾafʿel różni się od hafʿel…',['znaczeniem','prefiksem א zamiast ה','podwojeniem','końcówkami'],1,'H > ʾA – osłabienie ה.']
+]});
+
+L({id:21, ch:'21', title:'Czasowniki słabe', read:'Dn 4,10–19',
+g:[
+ {h:'Gardłowe i ר', p:'Wolą samogłoskę a zamiast i/e; zamiast szwy prostej przyjmują chatef; nie przyjmują dagesza (wydłużenie zastępcze); po i/ē z mater lectionis pojawia się patach furtivum (יְדִיעַ).'},
+ {h:'I-n', p:'Nun asymiluje się, gdy ma szwę spoczywającą: יִפֵּל < *yinpēl. Imperatyw traci nun (פֻּק). Ale często zachodzi wtórna dysymilacja nosowa i nun pozostaje: יִנְתְּנוּן, הַנְפֵּק. Ta sama dysymilacja tworzy n w czasownikach bez nun: יִנְדַּע (od ידע), מַנְדַּע „rozum”.'},
+ {h:'I-y i I-ʾ', p:'Prefiks + jod: asymilacja (יִנְדְּעוּן z dysymilacją) albo mater lectionis (יֵיטַב). W H jod przechodzi w waw: הוֹדַע (hebr. הוֹדִיעַ). Imperatyw bez jod (הַב „daj”). I-ʾ może przejść w jod (אֲתָה → הַיְתִי) lub stać się mater lectionis (יֵאמַר).'},
+ {h:'Puste (II-w/y) i geminowane', p:'Puste mają budowę CVC: brak samogłoski rdzeniowej w G pf (קָם), obecna w impf (יְקוּם). Ptc: alef w miejscu II (קָאֵם). Geminowane bywają mocne (גֹּדּוּ) albo upodobnione (עַל < *ʿalal).'},
+ {h:'III-h (III-y)', p:'W istocie CCV: dwie spółgłoski + samogłoska (najczęściej i), dlatego jod jako mater lectionis; ה na końcu to tylko znak dla ā. Końcówki: pf בְּנָה, 1 l.poj. בְּנֵית, 3 m. l.mn. בְּנוֹ; impf יִבְנֵא; ptc בָּנֵה, l.mn. בָּנַיִן.'}
+],
+v:[
+ ['גֹּדּוּ','goddû','גִּדְעוּ','gidʿû','zetnijcie!','','G imv m. l.mn. od גדד (geminowany).'],
+ ['טַל','ṭal','טַל','ṭal','rosa','',''],
+ ['כְּהַל','kəhal','יָכֹל','yākōl','móc','','Wariant יכל; ptc כָּהֲלִין.'],
+ ['לְבַב','ləbab','לֵבָב','lēbāb','serce','R',''],
+ ['נְחִת','nəḥit','יוֹרֵד','yôrēd','schodzący (ptc)','X','G ptc od נחת.'],
+ ['עִלָּי','ʿillāy','עֶלְיוֹן','ʿelyôn','Najwyższy','','Det. עִלָּאָה / עִלָּיָא.'],
+ ['צְבָה','ṣəbâ','חָפֵץ','ḥāpēṣ','chcieć','X','Impf יִצְבֵּא.'],
+ ['יִצְטַבַּע','yiṣṭabbaʿ','יִטָּבֵל','yiṭṭābēl','zostanie zwilżony','','Dt od צבע: metateza (ת־צ) i ת > ט.'],
+ ['אֶשְׁתּוֹמַם','ʾeštômam','הִשְׁתּוֹמֵם','hištômēm','był zdumiony','','ʾItpolel od שׁמם.'],
+ ['שְׁרֹשׁ','šərōš','שֹׁרֶשׁ','šōreš','korzeń','','L.mn. + suf. שָׁרְשׁוֹהִי.'],
+ ['עַד דִּבְרַת דִּי','ʿad dibrat dî','לְמַעַן','ləmaʿan','aby, tak aby','',''],
+ ['חַי','ḥay','חַי','ḥay','żywy','','L.mn. det. חַיַּיָּא.'],
+ ['יִתְיְהִב','yityəhib','יִנָּתֵן','yinnātēn','zostanie dany','','Gt impf od יהב.'],
+ ['נוּד','nûd','נוּד','nûd','uciekać','',''],
+ ['עִיר','ʿîr','—','—','czuwający (anioł)','','Hebr. עִיר = miasto – fałszywy przyjaciel.'],
+ ['רְבוּ','rəbû','גְּדֻלָּה','gədullâ','wielkość','',''],
+ ['יִנְדְּעוּן','yindəʿûn','יֵדְעוּ','yēdəʿû','poznają','DS','G impf od ידע z dysymilacją nosową.'],
+ ['יִתְּנִנַּהּ','yittəninnah','יִתְּנֶנָּה','yittənennâ','da ją','','G impf od נתן + nun energicum + suf. 3 ż.']
+],
+s:[
+ ['וַאֲלוּ עִיר וְקַדִּישׁ מִן שְׁמַיָּא נָחִת','A oto czuwający i święty zstępował z nieba.','נָחִת – G ptc od נחת (wariant z i).','Dn 4,10'],
+ ['קָרֵא בְחַיִל וְכֵן אָמַר גֹּדּוּ אִילָנָא וְקַצִּצוּ עַנְפוֹהִי','Wołał z mocą i tak mówił: Zetnijcie drzewo i obetnijcie jego gałęzie.','גֹּדּוּ – G imv geminowanego; קַצִּצוּ – D imv.','Dn 4,11'],
+ ['בְּרַם עִקַּר שָׁרְשׁוֹהִי בְּאַרְעָא שְׁבֻקוּ','Ale pień jego korzeni zostawcie w ziemi.','Dopełnienie wysunięte przed czasownik.','Dn 4,12'],
+ ['וּבְטַל שְׁמַיָּא יִצְטַבַּע','I rosą nieba niech będzie zwilżony.','יִצְטַבַּע – Dt z metatezą i emfatyzacją ת > ט po צ.','Dn 4,12'],
+ ['לִבְבֵהּ מִן אֲנָשָׁא יְשַׁנּוֹן וּלְבַב חֵיוָה יִתְיְהִב לֵהּ','Jego serce z ludzkiego niech zmienią, a serce zwierzęcia niech mu będzie dane.','יְשַׁנּוֹן – D impf III-h; יִתְיְהִב – Gt impf.','Dn 4,13'],
+ ['עַד דִּבְרַת דִּי יִנְדְּעוּן חַיַּיָּא דִּי שַׁלִּיט עִלָּיָא בְּמַלְכוּת אֲנָשָׁא','Aby żyjący poznali, że Najwyższy panuje nad królestwem ludzkim…','יִנְדְּעוּן – dysymilacja nosowa w I-y.','Dn 4,14'],
+ ['וּלְמַן דִּי יִצְבֵּא יִתְּנִנַּהּ','…i komu zechce, temu je daje.','יִצְבֵּא – G impf III-h; יִתְּנִנַּהּ – impf od נתן z nun energicum.','Dn 4,14']
+],
+q:[
+ ['Skąd n w יִנְדְּעוּן (od ידע)?',['nun rdzenia','wtórna dysymilacja nosowa','nun energicum','sufiks l.mn.'],1,'Podwojenie zastąpione przez n + spółgłoskę.'],
+ ['Imperatyw od נפק to…',['נְפֻק','פֻּק','הַנְפֵּק','אֱפֻק'],1,'I-n traci nun.'],
+ ['W czasownikach III-h końcowe ה to…',['spółgłoska rdzenia','mater lectionis dla ā','sufiks 3 ż.','rodzajnik'],1,'Rdzeń ma budowę CCV.'],
+ ['יִצְטַבַּע pokazuje…',['asymilację nun','metatezę ת z syczącą i ת > ט','dysymilację','nunację'],1,'*yitṣabbaʿ > yiṣṭabbaʿ.'],
+ ['Aram. עִיר w Dn 4 znaczy…',['miasto','czuwający (anioł)','osioł','wróg'],1,'Fałszywy przyjaciel wobec hebr. עִיר „miasto”.'],
+ ['H od ידע to…',['הַיְדַע','הוֹדַע','הַדַּע','הֵידַע'],1,'Jod przechodzi w waw.']
+]});
+
+L({id:22, ch:'22', title:'Osobliwości niektórych czasowników', read:'Dn 4,20–34',
+g:[
+ {h:'הוה „być”', p:'Czasownik III-h (waw jest spółgłoską, nie mater lectionis). Imperfectum z prefiksem ל־ zamiast י־: לֶהֱוֵא, לֶהֱוֹן (3 os.); תֶּהֱוֵא (2/3 ż.). Ta sama osobliwość wraca w późniejszych dialektach (syryjski, mandajski, rabiniczny). Często służy jako spójka i tworzy perifrazę z imiesłowem: הֲוֵית חָזֵה „patrzyłem”.'},
+ {h:'הלך „iść”', p:'G pf zastępuje אזל. Imiesłowy występują w D i H (מְהַלְּכִין, מַהְלְכִין „chodzący”), a impf i bezok. w G: יְהָךְ, לִמְהָךְ – lamed zanika bez śladu (jakby od הוך).'},
+ {h:'יכל „móc”', p:'W impf jod asymiluje się (יִכֻּל) albo przechodzi w waw (יוּכַל). Ptc regularne (יָכִל), ale istnieje wariant כהל (כָּהֲלִין).'},
+ {h:'סלק i עלל', p:'סלק „wejść”: w H lamed asymiluje się do ס (הַסִּקוּ), a w bezok. H pojawia się dysymilacja (לְהַנְסָקָה). עלל „wejść”: G pf עַל; H הַנְעֵל lub הַעֵל (z wirtualnym podwojeniem).'}
+],
+v:[
+ ['חַיִל','ḥayil','חַיִל','ḥayil','siła, wojsko','',''],
+ ['טְרַד','ṭərad','גֵּרֵשׁ','gērēš','wypędzić','X','Hebr. טָרַד „ciągły”.'],
+ ['מְדוֹר','mədôr','מָעוֹן','māʿôn','mieszkanie','','Od דור.'],
+ ['נְטַל','nəṭal','נָשָׂא','nāśāʾ','podnieść','X','Hebr. נָטַל – późne.'],
+ ['עֲדָה','ʿădâ','עָבַר','ʿābar','przeminąć, odejść','X',''],
+ ['פֻּם','pum','פֶּה','peh','usta','',''],
+ ['קְצָת','qəṣāt','קֵץ / קְצָת','qēṣ / qəṣāt','koniec; część','','לִקְצָת יוֹמַיָּא „po upływie dni”.'],
+ ['תּוּב','tûb','שׁוּב','šûb','wrócić','T','Impf יְתוּב.'],
+ ['חֲלַף','ḥălap','חָלַף','ḥālap','przeminąć','R',''],
+ ['הוּסְפַת','hûspat','הוּסְפָה','hûsəpâ','została dodana','','H pf bierny od יסף.'],
+ ['מַנְדַּע','mandaʿ','מַדָּע','maddāʿ','rozum, poznanie','DS','Od ידע; nn > nd.'],
+ ['קַיָּם','qayyām','קַיָּם','qayyām','trwały','',''],
+ ['תְּרֵי עֲשַׂר','tərê ʿăśar','שְׁנֵים עָשָׂר','šənêm ʿāśār','dwanaście','T NR',''],
+ ['לֶהֱוֹן','lehĕwôn','יִהְיוּ','yihyû','będą','NM','G impf 3 m. l.mn. od הוה.'],
+ ['מַהְלְכִין','mahləkîn','מִתְהַלְּכִים','mithalləkîm','przechadzający się','','H ptc od הלך.'],
+ ['יוּכַל','yûkal','יוּכַל','yûkal','będzie mógł','','G impf od יכל.'],
+ ['בָּרְכֵת','bārkēt','בֵּרַכְתִּי','bēraktî','błogosławiłem','','D pf 1 l.poj.'],
+ ['רוֹמֵם','rômēm','רוֹמֵם','rômēm','wywyższać','','Polel od רום.']
+],
+s:[
+ ['כֹּלָּא מְטָא עַל נְבוּכַדְנֶצַּר מַלְכָּא','Wszystko to spadło na króla Nabuchodonozora.','מְטָא – G pf od מטא „dosięgnąć”.','Dn 4,25'],
+ ['הֲלָא דָא הִיא בָּבֶל רַבְּתָא דִּי אֲנָה בֱנַיְתַהּ','Czyż to nie jest wielki Babilon, który ja zbudowałem?','בֱנַיְתַהּ – G pf 1 l.poj. + suf. 3 ż.; הִיא jako łącznik.','Dn 4,27'],
+ ['עוֹד מִלְּתָא בְּפֻם מַלְכָּא קָל מִן שְׁמַיָּא נְפַל','Jeszcze słowo było w ustach króla, gdy głos z nieba spadł.','Zdanie imienne + zdanie słowne bez spójnika.','Dn 4,28'],
+ ['וְלִקְצָת יוֹמַיָּה אֲנָה נְבוּכַדְנֶצַּר עַיְנַי לִשְׁמַיָּא נִטְלֵת','A po upływie (tych) dni ja, Nabuchodonozor, podniosłem oczy ku niebu.','נִטְלֵת – G pf 1 l.poj.; dopełnienie przed czasownikiem.','Dn 4,31'],
+ ['וּמַנְדְּעִי עֲלַי יְתוּב','I mój rozum wrócił do mnie.','מַנְדְּעִי – z dysymilacją nosową; יְתוּב – G impf (narracyjnie).','Dn 4,31'],
+ ['דִּי שָׁלְטָנֵהּ שָׁלְטָן עָלַם','…którego władza jest władzą wieczną.','Zdanie imienne; שָׁלְטָן עָלַם – constructus.','Dn 4,31'],
+ ['כְּעַן אֲנָה נְבֻכַדְנֶצַּר מְשַׁבַּח וּמְרוֹמֵם וּמְהַדַּר לְמֶלֶךְ שְׁמַיָּא','Teraz ja, Nabuchodonozor, wychwalam, wywyższam i sławię Króla nieba.','Trzy imiesłowy D/polel w funkcji czasu teraźniejszego.','Dn 4,34']
+],
+q:[
+ ['Impf הוה 3 m. l.poj. to…',['יֶהֱוֵא','לֶהֱוֵא','תֶּהֱוֵא','הֲוָא'],1,'Prefiks ל־.'],
+ ['יְהָךְ pochodzi od…',['הוך','הלך','חכך','אזל'],1,'Lamed zanika bez śladu.'],
+ ['Jak wygląda H pf 3 m. l.mn. od סלק?',['הַסְלִקוּ','הַסִּקוּ','הַנְסִקוּ','סַלִּקוּ'],1,'Lamed asymiluje się do ס.'],
+ ['מַנְדַּע (rozum) wobec hebr. מַדָּע ilustruje…',['asymilację','dysymilację nosową','metatezę','prostezę'],1,'nn > nd.'],
+ ['Hebr. פֶּה „usta” po aram. to…',['פֵּא','פֻּם','פְּמָא','פִּי'],1,'Det. פֻּמָּא.']
+]});
+
+L({id:23, ch:'23', title:'Składnia', read:'Dn 5,1–12',
+g:[
+ {h:'Szyk zdania', p:'Aramejski jest bardziej elastyczny niż hebrajski. Szyk wyjściowy VSO, ale częste są SVO i OV. Wysunięty na początek wyraz (casus pendens) bywa podjęty zaimkiem: מַלְכָּא זִיוֹהִי שְׁנוֹהִי „król – jego cera się zmieniła”. Pod wpływem akadyjskiego czasownik często stoi na końcu: חַמְרָא שָׁתֵה „wino pił”.'},
+ {h:'Dopełnienie bliższe', p:'Zwykle wprowadzone przez לְ albo nieoznaczone. יָת (hebr. אֵת) tylko w Dn 3,12; częste w targumach.'},
+ {h:'Zgoda przymiotnika', p:'Rzeczownik i przymiotnik zgadzają się w rodzaju i liczbie (choć końcówka morfologiczna nie zawsze jest ta sama). Przydawka – ten sam stan; orzecznik – nieokreślony. Zaimek wskazujący jako przydawka zwykle po rzeczowniku, jako orzecznik – przed nim.'},
+ {h:'Formy opisowe', p:'אִיתַי oraz הוה jako spójka z imiesłowem są znacznie częstsze niż w hebrajskim: הֲוָא שָׁתֵה „pił”, הֲוֵית חָזֵה „patrzyłem”, אִיתֵיכוֹן פָּלְחִין „służycie”.'},
+ {h:'Schemat narracji i dyskursu (P. Messina)', p:'W narracji pierwszy plan niesie qətal (perfectum) i x-qətal; tło – imiesłów, x-yiqtul i zdania imienne. W mowie zależnej przeszłość to x-qətal, teraźniejszość – imiesłów lub zdanie imienne, przyszłość – x-yiqtul, rozkaz – imperatyw i yiqtul krótki (wolitywny).'}
+],
+v:[
+ ['זִיו','zîw','זִיו / הָדָר','zîw / hādār','blask, cera','',''],
+ ['חֲמַר','ḥămar','יַיִן','yayin','wino','X','Det. חַמְרָא; hebr. חֶמֶר – poetyckie.'],
+ ['לְבַשׁ','ləbaš','לָבַשׁ','lābaš','ubierać się','R','Impf יִלְבַּשׁ.'],
+ ['לְחֶם','ləḥem','מִשְׁתֶּה','mišteh','uczta','F','Hebr. לֶחֶם = chleb.'],
+ ['פַּשֵּׁר','paššēr','פָּתַר','pātar','wykładać (D)','','Bezok. לְמִפְשַׁר (G).'],
+ ['יִקְרֵה','yiqrēh','יִקְרָא','yiqrāʾ','przeczyta','','G impf od קרא (III-ʾ jak III-h).'],
+ ['רַעְיוֹן','raʿyôn','מַחֲשָׁבָה','maḥăšābâ','myśl','',''],
+ ['הִשְׁתְּכַחַת','hištəkaḥat','נִמְצְאָה','nimṣəʾâ','została znaleziona','','Gt pf 3 ż. od שׁכח.'],
+ ['שְׁתָה','šətâ','שָׁתָה','šātâ','pić','R','Pf 3 m. l.mn. אִשְׁתִּיו (alef prostetyczny, nie ʾafʿel!).'],
+ ['תַּלְתִּי','taltî','שְׁלִישִׁי','šəlîšî','trzeci (w królestwie)','T',''],
+ ['אַרְגְּוָן','ʾargəwān','אַרְגָּמָן','ʾargāmān','purpura','LW',''],
+ ['מִתְבָּהַל','mitbāhal','נִבְהָל','nibhāl','przerażony','','Dt ptc od בהל.'],
+ ['כְּתַל','kətal','כֹּתֶל','kōtel','ściana','',''],
+ ['מִשְׁתֵּא','mištēʾ','מִשְׁתֶּה','mišteh','uczta (pijatyka)','',''],
+ ['נַהִירוּ','nahîrû','אוֹר','ʾôr','światłość, oświecenie','',''],
+ ['פַּס','pas','כַּף','kap','dłoń (wierzch)','','פַּס יְדָה „dłoń ręki”.'],
+ ['יִשְׁתַּנּוֹ','yištannô','יִשְׁתַּנּוּ','yištannû','zmienią się','','Dt impf od שׁנה (metateza).'],
+ ['רַבְרְבָנִין','rabrəbānîn','שָׂרִים','śārîm','dostojnicy','','Reduplikacja od רַב.']
+],
+s:[
+ ['בֵּלְשַׁאצַּר מַלְכָּא עֲבַד לְחֶם רַב לְרַבְרְבָנוֹהִי אֲלַף','Król Belszaccar urządził wielką ucztę dla tysiąca swoich dostojników.','SVO; לְחֶם = „uczta”, nie „chleb”.','Dn 5,1'],
+ ['וְלָקֳבֵל אַלְפָּא חַמְרָא שָׁתֵה','I wobec tego tysiąca pił wino.','Szyk OV; שָׁתֵה – ptc (opis tła).','Dn 5,1'],
+ ['בַּהּ שַׁעֲתָה נְפַקוּ אֶצְבְּעָן דִּי יַד אֱנָשׁ וְכָתְבָן','W tej chwili wyszły palce ludzkiej ręki i pisały.','נְפַקוּ – pf (pierwszy plan); כָּתְבָן – ptc ż. l.mn. (tło).','Dn 5,5'],
+ ['אֱדַיִן מַלְכָּא זִיוֹהִי שְׁנוֹהִי וְרַעְיֹנֹהִי יְבַהֲלוּנֵּהּ','Wtedy król – jego cera się zmieniła, a myśli go przerażały.','Casus pendens מַלְכָּא podjęty sufiksami.','Dn 5,6'],
+ ['כָּל אֱנָשׁ דִּי יִקְרֵה כְּתָבָה דְנָה וּפִשְׁרֵהּ יְחַוִּנַּנִי אַרְגְּוָנָא יִלְבַּשׁ','Każdy, kto przeczyta to pismo i oznajmi mi jego wyjaśnienie, ubierze się w purpurę.','Casus pendens; OV: אַרְגְּוָנָא יִלְבַּשׁ.','Dn 5,7'],
+ ['מַלְכָּא כַּפֵּת חַרְטֻמַּיָּא','Król związał magów.','D pf; dopełnienie bez znacznika.','Greenspahn 23,1'],
+ ['יַת חֶלְמָא פְּשַׁר דָּנִיֵּאל','Sen wyłożył Daniel.','OVS z partykułą יַת (typowa dla późnego aramejskiego).','Greenspahn 23,2'],
+ ['קְטַלוּ גֻבְרַיָּא לְכָהֲנַיָּא','Mężczyźni zabili kapłanów.','לְ jako znacznik dopełnienia bliższego.','Greenspahn 23,3']
+],
+q:[
+ ['Co to jest casus pendens?',['przypadek dopełniacza','wyraz wysunięty na początek i podjęty zaimkiem','forma bierna','zdanie warunkowe'],1,'מַלְכָּא זִיוֹהִי שְׁנוֹהִי.'],
+ ['W szyku orzecznikowym przymiotnik jest…',['określony','nieokreślony','w constructusie','zawsze po czasowniku'],1,''],
+ ['אִשְׁתִּיו „pili” – skąd א?',['ʾafʿel','alef prostetyczny','zapożyczenie','prefiks 1 os.'],1,'Znaczenie jest proste (G), nie przyczynowe.'],
+ ['Aram. לְחֶם w Dn 5,1 znaczy…',['chleb','uczta','wojna','ofiara'],1,'Fałszywy przyjaciel.'],
+ ['W narracji (Messina) tło wyraża zwykle…',['qətal','imiesłów i zdanie imienne','imperatyw','wayyiqtol'],1,'Pierwszy plan – qətal.']
+]});
+
+L({id:24, ch:'24', title:'Koniugacje bierne (peʿil, puʿʿal, hufʿal)', read:'Dn 5,13–30',
+g:[
+ {h:'Bierne „wewnętrzne”', t:[['Koniugacja','Pf 3 m. l.poj.','Pf 3 ż. l.poj.','Hebrajski'],['G bierne (peʿil)','כְּתִיב','כְּתִיבַת','qal bierne / nifʿal'],['D bierne (puʿʿal)','כֻּתַּב','—','puʿal'],['H bierne (hufʿal / hofʿal)','הֻכְתַּב / הָכְתַּב','הֻכְתְּבַת','hofʿal']]},
+ {h:'Peʿil', p:'Perfectum bierne G ma wzór qətîl – identyczny z imiesłowem biernym: רְשִׁים „zapisany / został zapisany”, יְהִיב „dany / został dany”, תְּקִילְתָּה „zostałeś zważony”. W hebrajskim bierny qal zachował się szczątkowo.'},
+ {h:'Hufʿal', p:'Prefiks הֻ־ / הָ־: הֻעַל „został wprowadzony”, הָנְחַת „został strącony”, הֻקְמַת „została postawiona”, הֻסַּק „został wyciągnięty”. Hebr. hofʿal: הוּבָא, הוּרַד.'},
+ {h:'Mene, tekel, peres', p:'Dn 5,25–28 to gra słów: מְנֵא „mina” / מְנָה „policzył”; תְּקֵל „szekel” / תְּקִילְתָּה „zostałeś zważony” (hebr. שָׁקַל: *ṯ > ת); פְּרֵס „pół miny” / פְּרִיסַת „zostało podzielone” / פָרָס „Persja”.'}
+],
+v:[
+ ['כָּרְסֵא','korsēʾ','כִּסֵּא','kissēʾ','tron','DS','Podwojone ss rozdzielone przez r (dysymilacja).'],
+ ['מָרֵא','mārēʾ','אָדוֹן','ʾādôn','pan','X','מָרֵא שְׁמַיָּא „Pan nieba”.'],
+ ['יְקָר','yəqār','כָּבוֹד','kābôd','chwała','R',''],
+ ['מָרִים','mārîm','מֵרִים','mērîm','wywyższający','','H ptc od רום.'],
+ ['הִתְרוֹמַמְתָּ','hitrômamtā','הִתְרוֹמַמְתָּ','hitrômamtā','wywyższyłeś się','','Hitpolel od רום.'],
+ ['רְשַׁם','rəšam','רָשַׁם','rāšam','zapisać','R','Pass. רְשִׁים.'],
+ ['שְׁוִי','šəwî','שֻׁוָּה','šuwwâ','został zrównany','','Pf bierne od שׁוה.'],
+ ['הַשְׁפֵּל','hašpēl','הִשְׁפִּיל','hišpîl','poniżyć (H)','',''],
+ ['חַסִּיר','ḥassîr','חָסֵר','ḥāsēr','brakujący, zbyt lekki','',''],
+ ['הַכְרִזוּ','hakrizû','הִכְרִיזוּ','hikrîzû','ogłosili','LW','H pf od כרז.'],
+ ['מְנָה','mənâ','מָנָה','mānâ','policzyć','R',''],
+ ['הֶעְדִּיו','heʿdîw','הֵסִירוּ','hēsîrû','odjęli','X','H pf 3 m. l.mn. od עדה.'],
+ ['פְּרִיסַת','pərîsat','נִפְרְסָה','nipr(ə)sâ','została podzielona','','Peʿil 3 ż. od פרס.'],
+ ['תְּקִילְתָּה','təqîltâ','נִשְׁקַלְתָּ','nišqaltā','zostałeś zważony','T','Peʿil 2 m. od תקל (hebr. שׁקל).'],
+ ['הֻעַל','huʿal','הוּבָא','hûbāʾ','został wprowadzony','','Hufʿal od עלל.'],
+ ['הָנְחַת','honḥat','הוּרַד','hûrad','został strącony','','Hufʿal od נחת.'],
+ ['יְהִיבַת','yəhîbat','נִתְּנָה','nittənâ','została dana','','Peʿil 3 ż. od יהב.']
+],
+s:[
+ ['בֵּאדַיִן דָּנִיֵּאל הֻעַל קֳדָם מַלְכָּא','Wtedy Daniel został wprowadzony przed króla.','הֻעַל – hufʿal od עלל.','Dn 5,13'],
+ ['וּכְדִי רִם לִבְבֵהּ הָנְחַת מִן כָּרְסֵא מַלְכוּתֵהּ','A gdy jego serce się wyniosło, został strącony z tronu swego królestwa.','רִם – G pf od רום; הָנְחַת – hufʿal; כָּרְסֵא – dysymilacja.','Dn 5,20'],
+ ['וּדְנָה כְתָבָא דִּי רְשִׁים מְנֵא מְנֵא תְּקֵל וּפַרְסִין','A to jest pismo, które zostało zapisane: MENE MENE TEKEL UFARSIN.','רְשִׁים – peʿil od רשׁם.','Dn 5,25'],
+ ['מְנֵא מְנָה אֱלָהָא מַלְכוּתָךְ וְהַשְׁלְמַהּ','MENE: Bóg policzył twoje królestwo i położył mu kres.','מְנָה – G pf; הַשְׁלְמַהּ – H pf + suf. 3 ż.','Dn 5,26'],
+ ['תְּקֵל תְּקִילְתָּה בְמֹאזַנְיָא וְהִשְׁתְּכַחַתְּ חַסִּיר','TEKEL: zostałeś zważony na wadze i znaleziony zbyt lekkim.','תְּקִילְתָּה – peʿil 2 m.; הִשְׁתְּכַחַתְּ – Gt pf 2 m.','Dn 5,27'],
+ ['פְּרֵס פְּרִיסַת מַלְכוּתָךְ וִיהִיבַת לְמָדַי וּפָרָס','PERES: twoje królestwo zostało podzielone i dane Medom i Persom.','Dwa peʿil 3 ż. zgodne z מַלְכוּ (ż.).','Dn 5,28']
+],
+q:[
+ ['רְשִׁים w Dn 5,25 to…',['G ptc czynny','G pf bierny (peʿil)','D imv','H pf'],1,'Wzór qətîl.'],
+ ['Hufʿal od נחת to…',['הַנְחֵת','הָנְחַת','אַחֵת','נְחִת'],1,'„został strącony”.'],
+ ['Dlaczego כָּרְסֵא ma ר?',['to inny rdzeń','dysymilacja podwojonego ס','metateza','zapożyczenie z perskiego'],1,'Hebr. כִּסֵּא.'],
+ ['תְּקֵל ~ hebr. שֶׁקֶל ilustruje…',['*ṯ > ת','*ḏ > ד','*ḍ > ע','nunację'],0,''],
+ ['Co znaczy מָרֵא?',['gorzki','pan','widok','buntownik'],1,'Por. מָרַנָא תָא.']
+]});
+
+L({id:25, ch:'25', title:'Koniugacje zwrotne (Gt i Dt)', read:'Dn 6,1–15',
+g:[
+ {h:'Paradygmat', t:[['Forma','Gt (hitpeʿel)','Dt (hitpaʿʿal)','Hebrajski (hitpaʿel)'],['pf 3 m. l.poj.','הִתְכְּתֵב','הִתְכַּתַּב','הִתְכַּתֵּב'],['impf 3 m. l.poj.','יִתְכְּתֵב','יִתְכַּתַּב','יִתְכַּתֵּב'],['ptc','מִתְכְּתֵב','מִתְכַּתַּב','מִתְכַּתֵּב'],['bezok.','הִתְכְּתָבָה','הִתְכַּתָּבָה','הִתְכַּתֵּב']]},
+ {h:'Znaczenie', p:'Gt to zwykle strona bierna do G (יִתְעֲבֵד „zostanie uczyniony”), czasem zwrotna. Dt – bierna lub zwrotna do D (מִתְנַצַּח „wyróżniał się”, אִתְיָעַטוּ „naradzili się”). Hebrajski ma hitpaʿel, a bierne G wyraża głównie nifʿal.'},
+ {h:'Metateza i asymilacja', p:'Gdy pierwsza spółgłoska rdzenia to sycząca (ס, שׂ, שׁ, צ, ז), ת zamienia się z nią miejscami: *hitšəkaḥ > הִשְׁתְּכַח; po צ ת > ט (יִצְטַבַּע), po ז ת > ד (הִזְדְּמִנְתּוּן). To samo zjawisko zna hebrajski: הִשְׁתַּמֵּר, הִצְטַדֵּק.'},
+ {h:'Wariant z א', p:'Obok הִתְ־ występuje אִתְ־ / אֶתְ־: koniugacje ʾitpeʿel i ʾitpaʿʿal (אִתְיְעַטוּ, אֶשְׁתּוֹמַם). Ta sama zamiana ה > א co w H > ʾA.'}
+],
+v:[
+ ['אֲחַשְׁדַּרְפַּן','ʾăḥašdarpan','אֲחַשְׁדַּרְפָּן','ʾăḥašdarpān','satrapa','LW','Perskie.'],
+ ['מְהֵימַן','məhêman','נֶאֱמָן','neʾĕmān','wierny, godny zaufania','','H ptc bierny od אמן.'],
+ ['אַרְיֵה','ʾaryēh','אַרְיֵה','ʾaryēh','lew','','L.mn. det. אַרְיָוָתָא.'],
+ ['גֹּב','gōb','בּוֹר','bôr','jama','X',''],
+ ['לֵילֵי','lêlê','לַיְלָה','laylâ','noc','','Det. לֵילְיָא.'],
+ ['עִלָּה','ʿillâ','עִלָּה','ʿillâ','pretekst','','Hebr. późne – „przyczyna”.'],
+ ['קְיָם','qəyām','חֹק','ḥōq','ustawa','X','Od קום; לְקַיָּמָה קְיָם „ustanowić ustawę”.'],
+ ['הַרְגִּשׁוּ','hargišû','הִרְגִּישׁוּ','hirgîšû','zbiegli się tłumnie','','H pf od רגשׁ.'],
+ ['שְׁפַר','šəpar','יָטַב','yāṭab','podobać się','X','Hebr. שָׁפַר (Ps 16,6).'],
+ ['בָּעוּ','bāʿû','בַּקָּשָׁה','baqqāšâ','prośba','',''],
+ ['אִתְיָעַטוּ','ʾityāʿaṭû','נוֹעֲצוּ','nôʿăṣû','naradzili się','TT','Dt od יעט (hebr. יעץ, *ẓ).'],
+ ['מִתְנַצַּח','mitnaṣṣaḥ','מִתְנַצֵּחַ','mitnaṣṣēaḥ','wyróżniający się','','Dt ptc od נצח.'],
+ ['סָרַךְ','sārak','שַׂר','śar','przełożony','LW',''],
+ ['עֵלָּא','ʿēllāʾ','מַעְלָה','maʿlâ','ponad','',''],
+ ['עֶשְׂרִין','ʿeśrîn','עֶשְׂרִים','ʿeśrîm','dwadzieścia','NM',''],
+ ['עֲשִׁית','ʿăšît','חָשַׁב','ḥāšab','zamierzył','','G ptc od עשׁת.'],
+ ['לְקַיָּמָה','ləqayyāmâ','לְקַיֵּם','ləqayyēm','ustanowić (D bezok.)','','Od קום z jod.'],
+ ['נְזִק','nəziq','נִזַּק','nizzaq','ponosić szkodę','','Ptc נָזִק.']
+],
+s:[
+ ['אֱדַיִן דָּנִיֵּאל דְּנָה הֲוָא מִתְנַצַּח עַל סָרְכַיָּא וַאֲחַשְׁדַּרְפְּנַיָּא','Wtedy ten Daniel wyróżniał się ponad przełożonych i satrapów.','הֲוָא + Dt ptc – perifraza czynności trwającej.','Dn 6,4'],
+ ['וְכָל עִלָּה וּשְׁחִיתָה לָא יָכְלִין לְהַשְׁכָּחָה כָּל קֳבֵל דִּי מְהֵימַן הוּא','Ale żadnego pretekstu ani przewinienia nie mogli znaleźć, ponieważ był wierny.','לְהַשְׁכָּחָה – H bezok. od שׁכח; כָּל קֳבֵל דִּי „ponieważ”.','Dn 6,5'],
+ ['לָא נְהַשְׁכַּח לְדָנִיֵּאל דְּנָה כָּל עִלָּא לָהֵן הַשְׁכַּחְנָה עֲלוֹהִי בְּדָת אֱלָהֵהּ','Nie znajdziemy u tego Daniela żadnego pretekstu, chyba że znajdziemy coś przeciw niemu w prawie jego Boga.','לָהֵן „chyba że”; עֲלוֹהִי – przyimek z sufiksem typu l.mn.','Dn 6,6'],
+ ['אִתְיָעַטוּ כֹּל סָרְכֵי מַלְכוּתָא לְקַיָּמָה קְיָם מַלְכָּא','Naradzili się wszyscy przełożeni królestwa, by król ustanowił ustawę.','אִתְיָעַטוּ – ʾitpaʿʿal (Dt z א); עט < *ẓ (hebr. יעץ).','Dn 6,8'],
+ ['יִתְרְמֵא לְגֹב אַרְיָוָתָא','Zostanie wrzucony do jamy lwów.','יִתְרְמֵא – Gt impf (bierne do G רמה).','Dn 6,8'],
+ ['וְכָל קֳבֵל דְּנָה מַלְכָּא דָּרְיָוֶשׁ רְשַׁם כְּתָבָא וֶאֱסָרָא','Wobec tego król Dariusz podpisał pismo i zakaz.','רְשַׁם – G pf.','Dn 6,10']
+],
+q:[
+ ['הִשְׁתְּכַח (od שׁכח) pokazuje…',['asymilację','metatezę ת z syczącą','dysymilację','nunację'],1,'*hitšəkaḥ > hištəkaḥ.'],
+ ['Gt najczęściej wyraża…',['przyczynowość','stronę bierną do G','intensywność','czas przyszły'],1,''],
+ ['Hebr. נוֹעַץ / יעץ odpowiada aram. rdzeń…',['יעץ','יעט','יעד','יעק'],1,'*ẓ: hebr. צ, aram. ט.'],
+ ['Prefiks אִתְ־ zamiast הִתְ־ to…',['błąd','wariant ʾitpeʿel/ʾitpaʿʿal','koniugacja A','alef prostetyczny'],1,'Ta sama zamiana ה > א.'],
+ ['מְהֵימַן znaczy…',['wierny','przerażony','wielki','żywy'],0,'H ptc bierny od אמן.']
+]});
+
+L({id:26, ch:'26', title:'Inne koniugacje (ʾafʿel, šafʿel, ʾitpeʿel)', read:'Dn 6,16–29',
+g:[
+ {h:'ʾAfʿel (A)', p:'Przyczynowa jak H, ale z prefiksem א: אַשְׁכַּח „znalazł”, הֵימִן (H) obok אֲמַן. W późniejszych dialektach A wyparła H. Uwaga: א na początku nie zawsze oznacza A – w אִשְׁתִּיו „pili” (Dn 5,3–4) to alef prostetyczny, bo znaczenie jest proste.'},
+ {h:'Šafʿel (Š) i Štafʿal', p:'Prefiks שׁ: שֵׁיזִב „ocalić”, שַׁכְלֵל „ukończyć”, שֵׁיצִיא „dokończyć”. Koniugacja przyczynowa typowa dla akadyjskiego (Š i Št), gdzie nie ma H; aramejskie formy są najpewniej zapożyczeniami.'},
+ {h:'Polel i inne', p:'Czasowniki puste i geminowane nie tworzą zwykłego D, lecz polel (רוֹמֵם „wywyższać”), a zamiast Dt – hitpolel / ʾetpolel (הִתְרוֹמַמְתָּ, אֶשְׁתּוֹמַם). Hebrajski zna te same formy (רוֹמֵם, הִתְרוֹמֵם).'},
+ {h:'Zamiany ה > א', p:'Ta sama tendencja widoczna jest w końcówkach: ־ָא (rodzajnik) obok ־ָה (rodzaj ż.), które bywają zamieniane w pisowni (בַּיְתָה „ten dom”, Ezd 6,15).'}
+],
+v:[
+ ['אֱסָר','ʾĕsār','אִסָּר','ʾissār','zakaz','',''],
+ ['מַלֵּל','mallēl','דִּבֶּר','dibbēr','mówić (D)','X','Ptc ż. מְמַלֱּלָה (Dn 7).'],
+ ['סְגַר','səgar','סָגַר','sāgar','zamknąć','R',''],
+ ['הַצְלַח','haṣlaḥ','הִצְלִיחַ','hiṣlîaḥ','powodziło mu się','','H pf od צלח.'],
+ ['הֻסַּק','hussaq','הוֹעֲלָה','hôʿŏlâ','został wyciągnięty','','Hufʿal od סלק (asymilacja l).'],
+ ['בְּאֵשׁ','bəʾēš','רַע','raʿ','był zły (nie podobało się)','X','בְּאֵשׁ עֲלוֹהִי „zmartwiło go”.'],
+ ['זָכוּ','zākû','זְכוּת','zəkût','niewinność','',''],
+ ['חֲבוּלָה','ḥăbûlâ','חַבָּלָה','ḥabbālâ','przestępstwo','',''],
+ ['נַדַּת','naddat','נָדְדָה','nādədâ','uciekła','','G pf 3 ż. od נדד.'],
+ ['אֲכַלוּ קַרְצֵיהוֹן','ʾăkalû qarṣêhôn','הִלְשִׁינוּ','hilšînû','oskarżyli (dosł. zjedli ich kawałki)','LW','Kalka akadyjska.'],
+ ['שְׁנָה','šənâ','שֵׁנָה','šēnâ','sen (spanie)','R','Homonim „rok”.'],
+ ['הֵימִן','hêmin','הֶאֱמִין','heʾĕmîn','zaufał, uwierzył','','H pf od אמן.'],
+ ['יְשֵׁיזְבִנָּךְ','yəšêzəbinnāk','יַצִּילְךָ','yaṣṣîləkā','wybawi cię','LW','Š impf + nun energicum + suf. 2 m.'],
+ ['חַבְּלוּנִי','ḥabbəlûnî','חִבְּלוּנִי','ḥibbəlûnî','zranili mnie','','D pf 3 m. l.mn. + suf. 1 l.poj.'],
+ ['אַרְעִית','ʾarʿît','תַּחְתִּית','taḥtît','dno','A',''],
+ ['שַׁכְלֵל','šaklēl','כִּלָּה','killâ','ukończyć (Š)','','Od כלל.']
+],
+s:[
+ ['אֱלָהָךְ דִּי אַנְתְּה פָּלַח לֵהּ בִּתְדִירָא הוּא יְשֵׁיזְבִנָּךְ','Twój Bóg, któremu ty służysz nieustannie, on cię wybawi.','Casus pendens אֱלָהָךְ podjęte przez הוּא; פָּלַח – ptc.','Dn 6,17'],
+ ['אֱדַיִן אֲזַל מַלְכָּא לְהֵיכְלֵהּ וּבָת טְוָת','Wtedy król poszedł do swego pałacu i spędził noc na poście.','בָּת – G pf od בית „nocować”.','Dn 6,19'],
+ ['וְשִׁנְתֵּהּ נַדַּת עֲלוֹהִי','A sen od niego uciekł.','שִׁנְתֵּהּ – שְׁנָה + suf.; נַדַּת – G pf 3 ż. geminowanego.','Dn 6,19'],
+ ['אֱלָהִי שְׁלַח מַלְאֲכֵהּ וּסֲגַר פֻּם אַרְיָוָתָא וְלָא חַבְּלוּנִי','Mój Bóg posłał swego anioła i zamknął paszczę lwów, i nie zraniły mnie.','סֲגַר – chatef pod ס przed ג; חַבְּלוּנִי – D pf + suf.','Dn 6,23'],
+ ['וְהֻסַּק דָּנִיֵּאל מִן גֻּבָּא','I wyciągnięto Daniela z jamy.','הֻסַּק – hufʿal od סלק z asymilacją ל.','Dn 6,24'],
+ ['דִּי הֵימִן בֵּאלָהֵהּ','Bo zaufał swemu Bogu.','הֵימִן – H od אמן (jod zamiast alefu).','Dn 6,24'],
+ ['דִּי הוּא אֱלָהָא חַיָּא וְקַיָּם לְעָלְמִין','Bo On jest Bogiem żywym i trwającym na wieki.','Przymiotniki חַיָּא (det., przydawka) i קַיָּם (orzecznik).','Dn 6,27'],
+ ['וְדָנִיֵּאל דְּנָה הַצְלַח בְּמַלְכוּת דָּרְיָוֶשׁ','A ten Daniel powodził się za panowania Dariusza.','הַצְלַח – H pf (nieprzechodnie: „miał powodzenie”).','Dn 6,29']
+],
+q:[
+ ['Šafʿel to koniugacja…',['zwrotna','przyczynowa z prefiksem שׁ','bierna','intensywna'],1,'Typowa dla akadyjskiego.'],
+ ['Czy א w אִשְׁתִּיו oznacza ʾafʿel?',['tak','nie – alef prostetyczny','to sufiks','to pytanie'],1,'Znaczenie proste: „pili”.'],
+ ['Polel (רוֹמֵם) zastępuje D w czasownikach…',['mocnych','pustych i geminowanych','I-n','III-h'],1,''],
+ ['הֻסַּק to…',['H pf czynny','hufʿal od סלק','Š od סקק','Gt'],1,'„został wyciągnięty”.'],
+ ['Co znaczy מַלֵּל?',['napełnić','mówić','królować','modlić się'],1,'D „mówić”.']
+]});
+
+</script>
+<script>
+(function(){
+'use strict';
+/* ---------- narzędzia ---------- */
+const $=(s,r=document)=>r.querySelector(s);
+const app=$('#app');
+const HEB=/[֐-׿יִ-ﭏ]/;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* tekst mieszany: zawija ciągi hebrajskie w span.he */
+function rich(s){
+  s=esc(s);
+  return s.replace(/[֐-׿יִ-ﭏ](?:[֐-׿יִ-ﭏ\s\/·,]*[֐-׿יִ-ﭏ])?/g,m=>'<span class="he" lang="arc">'+m+'</span>');
+}
+const he=s=>'<span class="he" lang="arc">'+esc(s)+'</span>';
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const pick=(a,n)=>shuffle(a).slice(0,n);
+const today=()=>{const d=new Date();return Math.floor((d.getTime()-d.getTimezoneOffset()*60000)/86400000)};
+const strip=s=>s.normalize('NFD').replace(/[֑-ׇ̀-ͯ]/g,'').replace(/[ʾʿ]/g,'').replace(/ł/g,'l').replace(/Ł/g,'L').toLowerCase();
+
+/* ---------- transliteracja automatyczna (zdania) ---------- */
+const TC={'א':'ʾ','ב':'b','ג':'g','ד':'d','ה':'h','ו':'w','ז':'z','ח':'ḥ','ט':'ṭ','י':'y','כ':'k','ך':'k','ל':'l','מ':'m','ם':'m','נ':'n','ן':'n','ס':'s','ע':'ʿ','פ':'p','ף':'p','צ':'ṣ','ץ':'ṣ','ק':'q','ר':'r','ש':'š','ת':'t'};
+const TV={'ֱ':'ĕ','ֲ':'ă','ֳ':'ŏ','ִ':'i','ֵ':'ē','ֶ':'e','ַ':'a','ָ':'ā','ֹ':'ō','ֺ':'ō','ֻ':'u'};
+const LONG=/[āēīōūâêîôû]$/;
+function translitWord(w){
+  const U=[];
+  for(const ch of w){
+    if(TC[ch]!==undefined){U.push({c:ch,m:''})}
+    else if(U.length&&/[֑-ׇ]/.test(ch)){U[U.length-1].m+=ch}
+    else U.push({c:ch,m:'',raw:true});
+  }
+  let out='';let prevV=null;let prevShevaSilent=false;
+  const n=U.length;
+  for(let i=0;i<n;i++){
+    const u=U[i];
+    if(u.raw){out+=u.c==='־'?'-':(u.c==='׃'?'':u.c);prevV=null;continue}
+    const m=u.m, dag=m.includes('ּ'), sheva=m.includes('ְ');
+    let v=null;for(const k in TV) if(m.includes(k)) v=TV[k];
+    const last=(i===n-1)||U[i+1].raw;
+    const prevHasVowel=prevV&&prevV!=='';
+    // waw z holamem / szurek
+    if(u.c==='ו'&&!v&&!sheva&&m.includes('ֹ')===false&&dag&&(i===0||!prevHasVowel)){out+=(i===0?'û':'û');prevV='û';prevShevaSilent=false;continue}
+    if(u.c==='ו'&&(m.includes('ֹ')||m.includes('ֺ'))&&!m.match(/[ְ-ָֻ]/)&&i>0&&!prevHasVowel){out+='ô';prevV='ô';prevShevaSilent=false;continue}
+    // mater lectionis
+    if(u.c==='י'&&!m&&i>0&&(prevV==='i'||prevV==='ē')&&!(U[i+1]&&!U[i+1].raw&&/[ְ-ֻ]/.test(U[i+1].m)&&false)){
+      out=out.slice(0,-1)+(prevV==='i'?'î':'ê');prevV=prevV==='i'?'î':'ê';continue}
+    if(u.c==='א'&&!m&&i>0){continue}
+    if(u.c==='ה'&&!m&&last&&i>0){const lc=out.slice(-1);const map={'ā':'â','ē':'ê','ō':'ô'};if(map[lc])out=out.slice(0,-1)+map[lc];else if(lc==='e')out+='h';else out+='h';continue}
+    let cons=TC[u.c];
+    if(u.c==='ש') cons=m.includes('ׂ')?'ś':'š';
+    if(u.c==='ה'&&dag) cons='h';
+    const forte=dag&&i>0&&prevHasVowel&&prevV!=='ə'&&!(u.c==='ה'&&last)&&u.c!=='ו';
+    if(forte){cons=cons+cons;if(out.endsWith('ō'))out=out.slice(0,-1)+'o'}
+    const nx=U[i+1];const nextLene=nx&&!nx.raw&&/[בגדכפת]/.test(nx.c)&&nx.m.includes('ּ');
+    // patach furtivum
+    if(last&&v==='a'&&(u.c==='ח'||u.c==='ע'||(u.c==='ה'&&dag))&&i>0&&LONG.test(out)){out+='a'+cons;prevV='a';continue}
+    out+=cons;
+    if(v){out+=v;prevV=v;prevShevaSilent=false}
+    else if(sheva){
+      const vocal=!last&&(i===0||forte||(!nextLene&&(prevShevaSilent||/[ēīōūêîôû]$/.test(prevV||''))));
+      if(vocal){out+='ə';prevV='ə';prevShevaSilent=false}else{prevV='';prevShevaSilent=true}
+    } else {prevV='';prevShevaSilent=true}
+  }
+  return out.replace(/ā([^aeiouāēīōūâêîôûəăĕŏ\s-]{1,2})ŏ/g,'o$1ŏ');
+}
+function translit(s){
+  return s.replace(/׃/g,'').split(/\s+/).map(w=>w.split('־').map((p,pi,arr)=>{
+    if(pi<arr.length-1&&/כָּ?ל$/.test(p.replace(/[\u0591-\u05AF]/g,''))) return translitWord(p).replace(/kāl$/,'kol');
+    if(/^כָ?ּ?ל$/.test(p.replace(/[ָּ]/g,''))&&/כָּל|כָל/.test(p)) return 'kol';
+    return translitWord(p)}).join('-')).join(' ');
+}
+
+/* ---------- dane pochodne ---------- */
+const ALLV=[];
+LESSONS.forEach(l=>{l.v.forEach((v,i)=>{const o={id:l.id+'-'+i,lid:l.id,ar:v[0],tr:v[1],he:v[2],htr:v[3],pl:v[4],tags:(v[5]||'').split(/\s+/).filter(Boolean),note:v[6]||''};l.V=l.V||[];l.V.push(o);ALLV.push(o)});
+  l.S=l.s.map((s,i)=>({id:l.id+'-s'+i,ar:s[0],pl:s[1],an:s[2],ref:s[3]||'',tr:translit(s[0])}));});
+const VBYID=Object.fromEntries(ALLV.map(v=>[v.id,v]));
+const LBYID=Object.fromEntries(LESSONS.map(l=>[l.id,l]));
+const INT=[0,1,3,7,16,35];
+
+/* ---------- postępy ---------- */
+const KEY='aramTrainer.v1';
+let P=blank();
+function blank(){return{v:1,t:0,cards:{},quiz:{},sent:{},last:null,days:{}}}
+function loadLocal(){try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);if(o&&o.v===1)P=Object.assign(blank(),o)}}catch(e){}}
+let db=null,uid=null,saveTimer=null,saving=false,pending=false,syncMode='local';
+function save(){
+  P.t=Date.now();
+  try{localStorage.setItem(KEY,JSON.stringify(P))}catch(e){}
+  if(db&&uid){clearTimeout(saveTimer);saveTimer=setTimeout(pushRemote,1500)}
+  updateBadge();
+}
+async function pushRemote(){
+  if(saving){pending=true;return}
+  saving=true;
+  try{await db.doc('data/users/'+uid+'/progress').set(JSON.parse(JSON.stringify(P)))}
+  catch(e){if(e&&(e.code==='invalid_argument'||e.code==='not_granted'||e.code==='revoked')){db=null;syncMode='local';renderSync()}}
+  saving=false;
+  if(pending){pending=false;pushRemote()}
+}
+async function connectRemote(){
+  try{
+    if(!window.claude||!window.claude.use) return;
+    const [d,u]=await Promise.all([window.claude.use('db'),window.claude.use('user')]);
+    if(!d||!u) return;
+    const id=await u.id(); if(!id) return;
+    const snap=await d.doc('data/users/'+id+'/progress').get();
+    db=d;uid=id;syncMode='account';
+    if(snap.exists){const r=snap.data();if(r&&r.v===1&&(r.t||0)>(P.t||0)){P=Object.assign(blank(),JSON.parse(JSON.stringify(r)));try{localStorage.setItem(KEY,JSON.stringify(P))}catch(e){};route()}else if((P.t||0)>(r&&r.t||0)){pushRemote()}}
+    else if(P.t){pushRemote()}
+    renderSync();updateBadge();
+  }catch(e){}
+}
+function renderSync(){const el=$('#sync');if(!el)return;el.className='sync'+(syncMode==='account'?' acc':'');el.innerHTML='<i></i>'+(syncMode==='account'?'Postępy zapisują się na Twoim koncie i są dostępne na innych urządzeniach.':'Postępy zapisują się w tej przeglądarce. Zrób kopię zapasową, żeby przenieść je gdzie indziej.')}
+function card(id){return P.cards[id]}
+function grade(id,ok){
+  const c=P.cards[id]||{b:0,d:0,ok:0,no:0};
+  if(ok){c.b=Math.min(c.b+1,5);c.ok++}else{c.b=0;c.no++}
+  c.d=today()+INT[c.b];P.cards[id]=c;P.days[today()]=(P.days[today()]||0)+1;
+}
+function dueList(){const t=today();return ALLV.filter(v=>{const c=P.cards[v.id];return c&&c.d<=t})}
+function known(v){const c=P.cards[v.id];return c&&c.b>=3}
+function lessonPct(l){
+  const k=l.V.filter(known).length/l.V.length;
+  const q=(P.quiz[l.id]||0)/100;
+  const s=l.S.length?l.S.filter(s=>P.sent[s.id]).length/l.S.length:1;
+  return Math.round((k*.5+q*.3+s*.2)*100);
+}
+function updateBadge(){const n=dueList().length;const b=$('#dueBadge');if(b){b.hidden=!n;b.textContent=n}}
+
+/* ---------- nawigacja ---------- */
+let view={name:'home'};
+function go(name,arg){view=Object.assign({name},arg||{});route();window.scrollTo(0,0)}
+function route(){
+  document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.go===view.name||(view.name==='lesson'&&b.dataset.go==='home'))));
+  if(view.name==='home')renderHome();
+  else if(view.name==='lesson')renderLesson();
+  else if(view.name==='review')renderReview();
+  else if(view.name==='par')renderPar();
+  else if(view.name==='gloss')renderGloss();
+  updateBadge();
+}
+$('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(b.dataset.go)});
+$('#brand').addEventListener('click',()=>go('home'));
+
+/* ---------- strona główna ---------- */
+function renderHome(){
+  const totalV=ALLV.length, knownV=ALLV.filter(known).length, due=dueList().length;
+  const quizDone=LESSONS.filter(l=>(P.quiz[l.id]||0)>=80).length;
+  const last=P.last&&LBYID[P.last];
+  app.innerHTML=`
+  <section class="hero">
+    <div class="intro">
+      <div class="eyebrow">Aramejski biblijny · Ezd i Dn</div>
+      <h1>Ucz się lekcja po lekcji, porównując z hebrajskim</h1>
+      <p>Każda lekcja odpowiada rozdziałowi podręcznika Greenspahna i części wykładu. Masz w niej gramatykę, słówka z odpowiednikami hebrajskimi, fiszki, quiz i zdania z Biblii.</p>
+      <div class="row" style="margin-top:14px">
+        ${last?`<button class="btn primary" data-open="${last.id}">Kontynuuj: lekcja ${esc(last.ch)}</button>`:`<button class="btn primary" data-open="${LESSONS[0].id}">Zacznij od lekcji 1</button>`}
+        <button class="btn" data-go="review" ${due?'':'disabled'}>Powtórka (${due})</button>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>${knownV}<span class="muted" style="font-size:14px"> / ${totalV}</span></b><span>słówek opanowanych</span></div>
+      <div class="stat"><b>${due}</b><span>do powtórki dziś</span></div>
+      <div class="stat"><b>${quizDone}<span class="muted" style="font-size:14px"> / ${LESSONS.length}</span></b><span>quizów ≥ 80%</span></div>
+    </div>
+  </section>
+  <h2 style="margin-top:28px">Lekcje</h2>
+  <div class="lessons">${LESSONS.map(l=>{const p=lessonPct(l);return `
+    <button class="lcard${p>=90?' done':''}" data-open="${l.id}" type="button">
+      <span class="lnum">${esc(l.ch)}</span>
+      <span class="lbody"><span class="lt">${esc(l.title)}</span><span class="meta">${esc(l.read)}</span>
+      <span class="chips"><span class="chip">${l.V.length} słówek</span><span class="chip">${l.S.length} zdań</span>${P.quiz[l.id]!=null?`<span class="chip ok">quiz ${P.quiz[l.id]}%</span>`:''}</span>
+      <span class="bar" aria-label="Postęp ${p}%"><i style="width:${p}%"></i></span></span>
+    </button>`}).join('')}</div>
+  <section class="panel" style="margin-top:28px">
+    <h3>Zapis postępów</h3>
+    <p id="sync" class="sync" style="margin:6px 0 10px"></p>
+    <div class="row">
+      <button class="btn" id="exp" type="button">Pokaż kopię zapasową</button>
+      <button class="btn" id="imp" type="button">Wczytaj kopię</button>
+      <button class="btn ghost" id="rst" type="button">Wyzeruj postępy</button>
+    </div>
+    <div id="bk" style="margin-top:10px"></div>
+  </section>`;
+  renderSync();
+  app.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>openLesson(+b.dataset.open));
+  app.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+  const bk=$('#bk');
+  $('#exp').onclick=()=>{const code=btoa(unescape(encodeURIComponent(JSON.stringify(P))));bk.innerHTML=`<p class="muted" style="margin:0 0 6px">Skopiuj ten kod i zachowaj go. Wklej go później w „Wczytaj kopię”.</p><textarea id="bkt" readonly>${code}</textarea><div class="row" style="margin-top:6px"><button class="btn" id="cp" type="button">Kopiuj</button><span id="cpm" class="muted"></span></div>`;
+    $('#cp').onclick=()=>{const t=$('#bkt');navigator.clipboard&&navigator.clipboard.writeText(t.value).then(()=>$('#cpm').textContent='Skopiowano.').catch(()=>{t.select();$('#cpm').textContent='Zaznaczono – skopiuj ręcznie.'})||(t.select(),$('#cpm').textContent='Zaznaczono – skopiuj ręcznie.')}};
+  $('#imp').onclick=()=>{bk.innerHTML=`<textarea id="bki" placeholder="Wklej kod kopii zapasowej"></textarea><div class="row" style="margin-top:6px"><button class="btn primary" id="ld" type="button">Wczytaj</button><span id="ldm" class="muted"></span></div>`;
+    $('#ld').onclick=()=>{try{const o=JSON.parse(decodeURIComponent(escape(atob($('#bki').value.trim()))));if(!o||o.v!==1)throw 0;P=Object.assign(blank(),o);save();renderHome();}catch(e){$('#ldm').textContent='Ten kod jest niepoprawny. Sprawdź, czy skopiowałeś go w całości.'}}};
+  $('#rst').onclick=()=>{bk.innerHTML=`<p style="margin:0 0 6px">Usunąć wszystkie postępy? Tego nie da się cofnąć.</p><div class="row"><button class="btn bad" id="rsy" type="button">Usuń postępy</button><button class="btn" id="rsn" type="button">Anuluj</button></div>`;
+    $('#rsy').onclick=()=>{P=blank();save();renderHome()};$('#rsn').onclick=()=>bk.innerHTML=''};
+}
+function openLesson(id){P.last=id;save();go('lesson',{id,tab:'teoria'})}
+
+/* ---------- lekcja ---------- */
+const TABS=[['teoria','Teoria'],['slowka','Słówka'],['fiszki','Fiszki'],['quiz','Quiz'],['zdania','Zdania']];
+function renderLesson(){
+  const l=LBYID[view.id];const p=lessonPct(l);
+  app.innerHTML=`<button class="back" type="button" id="bk">← Wszystkie lekcje</button>
+  <div class="lhead"><span class="lnum">${esc(l.ch)}</span><div style="flex:1;min-width:0"><div class="eyebrow">Lekcja ${esc(l.ch)} · ${esc(l.read)}</div><h1>${esc(l.title)}</h1>
+  <div class="bar" style="max-width:320px"><i style="width:${p}%"></i></div><div class="kbd" style="margin-top:3px">Postęp lekcji: ${p}% (słówka 50%, quiz 30%, zdania 20%)</div></div>
+  <div class="row">${l.id>1?`<button class="btn ghost" id="prev" type="button">‹ Poprzednia</button>`:''}${LESSONS.indexOf(l)<LESSONS.length-1?`<button class="btn ghost" id="next" type="button">Następna ›</button>`:''}</div></div>
+  <div class="tabs" role="tablist">${TABS.map(t=>`<button role="tab" type="button" data-tab="${t[0]}" aria-selected="${view.tab===t[0]}">${t[1]}</button>`).join('')}</div>
+  <div id="pane"></div>`;
+  $('#bk').onclick=()=>go('home');
+  const idx=LESSONS.indexOf(l);
+  if($('#prev'))$('#prev').onclick=()=>openLesson(LESSONS[idx-1].id);
+  if($('#next'))$('#next').onclick=()=>openLesson(LESSONS[idx+1].id);
+  app.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{view.tab=b.dataset.tab;renderLesson()});
+  const pane=$('#pane');
+  ({teoria:paneTheory,slowka:paneVocab,fiszki:paneCards,quiz:paneQuiz,zdania:paneSent})[view.tab](pane,l);
+}
+function tableHTML(t){return `<div class="tbl"><table><thead><tr>${t[0].map(c=>`<th>${rich(c)}</th>`).join('')}</tr></thead><tbody>${t.slice(1).map(r=>`<tr>${r.map(c=>`<td>${rich(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
+function paneTheory(pane,l){
+  const tags=[...new Set(l.V.flatMap(v=>v.tags))].filter(t=>PROC[t]);
+  pane.innerHTML=l.g.map(b=>`<div class="gblock"><h3>${esc(b.h)}</h3>${b.p?`<p>${rich(b.p)}</p>`:''}${b.t?tableHTML(b.t):''}</div>`).join('')+
+  (tags.length?`<div class="gblock"><h3>Procesy językowe w słówkach tej lekcji</h3><div class="stack" style="gap:8px">${tags.map(t=>`<div class="procbox"><b>${esc(PROC[t].n)}</b> <span class="muted">(${esc(PROC[t].s)})</span> – ${rich(PROC[t].d)} <span class="muted">Słówka: </span>${l.V.filter(v=>v.tags.includes(t)).map(v=>he(v.ar)).join(', ')}</div>`).join('')}</div></div>`:'')+
+  `<div class="row" style="margin-top:10px"><button class="btn primary" type="button" id="toV">Przejdź do słówek</button></div>`;
+  $('#toV').onclick=()=>{view.tab='slowka';renderLesson()};
+}
+function lvl(v){const c=P.cards[v.id];const b=c?c.b:0;return `<span class="lvl" title="Poziom ${b} z 5">${[1,2,3,4,5].map(i=>`<i class="${i<=b?'on':''}"></i>`).join('')}</span>`}
+function vrowHTML(v,showLesson){
+  const hasHe=v.he&&v.he!=='—';
+  return `<div class="vrow">
+   <div class="forms">
+    <div class="form ar"><span class="lab">aramejski</span><span class="he w" lang="arc">${esc(v.ar)}</span><span class="tr">${esc(v.tr)}</span></div>
+    <div class="form hb"><span class="lab">hebrajski</span>${hasHe?`<span class="he w" lang="he">${esc(v.he)}</span><span class="tr">${esc(v.htr)}</span>`:'<span class="none">—</span>'}</div>
+   </div>
+   <div class="pl"><span class="mean">${esc(v.pl)}</span>${lvl(v)}${showLesson?` <span class="chip">lekcja ${esc(LBYID[v.lid].ch)}</span>`:''}
+   ${v.note?`<div class="note">${rich(v.note)}</div>`:''}
+   ${v.tags.filter(t=>PROC[t]).length?`<div class="chips">${v.tags.filter(t=>PROC[t]).map(t=>`<button class="chip proc" type="button" data-proc="${t}">${esc(PROC[t].n)}</button>`).join('')}</div><div class="pbx"></div>`:''}</div>
+  </div>`;
+}
+function bindProc(root){root.querySelectorAll('[data-proc]').forEach(b=>b.onclick=()=>{const box=b.closest('.pl').querySelector('.pbx');const t=b.dataset.proc;if(box.dataset.t===t){box.innerHTML='';box.dataset.t='';return}box.dataset.t=t;box.innerHTML=`<div class="procbox">${rich(PROC[t].d)}</div>`})}
+function paneVocab(pane,l){
+  pane.innerHTML=`<p class="muted" style="margin-top:0">Przy każdym słówku: forma aramejska i jej odpowiednik hebrajski (transliteracja pod spodem), niżej znaczenie po polsku. Kliknij nazwę procesu, żeby zobaczyć wyjaśnienie. Kropki pokazują poziom w fiszkach.</p>
+  <div class="vlist">${l.V.map(v=>vrowHTML(v)).join('')}</div>
+  <div class="row" style="margin-top:14px"><button class="btn primary" type="button" id="toF">Ćwicz fiszki</button><button class="btn" type="button" id="toQ">Zrób quiz</button></div>`;
+  bindProc(pane);
+  $('#toF').onclick=()=>{view.tab='fiszki';renderLesson()};
+  $('#toQ').onclick=()=>{view.tab='quiz';renderLesson()};
+}
+
+/* ---------- fiszki ---------- */
+let fcMode='ar';
+function paneCards(pane,l){
+  const due=l.V.filter(v=>{const c=P.cards[v.id];return !c||c.d<=today()});
+  pane.innerHTML=`<div class="fc-wrap"><div class="row" style="justify-content:space-between">
+   <div class="seg" role="group" aria-label="Kierunek">${[['ar','aram. → pol.'],['pl','pol. → aram.'],['he','aram. → hebr.']].map(m=>`<button type="button" data-m="${m[0]}" aria-pressed="${fcMode===m[0]}">${m[1]}</button>`).join('')}</div></div>
+   <div class="row" style="margin-top:12px"><button class="btn primary" id="fcDue" type="button" ${due.length?'':'disabled'}>Nowe i do powtórki (${due.length})</button><button class="btn" id="fcAll" type="button">Wszystkie (${l.V.length})</button></div>
+   ${due.length?'':'<p class="muted">Wszystkie słówka tej lekcji są zaplanowane na później. Możesz przećwiczyć całą talię.</p>'}
+   <div id="fcArea"></div></div>`;
+  pane.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{fcMode=b.dataset.m;paneCards(pane,l)});
+  $('#fcDue').onclick=()=>runDeck($('#fcArea'),due,()=>paneCards(pane,l));
+  $('#fcAll').onclick=()=>runDeck($('#fcArea'),l.V,()=>paneCards(pane,l));
+}
+let deckKey=null;
+function runDeck(area,list,onEnd,title){
+  if(deckKey){document.removeEventListener('keydown',deckKey);deckKey=null}
+  let q=shuffle(list);const total=q.length;let done=0,okN=0;const seen=new Set();
+  const front=v=>fcMode==='pl'?`<div class="big pl">${esc(v.pl)}</div>`:`<div class="big he" lang="arc">${esc(v.ar)}</div>${fcMode==='he'?'<div class="muted">odpowiednik hebrajski?</div>':''}`;
+  const backHTML=v=>`<div class="big he" lang="arc" style="font-size:46px;line-height:1.35">${esc(v.ar)}</div><div class="tr" style="font-size:18px">${esc(v.tr)}</div>
+   <dl class="fc-grid"><dt>polski</dt><dd><b>${esc(v.pl)}</b></dd><dt>hebr.</dt><dd>${v.he&&v.he!=='—'?he(v.he):'—'} <span class="tr muted">${esc(v.htr)}</span></dd>
+   ${v.tags.filter(t=>PROC[t]).length?`<dt>proces</dt><dd>${v.tags.filter(t=>PROC[t]).map(t=>esc(PROC[t].n)).join(', ')}</dd>`:''}
+   ${v.note?`<dt>uwaga</dt><dd style="font-size:13px">${rich(v.note)}</dd>`:''}</dl>`;
+  function show(){
+    if(!q.length){area.innerHTML=`<div class="panel" style="margin-top:14px;text-align:center"><div class="score">${okN}/${total}</div><p>Za pierwszym razem rozpoznane. Nieznane słówka wrócą w powtórce już jutro.</p><button class="btn primary" type="button" id="again">Wróć</button></div>`;save();$('#again').onclick=onEnd;return}
+    const v=q[0];
+    area.innerHTML=`<div class="row" style="justify-content:space-between;margin-top:14px"><span class="muted">${done} / ${total}${title?' · '+esc(title):''}</span><span class="chip">lekcja ${esc(LBYID[v.lid].ch)}</span></div>
+    <div class="fc" id="fc" tabindex="0" role="button" aria-label="Odwróć kartę"><div class="fc-in"><div class="fc-face">${front(v)}<span class="hint">Kliknij lub naciśnij spację, aby odwrócić</span></div><div class="fc-face back">${backHTML(v)}</div></div></div>
+    <div class="answer-row"><button class="btn bad" type="button" data-a="0">Nie wiem</button><button class="btn" type="button" data-a="1">Trudne</button><button class="btn good" type="button" data-a="2">Wiem</button></div>
+    <p class="kbd hide-touch" style="text-align:center">Klawisze: spacja – odwróć · 1 nie wiem · 2 trudne · 3 wiem</p>`;
+    const fc=$('#fc',area);fc.onclick=()=>fc.classList.toggle('flip');
+    area.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>answer(+b.dataset.a));
+  }
+  function answer(a){
+    const v=q.shift();
+    const first=!seen.has(v.id);seen.add(v.id);
+    if(a===2){grade(v.id,true);if(first)okN++;done++}
+    else if(a===1){const c=P.cards[v.id]||{b:0,d:0,ok:0,no:0};c.d=today()+1;c.b=Math.max(1,Math.min(c.b,2));P.cards[v.id]=c;done++}
+    else{grade(v.id,false);q.splice(Math.min(q.length,3),0,v)}
+    save();show();
+  }
+  const key=e=>{if(!area.isConnected){document.removeEventListener('keydown',key);return}
+    if(e.target.closest&&e.target.closest('input,textarea'))return;
+    const fc=$('#fc',area);if(!fc)return;
+    if(e.key===' '){e.preventDefault();fc.classList.toggle('flip')}
+    else if(e.key==='1')answer(0);else if(e.key==='2')answer(1);else if(e.key==='3')answer(2)};
+  deckKey=key;document.addEventListener('keydown',key);
+  show();
+}
+
+/* ---------- quiz ---------- */
+function buildQuiz(l){
+  const Q=[];const pool=ALLV;
+  const others=(v,f,n)=>pick(pool.filter(x=>x[f]!==v[f]&&x[f]&&x[f]!=='—'),n*3).filter((x,i,a)=>a.findIndex(y=>y[f]===x[f])===i).slice(0,n);
+  const vs=shuffle(l.V);
+  vs.slice(0,4).forEach(v=>{const ds=others(v,'pl',3);Q.push({kind:'v',vid:v.id,p:`Co znaczy ${he(v.ar)} <span class="tr muted">${esc(v.tr)}</span>?`,o:shuffle([v.pl,...ds.map(d=>d.pl)]),a:v.pl,ex:`${he(v.ar)} = ${esc(v.pl)}; hebr. ${he(v.he)}`})});
+  vs.slice(4,7).forEach(v=>{const ds=others(v,'ar',3);Q.push({kind:'v',vid:v.id,he:true,p:`Jak po aramejsku: <b>${esc(v.pl)}</b>?`,o:shuffle([v.ar,...ds.map(d=>d.ar)]),a:v.ar,ex:`${he(v.ar)} <span class="tr">${esc(v.tr)}</span>`})});
+  vs.filter(v=>v.he&&v.he!=='—').slice(0,2).forEach(v=>{const ds=others(v,'he',3);Q.push({kind:'v',vid:v.id,he:true,p:`Hebrajski odpowiednik ${he(v.ar)} („${esc(v.pl)}”) to…`,o:shuffle([v.he,...ds.map(d=>d.he)]),a:v.he,ex:`${he(v.ar)} – ${he(v.he)} <span class="tr">${esc(v.htr)}</span>`+(v.tags.filter(t=>PROC[t]).length?'. '+v.tags.filter(t=>PROC[t]).map(t=>esc(PROC[t].n)).join(', ')+'.':'')})});
+  const tagged=shuffle(l.V.filter(v=>v.tags.some(t=>PROC[t]&&!['LW'].includes(t))));
+  tagged.slice(0,2).forEach(v=>{const t=v.tags.find(t=>PROC[t]&&t!=='LW');const ds=pick(Object.keys(PROC).filter(k=>!v.tags.includes(k)),3);Q.push({kind:'p',p:`Jaki proces lub zjawisko widać w parze ${he(v.ar)} – ${he(v.he)}?`,o:shuffle([PROC[t].n,...ds.map(k=>PROC[k].n)]),a:PROC[t].n,ex:rich(PROC[t].d)})});
+  pick(l.S,2).forEach(s=>{const ds=pick(LESSONS.flatMap(x=>x.S).filter(x=>x.id!==s.id),3);Q.push({kind:'s',p:`Przetłumacz: ${he(s.ar)}`,o:shuffle([s.pl,...ds.map(d=>d.pl)]),a:s.pl,ex:rich(s.an)})});
+  l.q.forEach(g=>Q.push({kind:'g',p:rich(g[0]),o:shuffle(g[1]),a:g[1][g[2]],ex:rich(g[3]||''),rich:true}));
+  return shuffle(Q).slice(0,14);
+}
+function paneQuiz(pane,l){
+  const Q=buildQuiz(l);let i=0,score=0;const res=[];const wrongV=[];
+  function show(){
+    if(i>=Q.length){const pct=Math.round(score/Q.length*100);const prev=P.quiz[l.id]||0;if(pct>prev)P.quiz[l.id]=pct;
+      wrongV.forEach(id=>grade(id,false));save();
+      pane.innerHTML=`<div class="q-card panel" style="text-align:center"><div class="eyebrow">Wynik</div><div class="score">${pct}%</div><p>${score} z ${Q.length} poprawnie. Najlepszy wynik w tej lekcji: ${Math.max(pct,prev)}%.</p>${wrongV.length?`<p class="muted">${wrongV.length} błędnie rozpoznanych słówek trafiło do jutrzejszej powtórki.</p>`:''}<div class="row" style="justify-content:center"><button class="btn primary" id="qa" type="button">Nowy quiz</button><button class="btn" id="qs" type="button">Przejdź do zdań</button></div></div>`;
+      $('#qa').onclick=()=>paneQuiz(pane,l);$('#qs').onclick=()=>{view.tab='zdania';renderLesson()};return}
+    const q=Q[i];
+    pane.innerHTML=`<div class="q-card"><div class="row" style="justify-content:space-between"><div class="progress-dots">${Q.map((x,k)=>`<i class="${k<i?(res[k]?'ok':'no'):(k===i?'cur':'')}"></i>`).join('')}</div><span class="muted">${i+1} / ${Q.length}</span></div>
+    <div class="q-prompt">${q.p}</div><div class="opts">${q.o.map((o,k)=>`<button class="opt" type="button" data-k="${k}">${q.he?he(o):(q.rich?rich(o):rich(o))}</button>`).join('')}</div><div id="fb"></div></div>`;
+    pane.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+      const k=+b.dataset.k;const ok=q.o[k]===q.a;res[i]=ok;if(ok)score++;else if(q.vid)wrongV.push(q.vid);
+      pane.querySelectorAll('.opt').forEach((x,j)=>{x.disabled=true;if(q.o[j]===q.a)x.classList.add('ok');else if(j===k)x.classList.add('no')});
+      $('#fb').innerHTML=`<div class="feedback ${ok?'ok':'no'}"><b>${ok?'Dobrze.':'Niestety nie.'}</b> ${q.ex||''}</div><div class="row" style="margin-top:10px"><button class="btn primary" id="nx" type="button">${i+1<Q.length?'Dalej':'Zobacz wynik'}</button></div>`;
+      const nx=$('#nx');nx.focus();nx.onclick=()=>{i++;show()};
+    });
+  }
+  show();
+}
+
+/* ---------- zdania ---------- */
+function paneSent(pane,l){
+  pane.innerHTML=`<p class="muted" style="margin-top:0">Przeczytaj zdanie na głos, spróbuj je przetłumaczyć, a potem odsłoń transliterację i analizę. „Ułóż zdanie” sprawdza, czy pamiętasz szyk. Transliteracja zdań jest generowana automatycznie (uproszczona).</p>
+  <div class="stack">${l.S.map((s,k)=>`<div class="sent" data-k="${k}">
+   <div class="row" style="justify-content:space-between"><span class="ref">${esc(s.ref)}</span>${P.sent[s.id]?'<span class="chip ok">ułożone</span>':''}</div>
+   <span class="he line" lang="arc">${esc(s.ar)}</span>
+   <div class="row" style="margin-top:6px"><button class="btn ghost" type="button" data-act="tr">Transliteracja</button><button class="btn ghost" type="button" data-act="pl">Tłumaczenie i analiza</button><button class="btn" type="button" data-act="build">Ułóż zdanie</button></div>
+   <div class="reveal" data-r="tr" hidden><p class="tr">${esc(s.tr)}</p></div>
+   <div class="reveal" data-r="pl" hidden><p><b>${esc(s.pl)}</b></p><p class="muted">${rich(s.an)}</p></div>
+   <div class="bld"></div></div>`).join('')}</div>`;
+  pane.querySelectorAll('.sent').forEach(el=>{
+    const s=l.S[+el.dataset.k];
+    el.querySelectorAll('[data-act]').forEach(b=>b.onclick=()=>{
+      const a=b.dataset.act;
+      if(a==='build'){builder(el.querySelector('.bld'),s,()=>paneSent(pane,l));return}
+      const r=el.querySelector(`[data-r="${a}"]`);r.hidden=!r.hidden;
+    });
+  });
+}
+function builder(box,s,onDone){
+  if(box.innerHTML){box.innerHTML='';return}
+  const words=s.ar.split(/\s+/);const ids=words.map((w,i)=>i);
+  let order=shuffle(ids);if(words.length>1)while(order.every((x,i)=>x===i))order=shuffle(ids);
+  const picked=[];
+  box.innerHTML=`<div class="builder"><p style="margin:0 0 6px"><b>${esc(s.pl)}</b></p><div class="slot" id="slot" aria-label="Twoje zdanie"></div><div class="pool">${order.map(i=>`<button class="tile" type="button" data-i="${i}" lang="arc">${esc(words[i])}</button>`).join('')}</div>
+  <div class="row" style="margin-top:8px"><button class="btn primary" type="button" data-b="chk">Sprawdź</button><button class="btn ghost" type="button" data-b="clr">Wyczyść</button><span class="msg muted"></span></div></div>`;
+  const slot=box.querySelector('.slot'),msg=box.querySelector('.msg');
+  const draw=()=>{slot.className='slot';slot.innerHTML=picked.map((i,k)=>`<button class="tile" type="button" data-k="${k}" lang="arc">${esc(words[i])}</button>`).join('');
+    slot.querySelectorAll('.tile').forEach(t=>t.onclick=()=>{const i=picked.splice(+t.dataset.k,1)[0];box.querySelector(`.pool [data-i="${i}"]`).classList.remove('used');draw()})};
+  box.querySelectorAll('.pool .tile').forEach(t=>t.onclick=()=>{if(t.classList.contains('used'))return;t.classList.add('used');picked.push(+t.dataset.i);draw()});
+  box.querySelector('[data-b="clr"]').onclick=()=>{picked.length=0;box.querySelectorAll('.pool .tile').forEach(t=>t.classList.remove('used'));draw();msg.textContent=''};
+  box.querySelector('[data-b="chk"]').onclick=()=>{
+    if(picked.length<words.length){msg.textContent='Użyj wszystkich słów.';return}
+    const ok=picked.every((i,k)=>words[i]===words[k]);
+    slot.classList.add(ok?'ok':'no');
+    if(ok){msg.textContent='Dobrze!';P.sent[s.id]=true;save();setTimeout(onDone,900)}
+    else{const firstBad=picked.findIndex((i,k)=>words[i]!==words[k]);msg.textContent='Jeszcze nie. Pierwsze '+firstBad+' słów jest na miejscu.'}
+  };
+}
+
+/* ---------- powtórka ---------- */
+function renderReview(){
+  const due=dueList();
+  app.innerHTML=`<div class="eyebrow">Powtórka rozłożona w czasie</div><h1>Powtórka</h1>
+  <p class="muted" style="max-width:62ch">Tu trafiają słówka ze wszystkich lekcji, które już ćwiczyłeś i których termin powtórki minął. Odstępy rosną z każdą poprawną odpowiedzią: 1, 3, 7, 16, 35 dni.</p>
+  <div class="row"><div class="seg" role="group" aria-label="Kierunek">${[['ar','aram. → pol.'],['pl','pol. → aram.'],['he','aram. → hebr.']].map(m=>`<button type="button" data-m="${m[0]}" aria-pressed="${fcMode===m[0]}">${m[1]}</button>`).join('')}</div></div>
+  <div id="rv">${due.length?`<div class="row" style="margin-top:12px"><button class="btn primary" id="st" type="button">Zacznij (${due.length})</button></div>`:`<div class="empty panel" style="margin-top:14px">Na dziś nie ma nic do powtórki. Otwórz lekcję i poćwicz fiszki, żeby dodać słówka.</div>`}</div>`;
+  app.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{fcMode=b.dataset.m;renderReview()});
+  if($('#st'))$('#st').onclick=()=>runDeck($('#rv'),due.slice(0,40),renderReview,'powtórka');
+}
+
+/* ---------- paradygmaty ---------- */
+let parTab='pf';
+function renderPar(){
+  const T=PARAD;
+  const tabs=[['pf','Perfectum'],['impf','Imperfectum'],['ptc','Imiesłowy'],['imv','Imperatyw i bezok.'],['nom','Rzeczownik i zaimki'],['drill','Ćwiczenie']];
+  let body='';
+  if(parTab==='pf'||parTab==='impf'){
+    const M=T[parTab];
+    body=`<p class="muted">Czasownik wzorcowy כתב „pisać”. W perfectum aram. 2 m. l.poj. ma też formę hebraizującą ־תָּ.</p><p class="swipe">Przesuń tabelę palcem w bok, żeby zobaczyć kolejne koniugacje.</p><div class="tbl par"><table><thead><tr><th>Osoba</th>${T.stems.map(s=>`<th>${esc(s)}</th>`).join('')}</tr></thead><tbody>${PERS.map((p,i)=>`<tr><td class="lab">${p}</td>${M.map(col=>`<td>${he(col[i])}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  } else if(parTab==='ptc'){
+    body=`<div class="tbl par"><table><thead><tr><th></th>${T.ptcLab.map(s=>`<th>${s}</th>`).join('')}</tr></thead><tbody>${T.ptc.map(r=>`<tr><td class="lab">${r[0]}</td>${r.slice(1).map(f=>`<td>${he(f)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="muted">Hebr. G czynny כֹּתֵב (ō < ā), bierny כָּתוּב; aram. zachowuje ā i ma wzór qətîl.</p>`;
+  } else if(parTab==='imv'){
+    body=`<div class="tbl par"><table><thead><tr><th></th>${T.ptcLab.map(s=>`<th>${s}</th>`).join('')}</tr></thead><tbody>${T.imv.map(r=>`<tr><td class="lab">${r[0]}</td>${r.slice(1).map(f=>`<td>${he(f)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+    <h3 style="margin:18px 0 8px">Bezokolicznik</h3><div class="tbl par"><table><tbody>${T.inf.map(r=>`<tr><td class="lab">${r[0]}</td><td>${he(r[1])}</td><td class="tr muted">${esc(translit(r[1]))}</td></tr>`).join('')}</tbody></table></div><p class="muted">G ma prefiks מ־ (zwykle z לְ): לְמִכְתַּב; hebr. לִכְתֹּב.</p>`;
+  } else if(parTab==='nom'){
+    body=`<h3 style="margin-bottom:8px">Stany rzeczownika</h3><div class="tbl par"><table><thead><tr><th></th><th>Absolutus</th><th>Constructus</th><th>Determinatus</th></tr></thead><tbody>${T.noun.map(r=>`<tr><td class="lab">${r[0]}</td>${r.slice(1).map(f=>`<td>${he(f)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+    <h3 style="margin:18px 0 8px">Zaimki osobowe</h3><div class="tbl par"><table><thead><tr><th>Osoba</th><th>Aramejski</th><th>Hebrajski</th></tr></thead><tbody>${T.pron.map(r=>`<tr><td class="lab">${r[0]}</td><td>${rich(r[1])}</td><td>${rich(r[2])}</td></tr>`).join('')}</tbody></table></div>
+    <h3 style="margin:18px 0 8px">Sufiksy dzierżawcze</h3><div class="tbl par"><table><thead><tr><th>Osoba</th><th>przy l.poj. („mój król”)</th><th>przy l.mn. („moi królowie”)</th></tr></thead><tbody>${T.sufS.map((r,i)=>`<tr><td class="lab">${r[0]}</td><td>${he(r[1])}</td><td>${he(T.sufP[i][1])}</td></tr>`).join('')}</tbody></table></div>`;
+  }
+  app.innerHTML=`<div class="eyebrow">Tabele odmiany</div><h1>Paradygmaty</h1>
+  <div class="tabs" role="tablist">${tabs.map(t=>`<button role="tab" type="button" data-pt="${t[0]}" aria-selected="${parTab===t[0]}">${t[1]}</button>`).join('')}</div><div id="parBody">${body}</div>`;
+  app.querySelectorAll('[data-pt]').forEach(b=>b.onclick=()=>{parTab=b.dataset.pt;renderPar()});
+  if(parTab==='drill')parDrill($('#parBody'));
+}
+function parForms(){
+  const F={};const add=(f,lab)=>{(F[f]=F[f]||[]).push(lab)};
+  ['pf','impf'].forEach(t=>PARAD[t].forEach((col,s)=>col.forEach((f,i)=>add(f,`${PARAD.short[s]} ${t==='pf'?'pf':'impf'} ${PERS[i]}`))));
+  PARAD.ptc.forEach(r=>r.slice(1).forEach((f,i)=>add(f,`ptc ${r[0]} ${PARAD.ptcLab[i]}`)));
+  PARAD.imv.forEach(r=>r.slice(1).forEach((f,i)=>add(f,`${r[0]} imv ${PARAD.ptcLab[i]}`)));
+  PARAD.inf.forEach(r=>add(r[1],`${r[0]} bezok.`));
+  return Object.entries(F).map(([f,l])=>({f,lab:l.join(' / ')}));
+}
+function parDrill(box){
+  const all=parForms();const Q=pick(all,10);let i=0,score=0;
+  function show(){
+    if(i>=Q.length){box.innerHTML=`<div class="q-card panel" style="text-align:center"><div class="score">${score}/${Q.length}</div><p>Rozpoznane formy.</p><button class="btn primary" type="button" id="ag">Jeszcze raz</button></div>`;$('#ag').onclick=()=>parDrill(box);return}
+    const q=Q[i];
+    const sameStemPrefix=q.lab.split(' ')[0];
+    const ds=shuffle(all.filter(x=>x.lab!==q.lab)).sort((a,b)=>(b.lab.startsWith(sameStemPrefix)?1:0)-(a.lab.startsWith(sameStemPrefix)?1:0)).slice(0,6);
+    const opts=shuffle([q.lab,...pick(ds,3).map(d=>d.lab)]);
+    box.innerHTML=`<div class="q-card"><div class="row" style="justify-content:space-between"><span class="eyebrow">Określ formę</span><span class="muted">${i+1} / ${Q.length}</span></div>
+     <div class="q-prompt" style="text-align:center">${he(q.f)}<div class="tr muted">${esc(translit(q.f))}</div></div>
+     <div class="opts">${opts.map((o,k)=>`<button class="opt" type="button" data-k="${k}">${esc(o)}</button>`).join('')}</div><div id="fb"></div></div>`;
+    box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const k=+b.dataset.k;const ok=opts[k]===q.lab;if(ok)score++;
+      box.querySelectorAll('.opt').forEach((x,j)=>{x.disabled=true;if(opts[j]===q.lab)x.classList.add('ok');else if(j===k)x.classList.add('no')});
+      $('#fb',box).innerHTML=`<div class="row" style="margin-top:10px"><button class="btn primary" id="nx" type="button">Dalej</button></div>`;const nx=$('#nx',box);nx.focus();nx.onclick=()=>{i++;show()}});
+  }
+  show();
+}
+
+/* ---------- słowniczek ---------- */
+let glossQ='';
+function renderGloss(){
+  app.innerHTML=`<div class="eyebrow">${ALLV.length} haseł ze wszystkich lekcji</div><h1>Słowniczek</h1>
+  <input class="search" id="gq" type="search" placeholder="Szukaj po polsku, aramejsku, hebrajsku lub w transliteracji" value="${esc(glossQ)}" style="margin:14px 0" aria-label="Szukaj">
+  <div id="gr" class="vlist"></div>`;
+  const inp=$('#gq');
+  const draw=()=>{const q=strip(inp.value.trim());glossQ=inp.value;
+    const res=q?ALLV.filter(v=>strip(v.ar+' '+v.tr+' '+v.he+' '+v.htr+' '+v.pl).includes(q)):ALLV;
+    $('#gr').innerHTML=res.length?res.slice(0,120).map(v=>vrowHTML(v,true)).join('')+(res.length>120?`<p class="muted">Pokazano 120 z ${res.length}. Zawęź wyszukiwanie.</p>`:''):`<div class="empty">Nic nie znaleziono dla „${esc(inp.value)}”.</div>`;
+    bindProc($('#gr'));};
+  inp.oninput=draw;draw();
+}
+
+/* ---------- start ---------- */
+loadLocal();
+route();
+connectRemote();
+window.__T={translit,LESSONS,ALLV};
+})();
+
+</script>
+
+</body>
+</html>
