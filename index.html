@@ -2059,15 +2059,24 @@ async function repInit(){
   if(view.name==='report')renderReport();
 }
 function openReport(ctx){go('report',{ctx})}
+const GH_NEW='https://github.com/berechowskab-sketch/Aramejski/issues/new';
+function ghURL(r){
+  const t=(r.where?r.where.split(' · ').slice(0,3).join(' · ')+': ':'')+r.what;
+  const title='Błąd – '+(t.length>90?t.slice(0,89)+'…':t);
+  const body=['**Gdzie:** '+(r.where||'—'),'','**Co jest źle:**',r.what,'',...(r.fix?['**Jak powinno być:**',r.fix,'']:[]),...(r.src?['**Źródło:** '+r.src,'']:[]),'_Zgłoszenie z trenera aramejskiego._'].join('\n');
+  return GH_NEW+'?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body.slice(0,6000));
+}
+function ghLink(r,txt){return `<a href="${esc(ghURL(r))}" target="_blank" rel="noopener">${txt}</a>`}
 app.addEventListener('click',e=>{const b=e.target.closest('[data-rep]');if(!b)return;e.preventDefault();e.stopPropagation();openReport(decodeURIComponent(b.dataset.rep))},true);
-const STAT={nowe:['nowe',''],poprawione:['poprawione','ok'],wyjasnione:['wyjaśnione','ok'],odrzucone:['bez zmian','']};
+const STAT={github:['otwarte na GitHubie',''],nowe:['nowe',''],poprawione:['poprawione','ok'],wyjasnione:['wyjaśnione','ok'],odrzucone:['bez zmian','']};
 function repItemHTML(r,local){
   const st=STAT[r.status||'nowe']||STAT.nowe;const d=r.createdAt?new Date(r.createdAt):null;
   return `<div class="rep-item"><div class="row" style="justify-content:space-between"><span class="chip ${st[1]}">${st[0]}</span><span class="muted" style="font-size:13px">${d?d.toLocaleString('pl-PL',{dateStyle:'short',timeStyle:'short'}):''}</span></div>
    ${r.where?`<p class="rep-where">${rich(r.where)}</p>`:''}
    <p><b>Błąd:</b> ${esc(r.what||'')}</p>${r.fix?`<p><b>Powinno być:</b> ${rich(r.fix)}</p>`:''}${r.src?`<p class="muted">Źródło: ${esc(r.src)}</p>`:''}
    ${r.reply?`<div class="rep-reply"><b>Odpowiedź:</b> ${rich(r.reply)}</div>`:''}
-   ${(r.status||'nowe')==='nowe'?`<div class="row"><button type="button" class="btn ghost sm" data-del="${esc(r.id)}" data-local="${local?1:0}">Usuń zgłoszenie</button></div>`:''}</div>`;
+   ${r.status==='github'?`<p>${ghLink(r,'Otwórz to zgłoszenie na GitHubie ponownie ↗')}</p>`:''}
+   ${['nowe','github'].includes(r.status||'nowe')?`<div class="row"><button type="button" class="btn ghost sm" data-del="${esc(r.id)}" data-local="${local?1:0}">Usuń zgłoszenie</button></div>`:''}</div>`;
 }
 function drawRepList(){
   const box=$('#replist');if(!box)return;
@@ -2092,14 +2101,14 @@ function renderReport(){
     <label><span>Co jest źle? <span class="muted">(wymagane)</span></span><textarea id="rwhat" required placeholder="np. tłumaczenie „urzędnik” – powinno być dosłownie"></textarea></label>
     <label><span>Jak powinno być? <span class="muted">(opcjonalnie)</span></span><textarea id="rfix" placeholder="np. Pan wieczności napisał list do potężnych królów."></textarea></label>
     <label><span>Źródło <span class="muted">(opcjonalnie)</span></span><input class="search" id="rsrc" placeholder="np. profesor na zajęciach, podręcznik s. 24"></label>
-    <div class="row"><button class="btn primary" type="submit">Wyślij zgłoszenie</button><span class="muted" id="rmsg" role="status"></span></div>
+    <div class="row"><button class="btn primary" type="submit">${repDb?'Wyślij zgłoszenie':'Wyślij na GitHubie ↗'}</button><span class="muted" id="rmsg" role="status"></span></div>
   </form>
   <div class="row" style="justify-content:space-between;margin-top:26px"><h2>Twoje zgłoszenia</h2><span id="repcopy"></span></div>
   <p class="muted" id="repinfo" style="margin:4px 0 10px"></p>
   <div class="stack" id="replist"></div>`;
   const info=$('#repinfo');
   if(repDb){info.textContent='Zgłoszenia zapisują się przy trenerze. Napisz Claude’owi „sprawdź zgłoszenia”, a poprawi błędy i zaznaczy, co zrobił.'}
-  else{info.textContent='W tej wersji zgłoszenia zapisują się tylko w tej przeglądarce. Skopiuj je i wklej w rozmowie z Claude’em.';
+  else{info.innerHTML='Zgłoszenie otworzy się na GitHubie w nowej karcie (potrzebne jest darmowe konto GitHub). Tam kliknij zielony przycisk <b>Create</b>, żeby je wysłać. Kopia zostaje w tej przeglądarce – możesz ją też skopiować i wkleić w rozmowie z Claude’em.';
     $('#repcopy').innerHTML=repLocal.length?'<button class="btn" type="button" id="rcp">Kopiuj zgłoszenia</button>':'';
     const c=$('#rcp');if(c)c.onclick=()=>{const t=repLocal.map((r,i)=>`${i+1}. [${r.where||'—'}] ${r.what}${r.fix?' → '+r.fix:''}${r.src?' (źródło: '+r.src+')':''}`).join('\n');
       (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>c.textContent='Skopiowano').catch(()=>{c.textContent='Zaznacz i skopiuj ręcznie';const ta=document.createElement('textarea');ta.value=t;$('#replist').before(ta);ta.select()})}}
@@ -2108,13 +2117,19 @@ function renderReport(){
     e.preventDefault();
     const r={where:$('#rwhere').value.trim(),what:$('#rwhat').value.trim(),fix:$('#rfix').value.trim(),src:$('#rsrc').value.trim(),status:'nowe',createdAt:Date.now()};
     const msg=$('#rmsg');if(!r.what){msg.textContent='Opisz, co jest źle.';$('#rwhat').focus();return}
+    const clear=()=>{view.ctx='';['#rwhat','#rfix','#rsrc','#rwhere'].forEach(q=>$(q).value='')};
+    if(!repDb){
+      let w=null;try{w=window.open(ghURL(r),'_blank');if(w)w.opener=null}catch(err){}
+      r.status='github';r.id='l'+Date.now();repLocal.push(r);saveLocalReps();
+      renderReport();
+      $('#rmsg').innerHTML=w?'Zgłoszenie otworzyło się w nowej karcie – kliknij tam <b>Create</b>, żeby je wysłać.':'Przeglądarka zablokowała nową kartę. '+ghLink(r,'Kliknij tutaj, aby otworzyć zgłoszenie na GitHubie ↗');
+      return}
     const btn=e.target.querySelector('button[type=submit]');btn.disabled=true;msg.textContent='Wysyłanie…';
-    let ok=false;
-    if(repDb){try{await repDb.collection('reports').add(r);ok=true}catch(err){ok=false}}
-    if(!ok){r.id='l'+Date.now();repLocal.push(r);saveLocalReps();if(!repDb)ok=true}
+    let ok=false;try{await repDb.collection('reports').add(r);ok=true}catch(err){ok=false}
     btn.disabled=false;
-    if(ok){msg.textContent='Dziękuję, zgłoszenie zapisane.';view.ctx='';$('#rwhat').value='';$('#rfix').value='';$('#rsrc').value='';$('#rwhere').value='';if(!repDb){renderReport();$('#rmsg').textContent='Dziękuję, zgłoszenie zapisane.'}else drawRepList()}
-    else{msg.textContent='Nie udało się wysłać – zapisano lokalnie w tej przeglądarce.';drawRepList()}
+    if(ok){clear();msg.textContent='Dziękuję, zgłoszenie zapisane.';drawRepList()}
+    else{r.status='github';r.id='l'+Date.now();repLocal.push(r);saveLocalReps();
+      msg.innerHTML='Nie masz uprawnień do zapisu w tym trenerze. '+ghLink(r,'Wyślij to zgłoszenie na GitHubie ↗')}
   };
 }
 
